@@ -1,143 +1,182 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const spring = {
-  type: "spring" as const,
-  stiffness: 300,
-  damping: 24,
-};
-
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.55, delay, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
-});
-
-const scaleIn = (delay = 0) => ({
-  initial: { opacity: 0, scale: 0.5 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { ...spring, delay },
-});
+const stats = [
+  {
+    number: "1,000+",
+    label: "Meal Distributed",
+    sub: "For Families and individuals.",
+    image: "https://framerusercontent.com/images/aJA4qVrM8EWKxQAKsONEMtPgM.jpeg",
+  },
+  {
+    number: "1,200+",
+    label: "Education Support",
+    sub: "For Families and individuals.",
+    image: "https://framerusercontent.com/images/skS9LjwTtqwGtOEeRGmXL9d2kU.jpeg",
+  },
+  {
+    number: "1,228+",
+    label: "Healthcare Access",
+    sub: "For Families and individuals.",
+    image: "https://framerusercontent.com/images/ZGFYFKtx1mI4BulabXQzYdcMPGI.jpeg",
+  },
+];
 
 export default function Hero() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setActive((p) => (p + 1) % stats.length), 3000);
+    return () => clearInterval(t);
+  }, []);
+
+  const s = stats[active];
+
   return (
-    <section
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-      style={{ backgroundColor: "var(--dark-bg)" }}
-    >
-      {/* Subtle dot grid */}
+    <section className="relative w-full min-h-screen overflow-hidden">
+      {/* Background image */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="https://framerusercontent.com/images/FEKROeWBu0nTbDszZlqurgevb8.jpg"
+        alt="Community impact"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      {/* Dark overlay */}
       <div
-        className="absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(135deg, rgba(12,32,26,0.75) 0%, rgba(12,32,26,0.45) 50%, rgba(12,32,26,0.2) 100%)" }}
       />
 
-      {/* Green ambient glow */}
-      <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full opacity-[0.08] blur-[140px] pointer-events-none"
-        style={{ backgroundColor: "#203e27" }}
-      />
+      {/* Content */}
+      <div className="relative max-w-[1160px] mx-auto px-5 md:px-8 min-h-screen flex items-end pb-16 md:pb-20">
+        <div className="w-full grid md:grid-cols-2 gap-8 md:gap-12 items-end">
 
-      <div className="relative max-w-[1200px] mx-auto px-8 md:px-8 pt-32 pb-28">
-        {/* Badge */}
-        <motion.div {...scaleIn(0)} className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-white/[0.12] bg-white/[0.04] mb-10">
-          <span
-            className="w-1.5 h-1.5 rounded-full"
-            style={{ backgroundColor: "var(--accent)" }}
-          />
-          <span
-            className="text-xs font-semibold uppercase tracking-[0.1em]"
-            style={{ fontFamily: "var(--font-be-vietnam)", color: "rgba(255,255,255,0.6)" }}
-          >
-            Give to Gain
-          </span>
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h1
-          {...fadeUp(0.08)}
-          className="text-[clamp(48px,8vw,88px)] font-bold text-white leading-[1.02] tracking-[-0.03em] max-w-4xl"
-        >
-          One opportunity
-          <br />
-          <span style={{ color: "var(--accent)" }}>can change</span>
-          <br />
-          everything.
-        </motion.h1>
-
-        {/* Subtext */}
-        <motion.p
-          {...fadeUp(0.16)}
-          className="mt-7 text-[17px] md:text-lg max-w-[460px] leading-relaxed"
-          style={{ color: "rgba(255,255,255,0.5)" }}
-        >
-          Canann gives young Nigerians access to tools, skills, and a community
-          that believes in them — because when one of us rises, we all rise.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          {...fadeUp(0.24)}
-          className="flex flex-col sm:flex-row items-start gap-3 mt-10"
-        >
-          <Link
-            href="/get-involved"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold transition-all hover:opacity-90 hover:scale-[1.02]"
-            style={{
-              backgroundColor: "var(--accent)",
-              color: "var(--accent-fg)",
-              boxShadow: "0 2px 8px rgba(45,106,79,0.35)",
-            }}
-          >
-            Get Involved
-            <ArrowRight size={15} />
-          </Link>
-          <Link
-            href="/about"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold transition-colors hover:border-white/40"
-            style={{
-              border: "1.5px solid rgba(255,255,255,0.18)",
-              color: "rgba(255,255,255,0.8)",
-            }}
-          >
-            Our Story
-          </Link>
-        </motion.div>
-
-        {/* Stat strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-wrap gap-10 mt-24 pt-10 border-t"
-          style={{ borderColor: "rgba(255,255,255,0.08)" }}
-        >
-          {[
-            { number: "200+", label: "People supported" },
-            { number: "12", label: "Communities reached" },
-            { number: "85%", label: "Improved opportunities" },
-            { number: "3+", label: "Years of impact" },
-          ].map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 12 }}
+          {/* LEFT — text */}
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.55 + i * 0.08, ease: "easeOut" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="font-medium text-white"
+              style={{ fontSize: "clamp(36px,4.5vw,64px)", letterSpacing: "-0.028em", fontWeight: 500, lineHeight: "1" }}
             >
-              <p className="text-3xl font-bold tracking-tight" style={{ color: "var(--accent)" }}>
-                {s.number}
-              </p>
-              <p className="text-sm mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
-                {s.label}
-              </p>
+              Where Small Actions Lead to Big Impact.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-4 text-base md:text-lg max-w-sm leading-relaxed"
+              style={{ color: "rgba(255,255,255,0.7)", fontSize: 20, fontWeight: 400 }}
+            >
+              Helping vulnerable communities access food, education, and hope.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-7"
+            >
+              <Link
+                href="/contact?type=donate"
+                className="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:opacity-90"
+                style={{
+                  backgroundColor: "var(--accent)",
+                  color: "#ffffff",
+                  padding: "13px 28px",
+                  borderRadius: "100px",
+                  boxShadow: "0 4px 16px rgba(57,164,107,0.4)",
+                }}
+              >
+                Donate Now
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
+
+          {/* RIGHT — floating stat card */}
+          <div className="flex justify-end">
+            <motion.div
+              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full max-w-[500px] rounded-[20px] overflow-hidden"
+              style={{ backgroundColor: "#ffffff", boxShadow: "0 16px 64px rgba(0,0,0,0.25)" }}
+            >
+              {/* Card content — single flex row */}
+              <div className="flex items-stretch gap-0">
+                {/* Left: indicators + stat text */}
+                <div className="flex-1 flex flex-col px-5 pt-4 pb-7">
+                  {/* Progress bars */}
+                  <div className="flex gap-2 mb-5">
+                    {stats.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActive(i)}
+                        className="flex-1 h-[3px] rounded-full transition-colors duration-300"
+                        style={{ backgroundColor: i === active ? "var(--accent)" : "#e0e0e0" }}
+                        aria-label={`Stat ${i + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <motion.p
+                    key={s.number}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="font-medium mt-6 leading-none"
+                    style={{ fontSize: "clamp(28px,4vw,40px)", color: "var(--foreground)", letterSpacing: "-0.04em" }}
+                  >
+                    {s.number}
+                  </motion.p>
+                  <motion.p
+                    key={s.label}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.35, delay: 0.05 }}
+                    className="text-sm font-medium mt-6 leading-snug"
+                    style={{ color: "var(--foreground)", fontSize: "1.25rem", letterSpacing: "-0.02em" }}
+                  >
+                    {s.label}
+                  </motion.p>
+                  <motion.p
+                    key={s.sub}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.35, delay: 0.08 }}
+                    className="text-xs mt-1"
+                    style={{ color: "var(--muted)" }}
+                  >
+                    {s.sub}
+                  </motion.p>
+                </div>
+
+                {/* Right: photo — full card height */}
+                <div className="shrink-0 pr-3 pb-3 pt-3" style={{ width: "260px" }}>
+                  <motion.div
+                    key={s.image}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4 }}
+                    className="w-full h-full rounded-[16px] overflow-hidden"
+                    style={{ minHeight: "220px" }}                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={s.image} alt={s.label} className="w-full h-full object-cover" />
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

@@ -42,7 +42,7 @@ export default function ProgrammeCards() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section style={{ backgroundColor: "var(--surface-alt)" }} className="py-20 md:py-32">
+    <section style={{ backgroundColor: "var(--surface-alt)" }} className="section">
       <div className="max-w-[1200px] mx-auto px-8">
         <motion.div
           ref={ref}
@@ -54,7 +54,7 @@ export default function ProgrammeCards() {
           <div className="max-w-xl">
             <p
               className="text-xs font-semibold uppercase tracking-[0.1em] mb-4"
-              style={{ fontFamily: "var(--font-be-vietnam)", color: "var(--accent)" }}
+              style={{ fontFamily: "var(--font-onest)", color: "var(--accent)" }}
             >
               Our Programmes
             </p>
@@ -105,7 +105,7 @@ export default function ProgrammeCards() {
                 <span
                   className="inline-block text-xs font-semibold uppercase tracking-[0.08em] px-3 py-1 rounded-full mb-4 self-start"
                   style={{
-                    fontFamily: "var(--font-be-vietnam)",
+                    fontFamily: "var(--font-onest)",
                     backgroundColor: "var(--accent-light)",
                     color: "var(--accent)",
                   }}

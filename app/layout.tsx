@@ -1,31 +1,24 @@
 import type { Metadata } from "next";
-import { DM_Sans, Be_Vietnam_Pro } from "next/font/google";
+import { Onest } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const onest = Onest({
+  variable: "--font-onest",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const beVietnam = Be_Vietnam_Pro({
-  variable: "--font-be-vietnam",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "700", "900"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Canann Impact Initiative",
   description:
-    "One opportunity can change everything. Canann connects underserved Nigerians with tools, resources, and community to build better futures.",
-  keywords: "Nigeria, NGO, impact, community, empowerment, Give to Gain",
+    "Helping vulnerable communities access food, education, and hope. Where small actions lead to big impact.",
+  keywords: "Nigeria, NGO, impact, community, food, education, healthcare, Give to Gain",
   openGraph: {
     title: "Canann Impact Initiative",
-    description: "One opportunity can change everything.",
+    description: "Where small actions lead to big impact.",
     type: "website",
   },
 };
@@ -36,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${beVietnam.variable} h-full`}>
+    <html lang="en" className={`${onest.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased">
         <Nav />
         <main className="flex-1">{children}</main>

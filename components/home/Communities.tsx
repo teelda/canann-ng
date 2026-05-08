@@ -34,7 +34,7 @@ export default function Communities() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section style={{ backgroundColor: "var(--background)" }} className="py-20 md:py-32">
+    <section style={{ backgroundColor: "var(--background)" }} className="section">
       <div className="max-w-[1200px] mx-auto px-8">
         <motion.div
           ref={ref}
@@ -45,7 +45,7 @@ export default function Communities() {
         >
           <p
             className="text-xs font-semibold uppercase tracking-[0.1em] mb-4"
-            style={{ fontFamily: "var(--font-be-vietnam)", color: "var(--accent)" }}
+            style={{ fontFamily: "var(--font-onest)", color: "var(--accent)" }}
           >
             Where We Work
           </p>

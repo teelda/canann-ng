@@ -1,20 +1,20 @@
 const keywords = [
-  "Digital Skills",
-  "Community",
-  "Tools & Access",
-  "Employment",
-  "Mentorship",
-  "Give to Gain",
+  "Food & Nutrition",
   "Education",
-  "Opportunity",
-  "Empowerment",
-  "Lagos",
-  "Abuja",
-  "Enugu",
-  "Tech Training",
-  "Career Growth",
-  "Support Networks",
-  "Change Makers",
+  "Emergency Relief",
+  "Healthcare",
+  "Donate Now",
+  "Give to Gain",
+  "Community",
+  "Hope",
+  "Compassion",
+  "Volunteers",
+  "Children",
+  "Families",
+  "Impact",
+  "Change",
+  "Together",
+  "Nigeria",
 ];
 
 export default function Marquee() {
@@ -22,8 +22,12 @@ export default function Marquee() {
 
   return (
     <section
-      className="py-6 overflow-hidden"
-      style={{ backgroundColor: "var(--dark-bg)", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+      className="py-5 overflow-hidden"
+      style={{
+        backgroundColor: "var(--dark-bg)",
+        borderTop: "1px solid rgba(255,255,255,0.05)",
+        borderBottom: "1px solid rgba(255,255,255,0.05)",
+      }}
     >
       <div className="animate-marquee">
         {doubled.map((word, i) => (
@@ -31,15 +35,15 @@ export default function Marquee() {
             <span
               className="text-sm font-semibold uppercase tracking-[0.08em] px-5"
               style={{
-                fontFamily: "var(--font-be-vietnam)",
-                color: i % 3 === 0 ? "var(--accent)" : "rgba(255,255,255,0.25)",
+                fontFamily: "var(--font-onest)",
+                color: i % 4 === 0 ? "var(--accent)" : "rgba(255,255,255,0.2)",
               }}
             >
               {word}
             </span>
             <span
               className="w-1 h-1 rounded-full shrink-0"
-              style={{ backgroundColor: "rgba(255,255,255,0.12)" }}
+              style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
             />
           </span>
         ))}

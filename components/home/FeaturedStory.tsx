@@ -11,7 +11,7 @@ export default function FeaturedStory() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section style={{ backgroundColor: "#ffffff" }} className="py-20 md:py-32">
+    <section style={{ backgroundColor: "#ffffff" }} className="section">
       <div className="max-w-[1200px] mx-auto px-8">
         <motion.p
           ref={ref}
@@ -19,7 +19,7 @@ export default function FeaturedStory() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-xs font-semibold uppercase tracking-[0.1em] mb-12"
-          style={{ fontFamily: "var(--font-be-vietnam)", color: "var(--accent)" }}
+          style={{ fontFamily: "var(--font-onest)", color: "var(--accent)" }}
         >
           Featured Story
         </motion.p>

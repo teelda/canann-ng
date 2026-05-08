@@ -16,7 +16,7 @@ export default function ImpactSnapshot() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 md:py-32" style={{ backgroundColor: "var(--dark-bg)" }}>
+    <section className="section" style={{ backgroundColor: "var(--dark-bg)" }}>
       <div className="max-w-[1200px] mx-auto px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left */}
@@ -28,7 +28,7 @@ export default function ImpactSnapshot() {
           >
             <p
               className="text-xs font-semibold uppercase tracking-[0.1em] mb-4"
-              style={{ fontFamily: "var(--font-be-vietnam)", color: "var(--accent)" }}
+              style={{ fontFamily: "var(--font-onest)", color: "var(--accent)" }}
             >
               Our Impact
             </p>

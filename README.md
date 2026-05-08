@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Canann Impact Initiative — Website
+
+Official website for **Canann Impact Initiative**, a Nigerian nonprofit providing food, education, healthcare, and emergency relief to vulnerable communities across Nigeria.
+
+## Tech Stack
+
+- **Next.js** (App Router)
+- **Tailwind CSS**
+- **Framer Motion** — page animations
+- **Lucide React** — icons
+- **Onest** — typeface
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  about-us/        About Us page
+  blog/            Blog listing
+  causes/          Causes page
+  contact/         Contact & donation form
+  page.tsx         Homepage
+  layout.tsx       Root layout + fonts
+  globals.css      Design tokens & global styles
 
-## Learn More
+components/
+  Nav.tsx          Floating pill navigation
+  Footer.tsx       Footer with newsletter signup
+  home/            Homepage section components
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Design Tokens
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Colours and typography are defined as CSS variables in `app/globals.css`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Value | Use |
+|---|---|---|
+| `--accent` | `#39a46b` | Primary green |
+| `--dark-bg` | `#0c201a` | Dark sections |
+| `--foreground` | `#222222` | Body text |
+| `--muted` | `#727272` | Secondary text |
+| `--surface` | `#f0f1f2` | Card backgrounds |
 
-## Deploy on Vercel
+Section vertical spacing is controlled globally via the `.section` class — adjust the `clamp()` values in `globals.css` to change spacing site-wide.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Build & Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build   # production build
+npm start       # start production server
+```
+
+Recommended deployment: [Vercel](https://vercel.com)

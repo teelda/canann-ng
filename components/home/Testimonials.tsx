@@ -47,7 +47,7 @@ export default function Testimonials() {
         >
           <p
             className="text-xs font-semibold uppercase tracking-[0.1em] mb-4"
-            style={{ fontFamily: "var(--font-be-vietnam)", color: "var(--accent)" }}
+            style={{ fontFamily: "var(--font-onest)", color: "var(--accent)" }}
           >
             Trusted by Communities
           </p>
