@@ -9,51 +9,51 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    title: "Safe Shelter. Stronger Lives. Sustainable Futures.",
-    excerpt: "How Canann's emergency housing programme is giving displaced families a foundation to rebuild from — not just a roof over their heads.",
+    title: "Teaching AI on Chalkboards: Inside Nigeria's Digital Divide",
+    excerpt: "What it looks like when schools still draw computer screens on blackboards — and how Canann is putting real devices in those classrooms.",
     date: "February 25, 2026",
-    category: "Emergency Relief",
-    image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=700&q=80",
+    category: "Digital Access",
+    image: "/MEM_0667.jpg",
     readTime: "4 min read",
   },
   {
-    title: "Delivering Warm Meals, Spreading Real Hope",
-    excerpt: "Behind every meal distribution is a story of community members who refused to let their neighbours go hungry.",
+    title: "How Our Offline Tech Journals Reach Where the Internet Can't",
+    excerpt: "For remote communities with no connectivity, our printed resources bring digital education to the last mile — no signal required.",
     date: "February 25, 2026",
-    category: "Food & Nutrition",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80",
+    category: "Offline Learning",
+    image: "/7N4A2919.png",
     readTime: "3 min read",
   },
   {
-    title: "Hope That Feeds, Protects, and Uplifts Communities",
-    excerpt: "Our integrated approach — food security, education, and healthcare together — is showing results that last beyond the programme.",
-    date: "February 25, 2026",
-    category: "Community",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80",
+    title: "The 150,000: Why We're Sponsoring a Generation of African Builders",
+    excerpt: "Our flagship programme is sponsoring 150,000 professionals, innovators, and school graduates to build solutions for their own communities.",
+    date: "March 10, 2026",
+    category: "Sponsorship",
+    image: "/IMG_9368.jpg",
     readTime: "5 min read",
   },
   {
-    title: "Where Compassion Builds Stronger Communities",
-    excerpt: "Meet the volunteers who show up every week — not for recognition, but because they believe the work matters.",
-    date: "February 25, 2026",
-    category: "Volunteering",
-    image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=700&q=80",
+    title: "From Learner to Builder: Stories from Our Skills Programme",
+    excerpt: "The moment a student realises they can build — not just consume — technology. Stories from the ground in Lagos and Cross River.",
+    date: "March 5, 2026",
+    category: "Skills Training",
+    image: "/volunterr.jpg",
     readTime: "6 min read",
   },
   {
-    title: "Bringing hope through food, shelter, and support",
-    excerpt: "A snapshot of what our teams delivered over the past quarter — and what we learned along the way.",
+    title: "Why Curricula Can't Wait: Closing the AI Knowledge Gap in Schools",
+    excerpt: "Nigerian schools are graduating students into a digital world without the tools to navigate it. Here's how we're filling the gap right now.",
     date: "February 26, 2026",
-    category: "Impact Report",
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=700&q=80",
+    category: "Education",
+    image: "/m 115.jpg",
     readTime: "7 min read",
   },
   {
-    title: "Because Every Plate and Every Home Deserves Care",
-    excerpt: "The intersection of food security and dignity — why how we give matters as much as what we give.",
+    title: "Green Workforce: Building Tech Solutions That Actually Fit Africa",
+    excerpt: "Sustainable, locally-rooted innovation isn't a trend — it's how we make sure the digital future benefits African communities, not just tech hubs.",
     date: "February 25, 2026",
-    category: "Food & Nutrition",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=700&q=80",
+    category: "Green Workforce",
+    image: "/mission1.jpg",
     readTime: "4 min read",
   },
 ];
@@ -152,7 +152,7 @@ export default function BlogPage() {
             Even a small donation can make a life-changing difference for someone in need.
           </p>
           <Link
-            href="/contact?type=donate"
+            href="/donate"
             className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
             style={{ backgroundColor: "var(--accent)" }}
           >

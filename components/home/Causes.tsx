@@ -9,39 +9,39 @@ import { useRef } from "react";
 
 const causes = [
   {
-    tag: "Food & Nutrition",
-    title: "Fighting Hunger, One Meal at a Time",
-    desc: "We provide nutritious meals to children and families facing food insecurity.",
+    tag: "Digital Access",
+    title: "Teaching the Digital World to Grassroots Communities",
+    desc: "Many Nigerian communities still learn computers on chalkboards. We're putting real tools and knowledge in their hands.",
     goal: 60800,
     raised: 39500,
-    image: "https://framerusercontent.com/images/aJA4qVrM8EWKxQAKsONEMtPgM.jpeg",
+    image: "/7N4A2919.png",
     href: "/causes",
   },
   {
-    tag: "Education",
-    title: "Education That Builds Futures",
-    desc: "Access to education gives children the tools to break the cycle of poverty.",
+    tag: "Tools & Devices",
+    title: "A Device Can Change Everything",
+    desc: "We provide laptops, tablets, and offline materials to learners who've never touched a keyboard. Access is the first step.",
     goal: 50800,
     raised: 36600,
-    image: "https://framerusercontent.com/images/BNzvO8dQ2ZiRIzowZaNsqKFJsE.jpeg",
+    image: "/7N4A2959.png",
     href: "/causes",
   },
   {
-    tag: "Emergency Relief",
-    title: "Help When It's Needed Most",
-    desc: "Rapid response support during disasters, crises, and emergencies.",
+    tag: "150K Sponsorship",
+    title: "Sponsoring a Generation of African Builders",
+    desc: "150,000 professionals, innovators, and secondary school graduates — sponsored with the skills to build for their own communities.",
+    goal: 500000,
+    raised: 120000,
+    image: "/7N4A2747.jpg",
+    href: "/causes",
+  },
+  {
+    tag: "Green Workforce",
+    title: "Building Solutions That Actually Fit Africa",
+    desc: "We train innovators to build sustainable, locally-rooted tech solutions — a workforce equipped for Africa's future.",
     goal: 80000,
     raised: 38400,
-    image: "https://framerusercontent.com/images/skS9LjwTtqwGtOEeRGmXL9d2kU.jpeg",
-    href: "/causes",
-  },
-  {
-    tag: "Healthcare",
-    title: "Care That Saves Lives",
-    desc: "Access to education gives children the tools to break the cycle of poverty.",
-    goal: 100000,
-    raised: 35000,
-    image: "https://framerusercontent.com/images/ZGFYFKtx1mI4BulabXQzYdcMPGI.jpeg",
+    image: "/7N4A2739.jpg",
     href: "/causes",
   },
 ];
@@ -53,7 +53,7 @@ function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) 
       style={{
         backgroundColor: "#ffffff",
         borderRadius: "100px",
-        padding: "5px 14px 5px 5px",
+        padding: "6px 8px 6px 12px",
         boxShadow: "0 1px 8px rgba(0,0,0,0.08)",
         border: "1px solid rgba(0,0,0,0.06)",
       }}
@@ -88,10 +88,10 @@ export default function Causes() {
             className="font-medium"
             style={{ fontSize: "clamp(26px,3vw,38px)", color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
           >
-            Where Your Support Makes a Difference
+            Where Your Support Makes a Real Difference
           </h2>
           <p className="mt-4 text-sm leading-relaxed max-w-sm mx-auto" style={{ color: "var(--muted)" }}>
-            Every cause we support is driven by real needs, real people, and real outcomes.
+            Every cause is rooted in the real barriers Nigerian and African communities face in accessing the digital world.
           </p>
         </motion.div>
 

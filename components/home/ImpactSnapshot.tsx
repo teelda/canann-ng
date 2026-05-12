@@ -5,10 +5,10 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { number: "200+", label: "People supported directly" },
-  { number: "12", label: "Communities reached" },
-  { number: "85%", label: "Improved opportunities" },
-  { number: "3+", label: "Years of impact" },
+  { number: "1,200+", label: "Learners trained" },
+  { number: "500+", label: "Devices deployed" },
+  { number: "15+", label: "Schools & communities reached" },
+  { number: "3+", label: "States active in Nigeria" },
 ];
 
 export default function ImpactSnapshot() {
@@ -17,7 +17,7 @@ export default function ImpactSnapshot() {
 
   return (
     <section className="section" style={{ backgroundColor: "var(--dark-bg)" }}>
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <motion.div
@@ -33,13 +33,13 @@ export default function ImpactSnapshot() {
               Our Impact
             </p>
             <h2 className="text-4xl md:text-[52px] font-bold text-white leading-tight tracking-[-0.02em]">
-              Small beginnings.
+              Real numbers.
               <br />
-              Real change.
+              Real impact.
             </h2>
             <p className="mt-5 text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Every number here is a person. A family. A story that didn&apos;t
-              have to end in struggle.
+              Every number represents a learner who now has a device, a skill,
+              or knowledge they didn&apos;t have before. The goal is 150,000 more.
             </p>
           </motion.div>
 

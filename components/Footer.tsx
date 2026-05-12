@@ -109,7 +109,7 @@ export default function Footer() {
               </p>
               <ul className="space-y-3.5">
                 {[
-                  ["Donate", "/contact?type=donate"],
+                  ["Donate", "/donate"],
                   ["Blog", "/blog"],
                 ].map(([label, href]) => (
                   <li key={href}>
@@ -167,14 +167,18 @@ export default function Footer() {
 
           {/* Logo watermark card */}
           <div
-            className="rounded-[24px] overflow-hidden relative flex items-end"
+            className="rounded-[24px] overflow-hidden relative flex flex-col justify-between p-8"
             style={{ backgroundColor: CARD_BG, minHeight: "200px" }}
           >
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/Canann logo.png" alt="Canann" className="w-10 h-10 object-contain" />
+            </div>
             <p
-              className="font-black leading-none select-none px-8 pb-4 w-full"
+              className="font-black leading-none select-none w-full"
               style={{
                 fontSize: "clamp(80px,10vw,180px)",
-                color: "rgba(57,164,107,0.1)",
+                color: "rgba(57,164,107,0.08)",
                 letterSpacing: "-0.04em",
                 lineHeight: 0.85,
               }}

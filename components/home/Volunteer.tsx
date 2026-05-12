@@ -10,16 +10,16 @@ import { useRef } from "react";
 
 const roles = [
   {
-    title: "Support Food Drives",
-    desc: "Help distribute meals and ensure families receive essential nutrition.",
+    title: "Run Digital Skills Sessions",
+    desc: "Lead hands-on training in communities — teaching computer basics, internet use, and AI concepts to learners starting from zero.",
   },
   {
-    title: "Event Support",
-    desc: "Assist at community events, health fairs, and educational workshops.",
+    title: "Tech Setup & Support",
+    desc: "Help deploy devices, install software, and set up learning stations in schools and community centres across Nigeria.",
   },
   {
-    title: "Community Outreach",
-    desc: "Go into communities to identify needs and connect people to our programmes.",
+    title: "Content & Curriculum Support",
+    desc: "Contribute to our offline tech journals and digital learning materials that reach communities where the internet hasn't arrived yet.",
   },
 ];
 
@@ -30,7 +30,7 @@ function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) 
       style={{
         backgroundColor: "#ffffff",
         borderRadius: "100px",
-        padding: "5px 14px 5px 5px",
+        padding: "6px 8px 6px 12px",
         boxShadow: "0 1px 8px rgba(0,0,0,0.08)",
         border: "1px solid rgba(0,0,0,0.06)",
       }}
@@ -66,7 +66,7 @@ export default function Volunteer() {
             <div className="aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://framerusercontent.com/images/asHraFvMvcE3ZaC3mzWTO4JECgk.jpg"
+                src="/volunterr.jpg"
                 alt="Volunteer at work"
                 className="w-full h-full object-cover"
               />
@@ -84,10 +84,10 @@ export default function Volunteer() {
               className="font-medium"
               style={{ fontSize: "clamp(26px,3vw,38px)", color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
             >
-              Volunteer for Change
+              Volunteer to Close the Digital Gap
             </h2>
             <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--muted)" }}>
-              Feeding families, educating children &amp; rebuilding lives — that&apos;s what our volunteers make possible.
+              Training learners, deploying devices, and reaching remote communities — that&apos;s what our volunteers make possible.
             </p>
 
             {/* Accordion role list */}

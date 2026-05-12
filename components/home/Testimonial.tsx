@@ -11,29 +11,29 @@ const testimonials = [
     quote: "Canann has transformed the way our community experiences support. Every program they run brings hope, education, and vital resources to families, empowering them to overcome challenges and build brighter futures.",
     name: "James Harrison",
     role: "Father",
-    avatar: "https://framerusercontent.com/images/IXpAbTxO6FLBlcDQO5PEu7RCQrE.png",
-    portrait: "https://framerusercontent.com/images/IXpAbTxO6FLBlcDQO5PEu7RCQrE.png",
+    avatar: "/testimonial.jpg",
+    portrait: "/testimonial.jpg",
   },
   {
     quote: "The support we received from Canann didn't just fill a gap — it changed the trajectory of our entire family. I cannot express how grateful we are for the meals, the education support, and the human dignity they gave us.",
     name: "Adaeze Okafor",
     role: "Mother of three",
-    avatar: "https://framerusercontent.com/images/NCt4DaaGgkQZNhcHeQcxvdYtvzg.png",
-    portrait: "https://framerusercontent.com/images/NCt4DaaGgkQZNhcHeQcxvdYtvzg.png",
+    avatar: "/testimonial 1.png",
+    portrait: "/testimonial 1.png",
   },
   {
     quote: "As a volunteer, I see the impact up close. These programmes aren't charity — they're investments in people. Every meal, every lesson, every moment of relief creates a ripple that lasts for years.",
     name: "Emmanuel T.",
     role: "Programme Volunteer",
-    avatar: "https://framerusercontent.com/images/sF3MO018fUERYT7O4B9y2Wxz6k.png",
-    portrait: "https://framerusercontent.com/images/sF3MO018fUERYT7O4B9y2Wxz6k.png",
+    avatar: "/volunterr.jpg",
+    portrait: "/volunterr.jpg",
   },
   {
     quote: "Working alongside Canann has shown me what genuine community care looks like. They don't just provide resources — they restore dignity and open doors that were previously closed.",
     name: "Sarah Mensah",
     role: "Community Leader",
-    avatar: "https://framerusercontent.com/images/Es4wKJsXzhapTuGNn5Sr7TygdMM.png",
-    portrait: "https://framerusercontent.com/images/Es4wKJsXzhapTuGNn5Sr7TygdMM.png",
+    avatar: "/m 118.jpg",
+    portrait: "/m 118.jpg",
   },
 ];
 
@@ -44,7 +44,7 @@ function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) 
       style={{
         backgroundColor: "#ffffff",
         borderRadius: "100px",
-        padding: "5px 14px 5px 5px",
+        padding: "6px 8px 6px 12px",
         boxShadow: "0 1px 8px rgba(0,0,0,0.10)",
         border: "1px solid rgba(255,255,255,0.15)",
       }}
@@ -103,7 +103,7 @@ export default function Testimonial() {
           className="rounded-[24px] overflow-hidden"
           style={{ backgroundColor: "#ffffff" }}
         >
-          <div className="grid grid-cols-[72px_1fr] md:grid-cols-[72px_280px_1fr]">
+          <div className="grid grid-cols-[72px_1fr] md:grid-cols-[72px_280px_1fr]" style={{ paddingTop: "24px", paddingBottom: "24px" }}>
 
             {/* Avatar list */}
             <div
@@ -131,7 +131,7 @@ export default function Testimonial() {
             </div>
 
             {/* Portrait photo */}
-            <div className="hidden md:block overflow-hidden" style={{ maxHeight: "380px" }}>
+            <div className="hidden md:block overflow-hidden" style={{ maxHeight: "380px", borderRadius: "16px" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 key={t.portrait}

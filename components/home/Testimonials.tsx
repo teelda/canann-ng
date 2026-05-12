@@ -37,7 +37,7 @@ export default function Testimonials() {
       className="py-20 md:py-32"
       style={{ backgroundColor: "var(--dark-bg)" }}
     >
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}

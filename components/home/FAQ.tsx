@@ -37,7 +37,7 @@ function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) 
       style={{
         backgroundColor: "#ffffff",
         borderRadius: "100px",
-        padding: "5px 14px 5px 5px",
+        padding: "6px 8px 6px 12px",
         boxShadow: "0 1px 8px rgba(0,0,0,0.08)",
         border: "1px solid rgba(0,0,0,0.06)",
       }}
@@ -67,7 +67,7 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col"
+            className="flex flex-col items-start"
           >
             <SectionTag label="FAQ" icon={HelpCircle} />
             <h2

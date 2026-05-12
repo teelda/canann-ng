@@ -9,19 +9,19 @@ import { useInView } from "framer-motion";
 
 const slides = [
   {
-    image: "https://framerusercontent.com/images/Q28M7qu8wi9hnC1ca9oE34RFs.jpg",
-    title: "1,200 Children Supported Through Education",
-    desc: "From school supplies to educational programs, we support children in staying in school, continuing their learning, and building a future full of opportunities.",
+    image: "/m 115.jpg",
+    title: "1,200+ Learners Trained in Digital Skills",
+    desc: "From complete beginners to confident digital users — in communities where AI is still a chalkboard concept. That gap is closing.",
   },
   {
-    image: "https://framerusercontent.com/images/aJA4qVrM8EWKxQAKsONEMtPgM.jpeg",
-    title: "1,000+ Meals Distributed",
-    desc: "For families and individuals facing hunger. Every meal is a step toward dignity, health, and a better tomorrow.",
+    image: "/7N4A2959.png",
+    title: "500+ Devices Deployed Across Nigeria",
+    desc: "Each device unlocks a learner. We place laptops, tablets, and offline tools in communities that have never had them before.",
   },
   {
-    image: "https://framerusercontent.com/images/ZGFYFKtx1mI4BulabXQzYdcMPGI.jpeg",
-    title: "48+ Active Volunteers",
-    desc: "Dedicated individuals who show up every week to make a difference — not for recognition, but because they believe the work matters.",
+    image: "/volunterr.jpg",
+    title: "48+ Volunteers Driving Change",
+    desc: "People who show up to train, teach, and equip — because they believe the next African innovator is sitting in a classroom right now.",
   },
 ];
 
@@ -32,7 +32,7 @@ function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) 
       style={{
         backgroundColor: "#ffffff",
         borderRadius: "100px",
-        padding: "5px 14px 5px 5px",
+        padding: "6px 8px 6px 12px",
         boxShadow: "0 1px 8px rgba(0,0,0,0.08)",
         border: "1px solid rgba(0,0,0,0.06)",
       }}
@@ -75,12 +75,12 @@ export default function ImpactSection() {
             className="font-medium"
             style={{ fontSize: "clamp(26px,3vw,38px)", color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
           >
-            Together we change
+            Closing the gap,
             <br />
-            <span style={{ color: "var(--accent)" }}>lives every day.</span>
+            <span style={{ color: "var(--accent)" }}>one learner at a time.</span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed max-w-md mx-auto" style={{ color: "var(--muted)" }}>
-            Feeding families, educating children &amp; rebuilding lives — that&apos;s what our impact shows.
+            Teaching digital skills, deploying tech tools, and reaching remote communities where the internet still hasn&apos;t arrived.
           </p>
         </motion.div>
 
@@ -160,7 +160,7 @@ export default function ImpactSection() {
                   1,000+
                 </p>
                 <p className="text-sm mt-1 font-medium" style={{ color: "var(--muted)" }}>
-                  Meal Distributed
+                  Students trained
                 </p>
               </div>
             </div>
@@ -174,14 +174,14 @@ export default function ImpactSection() {
                 className="text-xl font-medium text-white leading-snug"
                 style={{ letterSpacing: "-0.02em" }}
               >
-                95% of Funds Go Directly to Programs
+                95% of Funds Go Directly to Programmes
               </h3>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
-                We believe in full transparency. The majority of every donation is used directly to support life-changing programs and community initiatives.
+                Every donation goes into tech tools, skills training, offline journals, and the 150K sponsorship fund — not overhead.
               </p>
               <div className="mt-auto pt-5">
                 <Link
-                  href="/contact?type=donate"
+                  href="/donate"
                   className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:opacity-90"
                   style={{ backgroundColor: "#ffffff", color: "var(--foreground)" }}
                 >
@@ -207,7 +207,7 @@ export default function ImpactSection() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://framerusercontent.com/images/skS9LjwTtqwGtOEeRGmXL9d2kU.jpeg"
+              src="/7N4A2747.jpg"
               alt="Community impact"
               className="w-full h-full object-cover"
             />

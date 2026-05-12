@@ -14,7 +14,7 @@ function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) 
       style={{
         backgroundColor: "#ffffff",
         borderRadius: "100px",
-        padding: "5px 14px 5px 5px",
+        padding: "6px 8px 6px 12px",
         boxShadow: "0 1px 8px rgba(0,0,0,0.08)",
         border: "1px solid rgba(0,0,0,0.06)",
       }}
@@ -50,12 +50,12 @@ export default function Mission() {
             <SectionTag label="Our Mission" icon={Sprout} />
             <h2
               className="font-medium"
-              style={{ fontSize: "clamp(24px,4.5vw,56px)",fontWeight: 400, color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
+              style={{ fontSize: "clamp(24px,3.5vw,48px)",fontWeight: 400, color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
             >
-              Our Inspiring Mission and Ambitious Goals
+              Equipping Grassroots Communities for the Digital Age
             </h2>
             <p className="mt-5 text-base leading-relaxed" style={{ color: "var(--muted)", fontSize: 18, fontWeight: 400 }}>
-              Every cause we support is driven by real needs, real people, and real outcomes.
+              Where curricula haven&apos;t caught up, we show up — with tools, skills, knowledge, and offline resources that reach the last mile.
             </p>
             <Link
               href="/about-us"
@@ -83,7 +83,7 @@ export default function Mission() {
             <div className="aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://framerusercontent.com/images/jqrOYBeGbupmq0H6ENOZpJLWHlI.webp"
+                src="/mission.jpg"
                 alt="Community volunteers"
                 className="w-full h-full object-cover"
               />
@@ -112,7 +112,7 @@ export default function Mission() {
                   className="text-4xl mt-6 font-bold leading-none"
                   style={{ color: "var(--foreground)", letterSpacing: "-0.04em" }}
                 >
-                  200+
+                  48+
                 </p>
                 <p className="text-sm mt-1 font-medium" style={{ color: "var(--muted)" }}>
                   Dedicated Volunteers
@@ -123,8 +123,8 @@ export default function Mission() {
             <div className="rounded-[20px] overflow-hidden flex-1 min-h-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://framerusercontent.com/images/asHraFvMvcE3ZaC3mzWTO4JECgk.jpg"
-                alt="Volunteer at work"
+                src="/mission1.jpg"
+                alt="Mentor with student"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -7,24 +7,24 @@ import { useRef } from "react";
 
 const items = [
   {
-    icon: BookOpen,
-    title: "Education & Skills",
-    desc: "We give people access to learning — from digital literacy to vocational training — so they can compete and succeed.",
+    icon: Laptop,
+    title: "Tech Access for All",
+    desc: "We equip learners in schools and communities still teaching computers on chalkboards with real devices, software, and offline tools.",
   },
   {
-    icon: Laptop,
-    title: "Tools & Resources",
-    desc: "A laptop, internet access, or a single piece of software can unlock a career. We remove that barrier.",
+    icon: BookOpen,
+    title: "Digital Skills Training",
+    desc: "From computer basics to AI — structured pathways built for people starting from zero, in communities where digital is still foreign.",
   },
   {
     icon: Users,
-    title: "Community",
-    desc: "Progress is harder alone. We build networks of support where people lift each other — not just themselves.",
+    title: "Offline Tech Journals",
+    desc: "Our own printed learning resources carry digital knowledge to remote communities with no internet access. No connection required.",
   },
   {
     icon: Heart,
-    title: "Ongoing Support",
-    desc: "We don't just show up once. We walk with people through their journey, from first steps to real change.",
+    title: "Green Workforce",
+    desc: "We train innovators to build sustainable, locally-rooted solutions — technology that fits Africa's communities and environment.",
   },
 ];
 
@@ -34,7 +34,7 @@ export default function WhatWeDo() {
 
   return (
     <section style={{ backgroundColor: "#ffffff" }} className="section">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         {/* Header */}
         <motion.div
           ref={ref}
@@ -50,14 +50,14 @@ export default function WhatWeDo() {
             What We Do
           </p>
           <h2 className="text-4xl md:text-[52px] font-bold text-[#181a19] leading-tight tracking-[-0.02em]">
-            We provide access to tools,
+            Closing Africa&apos;s digital gap,
             <br />
-            opportunities, and support.
+            one community at a time.
           </h2>
           <p className="mt-5 text-base leading-relaxed" style={{ color: "var(--muted)" }}>
-            Most people don&apos;t need charity — they need a fair chance. Canann
-            creates that chance by removing the barriers standing between people
-            and their potential.
+            Millions of Nigerians are still learning computers on chalkboards. Canann
+            puts real tools, real skills, and real knowledge in their hands — and
+            gives them the foundation to build solutions for their own communities.
           </p>
         </motion.div>
 

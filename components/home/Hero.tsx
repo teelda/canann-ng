@@ -6,22 +6,22 @@ import { useEffect, useState } from "react";
 
 const stats = [
   {
-    number: "1,000+",
-    label: "Meal Distributed",
-    sub: "For Families and individuals.",
-    image: "https://framerusercontent.com/images/aJA4qVrM8EWKxQAKsONEMtPgM.jpeg",
-  },
-  {
     number: "1,200+",
-    label: "Education Support",
-    sub: "For Families and individuals.",
-    image: "https://framerusercontent.com/images/skS9LjwTtqwGtOEeRGmXL9d2kU.jpeg",
+    label: "Learners Trained",
+    sub: "Across schools and communities in Nigeria.",
+    image: "/7N4A2919.png",
   },
   {
-    number: "1,228+",
-    label: "Healthcare Access",
-    sub: "For Families and individuals.",
-    image: "https://framerusercontent.com/images/ZGFYFKtx1mI4BulabXQzYdcMPGI.jpeg",
+    number: "500+",
+    label: "Devices to deploy",
+    sub: "Laptops, tablets, and offline tools in the field.",
+    image: "/m 115.jpg",
+  },
+  {
+    number: "150,000",
+    label: "Sponsorship Goal",
+    sub: "Professionals, innovators & graduates to sponsor.",
+    image: "/7N4A2747.jpg",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function Hero() {
       {/* Background image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="https://framerusercontent.com/images/FEKROeWBu0nTbDszZlqurgevb8.jpg"
+        src="/hero-bg.jpg"
         alt="Community impact"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -73,7 +73,7 @@ export default function Hero() {
               className="mt-4 text-base md:text-lg max-w-sm leading-relaxed"
               style={{ color: "rgba(255,255,255,0.7)", fontSize: 20, fontWeight: 400 }}
             >
-              Helping vulnerable communities access food, education, and hope.
+              Bridging the digital divide — tech tools, skills, and knowledge for grassroots communities across Nigeria.
             </motion.p>
 
             <motion.div
@@ -83,7 +83,7 @@ export default function Hero() {
               className="mt-7"
             >
               <Link
-                href="/contact?type=donate"
+                href="/donate"
                 className="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:opacity-90"
                 style={{
                   backgroundColor: "var(--accent)",
@@ -160,7 +160,7 @@ export default function Hero() {
                 </div>
 
                 {/* Right: photo — full card height */}
-                <div className="shrink-0 pr-3 pb-3 pt-3" style={{ width: "260px" }}>
+                <div className="shrink-0 pr-3 pb-3 pt-3" style={{ width: "clamp(130px, 40%, 260px)" }}>
                   <motion.div
                     key={s.image}
                     initial={{ opacity: 0 }}

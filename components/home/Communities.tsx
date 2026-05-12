@@ -8,24 +8,24 @@ import { MapPin } from "lucide-react";
 const cities = [
   {
     name: "Lagos",
-    desc: "Our largest presence. Tech hubs, device drives, and community circles across Mainland and Island.",
-    stat: "120+",
-    statLabel: "People supported",
-    image: "https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=600&q=80",
+    desc: "Our largest presence. Digital skills workshops, device distribution, and tech training in schools across Mainland and Island.",
+    stat: "600+",
+    statLabel: "Learners reached",
+    image: "/m 162.jpg",
   },
   {
     name: "Abuja",
-    desc: "Policy partnerships and skills training hubs serving young professionals and recent graduates.",
-    stat: "50+",
-    statLabel: "People supported",
-    image: "https://images.unsplash.com/photo-1609101119886-aca45f3b72cb?auto=format&fit=crop&w=600&q=80",
+    desc: "Policy partnerships and digital literacy programmes serving students, professionals, and institutions in the capital.",
+    stat: "400+",
+    statLabel: "Learners reached",
+    image: "/MEM_0667.jpg",
   },
   {
-    name: "Enugu",
-    desc: "Community-first approach. Peer groups, mentorship programmes, and local employer links.",
-    stat: "30+",
-    statLabel: "People supported",
-    image: "https://images.unsplash.com/photo-1504711331083-9c895941bf81?auto=format&fit=crop&w=600&q=80",
+    name: "Cross River",
+    desc: "Community-first digital education — offline tech journals and hands-on skills training reaching remote secondary schools.",
+    stat: "200+",
+    statLabel: "Learners reached",
+    image: "/IMG_9368.jpg",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function Communities() {
 
   return (
     <section style={{ backgroundColor: "var(--background)" }} className="section">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -50,9 +50,9 @@ export default function Communities() {
             Where We Work
           </p>
           <h2 className="text-4xl md:text-[52px] font-bold text-[#181a19] leading-tight tracking-[-0.02em] max-w-2xl">
-            Present across Nigeria.
+            Active across Nigeria.
             <br />
-            Growing every year.
+            Africa is next.
           </h2>
         </motion.div>
 

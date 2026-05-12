@@ -21,7 +21,7 @@ export default function JoinMovement() {
         style={{ backgroundColor: "#203e27" }}
       />
 
-      <div className="relative max-w-[1200px] mx-auto px-8 text-center">
+      <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 text-center">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -41,8 +41,8 @@ export default function JoinMovement() {
             className="mt-5 text-base md:text-lg max-w-md mx-auto leading-relaxed"
             style={{ color: "rgba(255,255,255,0.5)" }}
           >
-            Whether you volunteer, partner, or simply share — every action matters.
-            One connection can change a life.
+            Whether you volunteer, donate, or partner — you help us close Africa&apos;s digital gap.
+            One device. One session. One life changed.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10">

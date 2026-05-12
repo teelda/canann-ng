@@ -48,26 +48,25 @@ function SectionBadge({
 }
 
 // ── Data ───────────────────────────────────────────────────────────────
-const aboutImages = [
-  "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80",
+const marqueeImages = [
+  "/MEM_0667.jpg",
+  "/m 115.jpg",
+  "/7N4A2959.png",
+  "/volunterr.jpg",
+  "/mission1.jpg",
+  "/7N4A2919.png",
+  "/IMG_9368.jpg",
+  "/m 118.jpg",
+  "/7N4A2739.jpg",
+  "/m 162.jpg",
+  "/7N4A2747.jpg",
 ];
 
 const stats = [
   { icon: Building2, number: "5+", label: "Years of Foundation" },
   { icon: Users, number: "500+", label: "Incredible Volunteers" },
-  { icon: Heart, number: "10k+", label: "Lives Supported" },
-  { icon: Megaphone, number: "30+", label: "Programmes Run" },
-];
-
-const gallery = [
-  { src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80", tall: false },
-  { src: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=400&q=80", tall: false },
-  { src: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=400&q=80", tall: true },
-  { src: "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?auto=format&fit=crop&w=400&q=80", tall: true },
-  { src: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=400&q=80", tall: false },
-  { src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80", tall: false },
+  { icon: Heart, number: "1,200+", label: "Learners Trained" },
+  { icon: Megaphone, number: "150K", label: "Sponsorship Goal" },
 ];
 
 const steps = [
@@ -122,8 +121,8 @@ const faqs = [
 
 // ── Page ───────────────────────────────────────────────────────────────
 export default function AboutUsPage() {
-  const [slide, setSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const doubled = [...marqueeImages, ...marqueeImages];
 
   return (
     <div>
@@ -131,13 +130,13 @@ export default function AboutUsPage() {
       <section className="relative w-full overflow-hidden" style={{ minHeight: "85vh" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://framerusercontent.com/images/FEKROeWBu0nTbDszZlqurgevb8.jpg"
+          src="/about-hero.jpg"
           alt="Children in community"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0" style={{ background: "rgba(12,28,18,0.55)" }} />
         <div
-          className="relative max-w-[1200px] mx-auto px-5 md:px-8 flex items-end pb-20 md:pb-28"
+          className="relative max-w-[1200px] mx-auto px-5 md:px-8 flex items-end pb-16 md:pb-28"
           style={{ minHeight: "85vh" }}
         >
           <div className="max-w-2xl">
@@ -145,7 +144,7 @@ export default function AboutUsPage() {
             <h1
               className="text-white mt-1"
               style={{
-                fontSize: "clamp(42px, 5.5vw, 68px)",
+                fontSize: "clamp(36px, 5.5vw, 68px)",
                 fontWeight: 700,
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
@@ -166,40 +165,40 @@ export default function AboutUsPage() {
       {/* ── ABOUT CANANN ── */}
       <section className="section" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left */}
             <div>
               <SectionBadge icon={Heart} label="About Canann" />
               <h2
                 style={{
-                  fontSize: "clamp(30px, 4vw, 54px)",
+                  fontSize: "clamp(28px, 4vw, 54px)",
                   fontWeight: 700,
                   lineHeight: 1.1,
                   letterSpacing: "-0.02em",
                   color: "var(--foreground)",
                 }}
               >
-                We Work to Change Lives Across Nigeria
+                Equipping Grassroots Communities for the Digital Age
               </h2>
               <p
                 className="mt-5 leading-relaxed"
                 style={{ fontSize: "15px", color: "var(--muted)", fontWeight: 400 }}
               >
-                With your support, we provide food, education, and healthcare to families who need it most. Every contribution creates real change for real people.
+                Nigeria has millions of learners who are still being taught about computers on chalkboards. Canann closes that gap — with tech tools, structured skills training, and offline resources that reach communities even where the internet doesn&apos;t.
               </p>
               <div className="mt-6 space-y-3">
                 {[
                   {
                     title: "Our Vision",
-                    body: "A Nigeria where your starting point doesn't determine your ending place — where every child, family, and community can thrive.",
+                    body: "An Africa where every learner — regardless of geography, infrastructure, or income — has access to the digital tools, knowledge, and networks they need to build a better tomorrow.",
                   },
                   {
                     title: "Our Mission",
-                    body: "To create genuine access to food, education, healthcare, and emergency relief for vulnerable communities across Nigeria.",
+                    body: "To bridge Africa's digital divide through tech tools, skills training, and offline learning resources — sponsoring 150,000 professionals, innovators, and graduates to build sustainable solutions for their own communities.",
                   },
                 ].map(({ title, body }) => (
-                  <div key={title} className="p-6 rounded-2xl" style={{ backgroundColor: "var(--surface)" }}>
-                    <h3 style={{ fontSize: "17px", fontWeight: 600, color: "var(--foreground)", letterSpacing: "-0.01em" }}>
+                  <div key={title} className="p-5 md:p-6 rounded-2xl" style={{ backgroundColor: "var(--surface)" }}>
+                    <h3 style={{ fontSize: "16px", fontWeight: 600, color: "var(--foreground)", letterSpacing: "-0.01em" }}>
                       {title}
                     </h3>
                     <p
@@ -213,50 +212,62 @@ export default function AboutUsPage() {
               </div>
             </div>
 
-            {/* Right — carousel */}
-            <div>
-              <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={aboutImages[slide]}
-                  alt="Canann community"
-                  className="w-full h-full object-cover transition-opacity duration-500"
-                />
-              </div>
-              <div className="flex gap-2 mt-4 justify-center">
-                {aboutImages.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setSlide(i)}
-                    className="h-1.5 rounded-full transition-all duration-300"
-                    style={{
-                      width: i === slide ? "32px" : "20px",
-                      backgroundColor: i === slide ? "var(--accent)" : "#d0d0d0",
-                    }}
-                    aria-label={`Slide ${i + 1}`}
-                  />
-                ))}
-              </div>
+            {/* Right — featured image */}
+            <div className="rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/MEM_0667.jpg"
+                alt="Canann community event"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── FULL-WIDTH IMAGE STRIP ── */}
+      <section style={{ overflow: "hidden", backgroundColor: "#ffffff", paddingBottom: "clamp(48px, 8vw, 80px)" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "12px",
+            animation: "marquee 50s linear infinite",
+            width: "max-content",
+          }}
+        >
+          {doubled.map((src, i) => (
+            <div
+              key={i}
+              style={{
+                flexShrink: 0,
+                width: "clamp(260px, 28vw, 360px)",
+                height: "clamp(300px, 32vw, 420px)",
+                borderRadius: "20px",
+                overflow: "hidden",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={src} alt="" className="w-full h-full object-cover" style={{ display: "block" }} />
+            </div>
+          ))}
         </div>
       </section>
 
       {/* ── STATS ── */}
       <section className="pb-16 md:pb-20" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {stats.map(({ icon: Icon, number, label }) => (
               <div
                 key={label}
-                className="p-6 md:p-8 rounded-2xl flex flex-col gap-5"
+                className="p-5 md:p-8 rounded-2xl flex flex-col gap-4 md:gap-5"
                 style={{ backgroundColor: "var(--surface)" }}
               >
-                <Icon size={32} strokeWidth={1.5} style={{ color: "var(--foreground)" }} />
+                <Icon size={28} strokeWidth={1.5} style={{ color: "var(--foreground)" }} />
                 <div>
                   <p
                     style={{
-                      fontSize: "clamp(34px, 4vw, 52px)",
+                      fontSize: "clamp(28px, 4vw, 52px)",
                       fontWeight: 700,
                       color: "var(--foreground)",
                       letterSpacing: "-0.03em",
@@ -275,49 +286,16 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ── PHOTO GALLERY ── */}
-      <section className="pb-16 md:pb-20" style={{ backgroundColor: "#ffffff" }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 overflow-x-auto">
-          <div
-            className="flex gap-3 items-end justify-center"
-            style={{ height: "400px", minWidth: "900px" }}
-          >
-            {gallery.map(({ src, tall }, i) => (
-              <div
-                key={i}
-                className="shrink-0 rounded-[20px] overflow-hidden"
-                style={{
-                  flex: `0 0 ${tall ? "200px" : "160px"}`,
-                  height: tall ? "100%" : "82%",
-                }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt="" className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center gap-2 mt-5">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="h-2 w-2 rounded-full"
-                style={{ backgroundColor: i === 1 ? "var(--accent)" : "#d0d0d0" }}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── 4 STEP PROCESS ── */}
       <section className="section" style={{ backgroundColor: "var(--background)" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid md:grid-cols-[2fr_3fr] gap-12 md:gap-20 items-start">
+          <div className="grid md:grid-cols-[2fr_3fr] gap-10 md:gap-20 items-start">
             {/* Left */}
             <div className="md:sticky md:top-28">
               <SectionBadge icon={RefreshCw} label="4 Step Process" />
               <h2
                 style={{
-                  fontSize: "clamp(28px, 3.5vw, 50px)",
+                  fontSize: "clamp(26px, 3.5vw, 50px)",
                   fontWeight: 700,
                   lineHeight: 1.1,
                   letterSpacing: "-0.02em",
@@ -336,14 +314,14 @@ export default function AboutUsPage() {
             </div>
 
             {/* Right — timeline */}
-            <div className="relative">
+            <div className="relative mt-2">
               <div
                 className="absolute left-[19px] top-0 bottom-0 w-[2px] pointer-events-none"
                 style={{ background: "linear-gradient(to bottom, var(--accent) 52%, #d4d4d4 52%)" }}
               />
               <div className="space-y-3">
                 {steps.map((step) => (
-                  <div key={step.num} className="flex gap-5 items-start relative">
+                  <div key={step.num} className="flex gap-4 md:gap-5 items-start relative">
                     <div
                       className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 z-10"
                       style={{
@@ -357,13 +335,13 @@ export default function AboutUsPage() {
                       {step.num}
                     </div>
                     <div
-                      className="flex-1 p-5 rounded-2xl"
+                      className="flex-1 p-4 md:p-5 rounded-2xl"
                       style={{ backgroundColor: "#ffffff", boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}
                     >
-                      <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center justify-between mb-2 gap-3">
                         <h3
                           style={{
-                            fontSize: "17px",
+                            fontSize: "16px",
                             fontWeight: 600,
                             color: "var(--foreground)",
                             letterSpacing: "-0.01em",
@@ -372,7 +350,7 @@ export default function AboutUsPage() {
                           {step.title}
                         </h3>
                         <span
-                          className="rounded-full px-3 py-1"
+                          className="rounded-full px-3 py-1 shrink-0"
                           style={{
                             fontSize: "11px",
                             fontWeight: 500,
@@ -398,13 +376,13 @@ export default function AboutUsPage() {
       {/* ── FAQ ── */}
       <section className="section" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid md:grid-cols-[2fr_3fr] gap-12 md:gap-20 items-start">
+          <div className="grid md:grid-cols-[2fr_3fr] gap-10 md:gap-20 items-start">
             {/* Left */}
             <div>
               <SectionBadge icon={HelpCircle} label="FAQ" />
               <h2
                 style={{
-                  fontSize: "clamp(26px, 3.2vw, 48px)",
+                  fontSize: "clamp(24px, 3.2vw, 48px)",
                   fontWeight: 700,
                   lineHeight: 1.1,
                   letterSpacing: "-0.02em",
@@ -413,8 +391,8 @@ export default function AboutUsPage() {
               >
                 Questions? We&apos;re Here to Help
               </h2>
-              <div className="mt-8 p-6 rounded-2xl" style={{ backgroundColor: "var(--surface)" }}>
-                <h3 style={{ fontSize: "17px", fontWeight: 600, color: "var(--foreground)" }}>
+              <div className="mt-6 md:mt-8 p-5 md:p-6 rounded-2xl" style={{ backgroundColor: "var(--surface)" }}>
+                <h3 style={{ fontSize: "16px", fontWeight: 600, color: "var(--foreground)" }}>
                   Still have a Question?
                 </h3>
                 <p
@@ -449,13 +427,13 @@ export default function AboutUsPage() {
                     style={{ backgroundColor: "var(--surface)" }}
                   >
                     <button
-                      className="w-full flex items-center justify-between px-5 py-4 text-left"
+                      className="w-full flex items-center justify-between px-4 md:px-5 py-4 text-left"
                       onClick={() => setOpenFaq(isOpen ? null : i)}
                     >
                       <span
                         className="pr-4"
                         style={{
-                          fontSize: "16px",
+                          fontSize: "15px",
                           fontWeight: 600,
                           color: "var(--foreground)",
                           letterSpacing: "-0.01em",
@@ -478,7 +456,7 @@ export default function AboutUsPage() {
                       </div>
                     </button>
                     {isOpen && (
-                      <div className="px-5 pb-5">
+                      <div className="px-4 md:px-5 pb-5">
                         <p style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400, lineHeight: 1.65 }}>
                           {faq.a}
                         </p>
@@ -493,27 +471,26 @@ export default function AboutUsPage() {
       </section>
 
       {/* ── DONATE CTA ── */}
-      <section className="pb-8 px-5 md:px-8">
+      <section className="pb-8 px-4 md:px-8">
         <div className="max-w-[1200px] mx-auto">
-          <div className="relative overflow-hidden rounded-[24px]" style={{ minHeight: "360px" }}>
+          <div className="relative overflow-hidden rounded-[24px]" style={{ minHeight: "320px" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80"
+              src="/donate-cta.jpg"
               alt=""
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0" style={{ background: "rgba(10,28,18,0.62)" }} />
             <div
-              className="relative grid md:grid-cols-2 gap-8 items-end px-8 md:px-14 py-14 md:py-20"
-              style={{ minHeight: "360px" }}
+              className="relative grid md:grid-cols-2 gap-8 items-end px-6 md:px-14 py-12 md:py-20"
+              style={{ minHeight: "320px" }}
             >
-              {/* Left */}
               <div>
                 <SectionBadge icon={Heart} label="Donate Today" dark />
                 <h2
                   className="text-white"
                   style={{
-                    fontSize: "clamp(28px, 3.8vw, 52px)",
+                    fontSize: "clamp(26px, 3.8vw, 52px)",
                     fontWeight: 700,
                     lineHeight: 1.1,
                     letterSpacing: "-0.02em",
@@ -522,12 +499,11 @@ export default function AboutUsPage() {
                   Your Kindness Can Change a Life Today
                 </h2>
               </div>
-              {/* Right */}
               <div className="flex flex-col items-start md:items-end gap-5 justify-end">
                 <p
                   className="md:text-right leading-relaxed"
                   style={{
-                    fontSize: "17px",
+                    fontSize: "16px",
                     color: "rgba(255,255,255,0.75)",
                     fontWeight: 400,
                     maxWidth: "300px",
@@ -536,7 +512,7 @@ export default function AboutUsPage() {
                   Even a small donation can make a life-changing difference for someone in need.
                 </p>
                 <Link
-                  href="/contact?type=donate"
+                  href="/donate"
                   className="inline-flex items-center gap-3 font-semibold text-white transition-all hover:opacity-90"
                   style={{
                     backgroundColor: "var(--accent)",

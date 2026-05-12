@@ -9,31 +9,31 @@ import { useRef } from "react";
 const programmes = [
   {
     tag: "Devices",
-    title: "Tech Access Programme",
-    desc: "Refurbished laptops, data bundles, and software licences — given to individuals who qualify. The right tool shouldn't be a luxury.",
-    href: "/get-involved",
-    image: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&w=800&q=80",
+    title: "Tech Tools Programme",
+    desc: "Laptops, tablets, and offline materials for learners in communities where computers are still unfamiliar. The right tool shouldn't be a luxury.",
+    href: "/causes",
+    image: "/7N4A2959.png",
   },
   {
     tag: "Skills",
-    title: "Digital Skills Training",
-    desc: "Structured learning pathways in coding, design, data, and digital marketing — built for people who are starting from zero.",
-    href: "/get-involved",
-    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80",
+    title: "Digital Skills Pathway",
+    desc: "From digital literacy to AI fundamentals — structured programmes built for secondary school graduates, professionals, and community learners starting from zero.",
+    href: "/causes",
+    image: "/7N4A2747.jpg",
   },
   {
-    tag: "Network",
-    title: "Community Circles",
-    desc: "Peer-led groups in Lagos, Abuja, and Enugu. Monthly meetups, online support, shared accountability — progress together.",
-    href: "/get-involved",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
+    tag: "Resources",
+    title: "Offline Tech Journals",
+    desc: "Our own printed publications bridge the gap for communities with no internet. Real digital education — no connection required.",
+    href: "/causes",
+    image: "/7N4A2739.jpg",
   },
   {
-    tag: "Employment",
-    title: "Career Bridge",
-    desc: "Connecting graduates of our programmes with vetted employers, freelance platforms, and remote-work opportunities.",
-    href: "/get-involved",
-    image: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=800&q=80",
+    tag: "Sponsorship",
+    title: "150K Sponsorship Drive",
+    desc: "We are sponsoring 150,000 professionals, innovators, and secondary school graduates with the knowledge and tools to build solutions for their local communities.",
+    href: "/causes",
+    image: "/7N4A2919.png",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function ProgrammeCards() {
 
   return (
     <section style={{ backgroundColor: "var(--surface-alt)" }} className="section">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export default function ProgrammeCards() {
               Our Programmes
             </p>
             <h2 className="text-4xl md:text-[52px] font-bold text-[#181a19] leading-tight tracking-[-0.02em]">
-              Four ways we create change.
+              Four ways we close the digital gap.
             </h2>
           </div>
           <Link

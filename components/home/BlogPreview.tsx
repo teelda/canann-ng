@@ -9,21 +9,21 @@ import { useRef } from "react";
 
 const posts = [
   {
-    title: "Safe Shelter. Stronger Lives. Sustainable Futures.",
+    title: "Teaching AI on Chalkboards: Inside Nigeria's Digital Divide",
     date: "February 25, 2026",
-    image: "https://framerusercontent.com/images/Tk2yyGgLYgfhq80gKmNp0dlQxH4.png",
+    image: "/MEM_0667.jpg",
     href: "/blog",
   },
   {
-    title: "Delivering Warm Meals, Spreading Real Hope",
+    title: "How Our Offline Tech Journals Reach Where the Internet Can't",
     date: "February 25, 2026",
-    image: "https://framerusercontent.com/images/5OUnhm4oz74Jr8eylSUlGBEM8m0.png",
+    image: "/m 115.jpg",
     href: "/blog",
   },
   {
-    title: "Hope That Feeds, Protects, and Uplifts Communities",
-    date: "February 25, 2026",
-    image: "https://framerusercontent.com/images/2VBKLeED8n7Kzu3MeYFk9c6jpvs.jpg",
+    title: "The 150,000: Why We're Sponsoring a Generation of African Builders",
+    date: "March 10, 2026",
+    image: "/mission1.jpg",
     href: "/blog",
   },
 ];
@@ -35,7 +35,7 @@ function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) 
       style={{
         backgroundColor: "#ffffff",
         borderRadius: "100px",
-        padding: "5px 14px 5px 5px",
+        padding: "6px 8px 6px 12px",
         boxShadow: "0 1px 8px rgba(0,0,0,0.08)",
         border: "1px solid rgba(0,0,0,0.06)",
       }}

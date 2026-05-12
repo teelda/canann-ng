@@ -9,40 +9,40 @@ export const metadata: Metadata = {
 
 const causes = [
   {
-    tag: "Food & Nutrition",
-    title: "Fighting Hunger, One Meal at a Time",
-    desc: "We provide nutritious meals to children and families facing food insecurity. From community kitchens to direct distribution, we ensure no one goes to bed hungry. Our food programmes reach the most vulnerable — the elderly, children under 5, and families in crisis.",
+    tag: "Digital Access",
+    title: "Teaching the Digital World to Grassroots Communities",
+    desc: "Millions of Nigerians are still learning computers on chalkboards. We deliver hands-on digital literacy programmes to schools and communities — covering computer basics, internet fundamentals, and AI concepts in a way that starts where learners actually are.",
     goal: 60800,
     raised: 39500,
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-    impact: "1,000+ meals distributed monthly",
+    image: "/7N4A2919.png",
+    impact: "1,200+ learners trained so far",
   },
   {
-    tag: "Education",
-    title: "Education That Builds Futures",
-    desc: "Access to education gives children the tools to break the cycle of poverty. We fund school enrolment, learning materials, and after-school support for children who would otherwise miss out. Education is the highest-return investment we can make.",
+    tag: "Tools & Devices",
+    title: "A Device Can Change Everything",
+    desc: "Access to a laptop, tablet, or even a smartphone changes what's possible for a learner. We provide devices and our proprietary offline tech journals to communities where buying a computer is out of reach — and the internet isn't even an option yet.",
     goal: 50800,
     raised: 36600,
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-    impact: "1,200 children supported",
+    image: "/7N4A2959.png",
+    impact: "500+ devices deployed",
   },
   {
-    tag: "Emergency Relief",
-    title: "Help When It's Needed Most",
-    desc: "Disasters don't wait. When floods, fires, or crises strike, our rapid response teams deploy within 24 hours — bringing shelter, food, medical aid, and trauma support to affected families. Speed saves lives.",
+    tag: "150K Sponsorship",
+    title: "Sponsoring 150,000 African Builders",
+    desc: "Our flagship programme is sponsoring 150,000 professionals, innovators, and fresh secondary school graduates with the tools, skills, and knowledge to build solutions for their local communities. Curricula haven't caught up — we're filling that gap now.",
+    goal: 500000,
+    raised: 120000,
+    image: "/7N4A2739.jpg",
+    impact: "150,000 sponsorships targeted",
+  },
+  {
+    tag: "Green Workforce",
+    title: "Building Tech Solutions That Fit Africa",
+    desc: "We train a generation of African innovators to build sustainable, locally-rooted solutions — technology designed for African communities, not imported from Silicon Valley. A green workforce builds with the environment and community in mind.",
     goal: 80000,
     raised: 38400,
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80",
-    impact: "48-hour response time",
-  },
-  {
-    tag: "Healthcare",
-    title: "Care That Saves Lives",
-    desc: "Basic healthcare is not a luxury — but for millions, it remains out of reach. We fund mobile clinics, essential medicines, maternal health support, and vaccination drives in underserved communities across Nigeria.",
-    goal: 100000,
-    raised: 35000,
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=900&q=80",
-    impact: "Free care for thousands annually",
+    image: "/7N4A2747.jpg",
+    impact: "Pan-African long-term vision",
   },
 ];
 
@@ -66,10 +66,10 @@ export default function CausesPage() {
             className="font-medium text-white leading-tight tracking-[-0.03em] max-w-3xl"
             style={{ fontSize: "clamp(40px,6vw,72px)" }}
           >
-            Where Your Support Makes a Difference
+            Closing Africa&apos;s Digital Gap — One Cause at a Time
           </h1>
           <p className="mt-6 text-base md:text-lg max-w-md leading-relaxed" style={{ color: "rgba(255,255,255,0.48)" }}>
-            Every cause we support is driven by real needs, real people, and real outcomes.
+            Every cause is rooted in a real barrier Nigerian and African communities face on their path to the digital age.
           </p>
         </div>
       </section>
@@ -79,10 +79,10 @@ export default function CausesPage() {
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:divide-x" style={{ "--tw-divide-opacity": 1 } as React.CSSProperties}>
             {[
-              { n: "1,000+", l: "Meals distributed" },
-              { n: "1,200", l: "Children supported" },
-              { n: "95%", l: "Funds to programs" },
-              { n: "48+", l: "Active volunteers" },
+              { n: "1,200+", l: "Learners trained" },
+              { n: "500+", l: "Devices deployed" },
+              { n: "95%", l: "Funds to programmes" },
+              { n: "150K", l: "Sponsorship goal" },
             ].map((s) => (
               <div key={s.l} className="md:px-10 first:pl-0 last:pr-0">
                 <p className="text-4xl font-bold tracking-tight" style={{ color: "var(--accent)" }}>{s.n}</p>
@@ -115,7 +115,7 @@ export default function CausesPage() {
                 </div>
 
                 {/* Content */}
-                <div className={`p-8 md:p-12 flex flex-col justify-center ${i % 2 === 1 ? "md:order-1" : ""}`}>
+                <div className={`p-6 md:p-12 flex flex-col justify-center ${i % 2 === 1 ? "md:order-1" : ""}`}>
                   <span
                     className="inline-block text-xs font-semibold uppercase tracking-[0.08em] px-3 py-1 rounded-full mb-5 self-start"
                     style={{ fontFamily: "var(--font-onest)", backgroundColor: "var(--accent-light)", color: "var(--accent)" }}
@@ -145,7 +145,7 @@ export default function CausesPage() {
                   </div>
 
                   <Link
-                    href="/contact?type=donate"
+                    href="/donate"
                     className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full text-sm font-semibold self-start transition-all hover:opacity-90"
                     style={{ backgroundColor: "var(--accent)", color: "#ffffff" }}
                   >
@@ -169,7 +169,7 @@ export default function CausesPage() {
             Even a small donation can make a life-changing difference for someone in need.
           </p>
           <Link
-            href="/contact?type=donate"
+            href="/donate"
             className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
             style={{ backgroundColor: "var(--accent)" }}
           >

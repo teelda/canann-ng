@@ -12,7 +12,7 @@ export default function FeaturedStory() {
 
   return (
     <section style={{ backgroundColor: "#ffffff" }} className="section">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <motion.p
           ref={ref}
           initial={{ opacity: 0, y: 16 }}
@@ -35,7 +35,7 @@ export default function FeaturedStory() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80"
+              src="/story.jpg"
               alt="Chidi working on his laptop"
               className="w-full h-full object-cover"
             />

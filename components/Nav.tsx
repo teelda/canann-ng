@@ -46,16 +46,8 @@ export default function Nav() {
             className="flex items-center gap-2.5 font-semibold text-[17px] shrink-0 transition-opacity hover:opacity-80"
             style={{ color: "var(--foreground)", letterSpacing: "-0.03em" }}
           >
-            {/* Green leaf icon */}
-            <div
-              className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
-              style={{ backgroundColor: "var(--accent)" }}
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 2C5.5 2 3 4 3 7.5C3 10.5 5 13 8 14C11 13 13 10.5 13 7.5C13 4 10.5 2 8 2Z" fill="white" opacity="0.9"/>
-                <path d="M8 14V8M8 8C8 8 5.5 6 4 7M8 8C8 8 10.5 6 12 7" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
-              </svg>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/Canann logo.png" alt="Canann" className="w-8 h-8 object-contain shrink-0" />
             Canann
           </Link>
 
@@ -66,7 +58,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 className="text-sm font-medium transition-opacity hover:opacity-60"
-                style={{ color: "var(--foreground)" }}
+                style={{ color: "var(--foreground)", fontSize: 16 }}
               >
                 {l.label}
               </Link>
@@ -76,7 +68,7 @@ export default function Nav() {
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-3">
             <Link
-              href="/contact?type=donate"
+              href="/donate"
               className="hidden md:inline-flex items-center gap-2 text-sm font-semibold transition-all hover:opacity-90"
               style={{
                 backgroundColor: "var(--accent)",
@@ -127,7 +119,7 @@ export default function Nav() {
             ))}
             <div className="pt-2">
               <Link
-                href="/contact?type=donate"
+                href="/donate"
                 className="inline-block text-sm font-semibold px-5 py-2.5 rounded-full"
                 style={{ backgroundColor: "var(--accent)", color: "#ffffff" }}
                 onClick={() => setOpen(false)}

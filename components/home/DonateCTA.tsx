@@ -14,7 +14,7 @@ function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) 
       style={{
         backgroundColor: "#ffffff",
         borderRadius: "100px",
-        padding: "5px 14px 5px 5px",
+        padding: "6px 8px 6px 12px",
         boxShadow: "0 1px 8px rgba(0,0,0,0.12)",
         border: "1px solid rgba(255,255,255,0.2)",
       }}
@@ -47,7 +47,7 @@ export default function DonateCTA() {
           {/* Background image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://framerusercontent.com/images/0pDin8wn6lxPHTz0OR1rI74RVY.png"
+            src="/donate-cta.jpg"
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
             aria-hidden="true"
@@ -80,7 +80,7 @@ export default function DonateCTA() {
                 Even a small donation can make a life-changing difference for someone in need.
               </p>
               <Link
-                href="/contact?type=donate"
+                href="/donate"
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
                 style={{ backgroundColor: "var(--accent)" }}
               >
