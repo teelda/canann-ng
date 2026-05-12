@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Loader } from "lucide-react";
@@ -18,7 +18,7 @@ function fmt(n: number) {
   return "₦" + n.toLocaleString("en-NG");
 }
 
-export default function DonateSuccess() {
+function SuccessContent() {
   const params = useSearchParams();
   const reference = params.get("reference") ?? params.get("trxref");
   const [tx, setTx] = useState<TxData | null>(null);
@@ -172,5 +172,20 @@ export default function DonateSuccess() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function DonateSuccess() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#ffffff" }}>
+        <div className="flex flex-col items-center gap-4">
+          <Loader size={32} className="animate-spin" style={{ color: "var(--accent)" }} />
+          <p className="text-sm font-medium" style={{ color: "var(--muted)" }}>Loading…</p>
+        </div>
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
   );
 }
