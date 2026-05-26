@@ -25,10 +25,10 @@ export default function Nav() {
       {/* Floating pill nav */}
       <header
         className="fixed z-50 transition-all duration-300"
-        style={{ top: "16px", left: "50%", transform: "translateX(-50%)", width: "calc(100% - 40px)", maxWidth: "1160px" }}
+        style={{ top: "16px", left: "50%", transform: "translateX(-50%)", width: "calc(100% - 40px)", maxWidth: "1200px" }}
       >
         <nav
-          className="flex items-center justify-between px-4 md:px-5"
+          className="flex items-center justify-between px-6 md:px-6"
           style={{
             backgroundColor: "rgba(255,255,255,0.97)",
             backdropFilter: "blur(20px)",

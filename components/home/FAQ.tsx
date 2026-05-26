@@ -10,23 +10,27 @@ import Link from "next/link";
 const faqs = [
   {
     q: "How does Canann help people?",
-    a: "Canann helps people through community programmes, support services, and sustainable initiatives — including food distribution, education support, emergency relief, and healthcare access — directly reaching those in need.",
+    a: "Canann helps communities through digital literacy programmes, AI education, device deployment, skills training, menstrual health support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
+  },
+  {
+    q: "Does Canann teach AI in schools?",
+    a: "Yes. AI literacy is a core part of our Tech in School programme. We teach secondary school students and community learners what AI is, how it works, and how to use it practically — starting from zero, delivered in person, with offline materials for communities without reliable internet.",
   },
   {
     q: "Can I volunteer with Canann?",
-    a: "Yes! We welcome volunteers for food drives, event support, community outreach, and more. Visit our contact page to apply and we'll find the right role for your skills and availability.",
+    a: "Yes! We welcome volunteers for digital skills sessions, device setup, curriculum support, and Pad a Girl distribution. Visit our contact page to apply and we'll find the right role for your skills and availability.",
   },
   {
     q: "How does Canann use donations?",
-    a: "95% of all donations go directly to programmes that support food security, education, healthcare, and emergency relief. We publish transparent impact reports so you always know where your money goes.",
+    a: "95% of all donations go directly to programmes — tech tools, AI literacy training, offline journals, Pad a Girl supplies, and the 150K sponsorship fund. We publish transparent impact reports so you always know where your money goes.",
   },
   {
     q: "How can I partner with Canann?",
-    a: "Organisations, companies, and institutions can partner with us to sponsor programmes, provide resources, or amplify impact at scale. Reach out via our contact page to start a conversation.",
+    a: "Organisations, companies, and institutions can partner with us to fund AI education or Tech in School cohorts, support Pad a Girl, or join GroundUp Skills. Reach out via our contact page to start a conversation.",
   },
   {
     q: "How can I stay updated with Canann?",
-    a: "Subscribe to our newsletter in the footer, follow us on social media, or visit our blog regularly for stories, insights, and real impact reports from the field.",
+    a: "Subscribe to our newsletter in the footer, follow us on social media, or visit our blog regularly for AI education updates, Pad a Girl stories, and real impact reports from the field.",
   },
 ];
 
@@ -86,7 +90,7 @@ export default function FAQ() {
                 Still have any Question?
               </p>
               <p className="text-xs leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-                Directly to programmes that support food, education, healthcare, and emergency relief.
+                Reach out and we&apos;ll connect you to the right programme — AI education, Pad a Girl, GroundUp Skills, and more.
               </p>
               <Link
                 href="/contact"

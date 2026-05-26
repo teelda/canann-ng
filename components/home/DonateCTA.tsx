@@ -67,7 +67,7 @@ export default function DonateCTA() {
                 className="font-medium text-white"
                 style={{ fontSize: "clamp(26px,3vw,42px)", letterSpacing: "-0.028em", lineHeight: "115%" }}
               >
-                Your Kindness Can Change a Life Today
+                Your Support Can Put a Device, an AI Skill, or a Pad in the Hands of Someone Who Needs It Today
               </h2>
             </div>
 

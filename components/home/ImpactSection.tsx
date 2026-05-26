@@ -75,9 +75,9 @@ export default function ImpactSection() {
             className="font-medium"
             style={{ fontSize: "clamp(26px,3vw,38px)", color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
           >
-            Closing the gap,
+            Closing the Digital and AI Gap —
             <br />
-            <span style={{ color: "var(--accent)" }}>one learner at a time.</span>
+            <span style={{ color: "var(--accent)" }}>One Learner at a Time.</span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed max-w-md mx-auto" style={{ color: "var(--muted)" }}>
             Teaching digital skills, deploying tech tools, and reaching remote communities where the internet still hasn&apos;t arrived.

@@ -3,51 +3,57 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Causes — Canann Impact Initiative",
-  description: "Support food, education, emergency relief, and healthcare programmes making a real difference.",
+  title: "Digital Access for Communities Nigeria — Our Four Causes",
+  description:
+    "Four causes closing Nigeria's digital, skills, and health gap — Pad a Girl, Tech in School, GroundUp Skills, and Green Workforce. Fund digital access for communities in Nigeria today.",
+  alternates: { canonical: "/causes" },
 };
 
 const causes = [
   {
-    tag: "Digital Access",
-    title: "Teaching the Digital World to Grassroots Communities",
-    desc: "Millions of Nigerians are still learning computers on chalkboards. We deliver hands-on digital literacy programmes to schools and communities — covering computer basics, internet fundamentals, and AI concepts in a way that starts where learners actually are.",
-    goal: 60800,
-    raised: 39500,
+    tag: "Pad a Girl",
+    title: "A Period Should Never Cost a Girl Her Education",
+    desc: "In too many Nigerian communities, menstruation is still a reason girls stay home from school. Without sanitary products, a girl can miss up to 5 days every month — nearly 20% of her school year, gone. Pad a Girl delivers sanitary products, menstrual health education, and practical support to girls in underserved secondary schools.",
+    goal: 350000,
+    raised: 84000,
     image: "/7N4A2919.png",
-    impact: "1,200+ learners trained so far",
+    impact: "Target: 5,000 girls reached with products and health education in Year 1",
+    cta: "Pad a Girl",
   },
   {
-    tag: "Tools & Devices",
-    title: "A Device Can Change Everything",
-    desc: "Access to a laptop, tablet, or even a smartphone changes what's possible for a learner. We provide devices and our proprietary offline tech journals to communities where buying a computer is out of reach — and the internet isn't even an option yet.",
-    goal: 50800,
-    raised: 36600,
+    tag: "Tech in School: EMpower",
+    title: "Real Devices. Real AI Skills. Real Schools. Real Change.",
+    desc: "For two years, Canann has gone directly into secondary schools — setting up tech environments, delivering offline journals, introducing AI literacy, and training over 1,500 students in Calabar. Tech in School now expands: deploying devices, delivering structured AI foundations, and reaching more schools across Nigeria. Devices and AI literacy are no longer optional — they are the baseline.",
+    goal: 1800000,
+    raised: 395000,
     image: "/7N4A2959.png",
-    impact: "500+ devices deployed",
+    impact: "1,500+ students trained across 4 schools. Expanding now.",
+    cta: "Fund Tech in School",
   },
   {
-    tag: "150K Sponsorship",
-    title: "Sponsoring 150,000 African Builders",
-    desc: "Our flagship programme is sponsoring 150,000 professionals, innovators, and fresh secondary school graduates with the tools, skills, and knowledge to build solutions for their local communities. Curricula haven't caught up — we're filling that gap now.",
-    goal: 500000,
+    tag: "GroundUp Skills",
+    title: "The Skills to Earn. The Knowledge to Build. The Confidence to Lead 150,000 People.",
+    desc: "Digital training, vocational education, and entrepreneurship coaching in one accessible programme — built for grassroots communities across Nigeria. Our flagship ambition: sponsor 150,000 professionals, innovators, and graduates with the tools, skills, and networks to build sustainable solutions for their own communities.",
+    goal: 575000,
     raised: 120000,
     image: "/7N4A2739.jpg",
-    impact: "150,000 sponsorships targeted",
+    impact: "Target: 150,000 African builders sponsored",
+    cta: "Fund GroundUp Skills",
   },
   {
     tag: "Green Workforce",
-    title: "Building Tech Solutions That Fit Africa",
-    desc: "We train a generation of African innovators to build sustainable, locally-rooted solutions — technology designed for African communities, not imported from Silicon Valley. A green workforce builds with the environment and community in mind.",
-    goal: 80000,
-    raised: 38400,
+    title: "Building AI-Powered Solutions Designed for Africa, Not Imported From Silicon Valley.",
+    desc: "We train a generation of African innovators to build sustainable, locally-rooted solutions — including AI-powered tools designed for African communities, not imported from Silicon Valley. A green workforce builds with the environment, the community, and the future in mind.",
+    goal: 800000,
+    raised: 380400,
     image: "/7N4A2747.jpg",
     impact: "Pan-African long-term vision",
+    cta: "Fund Green Workforce",
   },
 ];
 
 function formatCurrency(n: number) {
-  return "$" + n.toLocaleString();
+  return "₦" + n.toLocaleString("en-NG");
 }
 
 export default function CausesPage() {
@@ -56,6 +62,13 @@ export default function CausesPage() {
       {/* Hero */}
       <section className="py-24 md:py-36" style={{ backgroundColor: "var(--dark-bg)" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="flex justify-end mb-6">
+            <nav className="flex items-center gap-2 text-xs" aria-label="Breadcrumb">
+              <Link href="/" className="transition-opacity hover:opacity-80" style={{ color: "rgba(255,255,255,0.55)" }}>Home</Link>
+              <span style={{ color: "rgba(255,255,255,0.28)" }}>/</span>
+              <span style={{ color: "rgba(255,255,255,0.38)" }}>Causes</span>
+            </nav>
+          </div>
           <p
             className="text-xs font-semibold uppercase tracking-[0.1em] mb-5"
             style={{ fontFamily: "var(--font-onest)", color: "var(--accent)" }}
@@ -64,9 +77,9 @@ export default function CausesPage() {
           </p>
           <h1
             className="font-medium text-white leading-tight tracking-[-0.03em] max-w-3xl"
-            style={{ fontSize: "clamp(40px,6vw,72px)" }}
+            style={{ fontSize: "clamp(32px,5vw,62px)" }}
           >
-            Closing Africa&apos;s Digital Gap — One Cause at a Time
+            Four Causes. One Mission. Closing Africa&apos;s Digital, Skills, and Health Gap.
           </h1>
           <p className="mt-6 text-base md:text-lg max-w-md leading-relaxed" style={{ color: "rgba(255,255,255,0.48)" }}>
             Every cause is rooted in a real barrier Nigerian and African communities face on their path to the digital age.
@@ -95,7 +108,7 @@ export default function CausesPage() {
 
       {/* Causes list */}
       <section className="py-16 md:py-24" style={{ backgroundColor: "var(--background)" }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 space-y-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 space-y-10">
           {causes.map((c, i) => {
             const pct = Math.round((c.raised / c.goal) * 100);
             return (
@@ -109,7 +122,7 @@ export default function CausesPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={c.image}
-                    alt={c.tag}
+                    alt={`${c.tag} — ${c.title}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -149,7 +162,7 @@ export default function CausesPage() {
                     className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full text-sm font-semibold self-start transition-all hover:opacity-90"
                     style={{ backgroundColor: "var(--accent)", color: "#ffffff" }}
                   >
-                    Donate to this cause
+                    {c.cta}
                     <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -160,12 +173,20 @@ export default function CausesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-24" style={{ backgroundColor: "var(--dark-bg)" }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 text-center">
+      <section className="py-20 md:py-24 relative overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/7N4A2919.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(12,32,26,0.72)" }} />
+        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-medium text-white tracking-tight">
             Your Kindness Can Change a Life Today
           </h2>
-          <p className="mt-4 text-base max-w-sm mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+          <p className="mt-4 text-base max-w-sm mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
             Even a small donation can make a life-changing difference for someone in need.
           </p>
           <Link

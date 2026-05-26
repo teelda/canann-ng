@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ContactForm from "./ContactForm";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact — Canann Impact Initiative",
-  description: "Reach out to volunteer, partner, or ask a question. We respond within 48 hours.",
+  title: "Contact Us — Partner with Nigeria's Digital Literacy NGO",
+  description:
+    "Reach out to volunteer, partner on AI education or Pad a Girl, or fund digital access in Nigerian communities. We respond within 48 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -13,6 +16,13 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="py-24 md:py-36" style={{ backgroundColor: "var(--dark-bg)" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="flex justify-end mb-6">
+            <nav className="flex items-center gap-2 text-xs" aria-label="Breadcrumb">
+              <Link href="/" className="transition-opacity hover:opacity-80" style={{ color: "rgba(255,255,255,0.55)" }}>Home</Link>
+              <span style={{ color: "rgba(255,255,255,0.28)" }}>/</span>
+              <span style={{ color: "rgba(255,255,255,0.38)" }}>Contact</span>
+            </nav>
+          </div>
           <p
             className="text-xs font-semibold uppercase tracking-[0.1em] mb-5"
             style={{ fontFamily: "var(--font-onest)", color: "var(--accent)" }}
@@ -21,12 +31,64 @@ export default function ContactPage() {
           </p>
           <h1
             className="font-medium text-white leading-tight tracking-[-0.03em] max-w-2xl"
-            style={{ fontSize: "clamp(40px,6vw,72px)" }}
+            style={{ fontSize: "clamp(32px,5vw,62px)" }}
           >
-            Reach Out. We&apos;re Here Always.
+            Reach Out. Let&apos;s Build Africa&apos;s Digital Future Together.
           </h1>
           <p className="mt-6 text-base md:text-lg max-w-md leading-relaxed" style={{ color: "rgba(255,255,255,0.48)" }}>
-            Whether you want to volunteer, partner, make a donation, or simply say hello — we&apos;d love to hear from you.
+            Whether you want to volunteer, partner with us on AI education or Pad a Girl, fund a cause, or simply say hello — we&apos;d love to hear from you.
+          </p>
+        </div>
+      </section>
+
+      {/* Partner With Us */}
+      <section className="py-16 md:py-20" style={{ backgroundColor: "var(--background)" }}>
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3" style={{ color: "var(--foreground)" }}>
+            Is Your Organisation Ready to Help Close Africa&apos;s Gap?
+          </h2>
+          <p className="text-sm leading-relaxed mb-10 max-w-2xl" style={{ color: "var(--muted)" }}>
+            We&apos;re looking for corporate partners, universities, health organisations, and tech companies who want to make a real difference in Nigerian communities. Whether you have funding, expertise, devices, or products — there&apos;s a way to plug in.
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                num: "1",
+                title: "Fund AI Education or Tech in School",
+                body: "Sponsor a cohort of digital and AI literacy training.",
+              },
+              {
+                num: "2",
+                title: "Support Pad a Girl",
+                body: "Donate products, fund distribution, or run a workplace collection.",
+              },
+              {
+                num: "3",
+                title: "Join GroundUp Skills",
+                body: "Fund a cohort, send a facilitator, or donate vocational tools and starter kits.",
+              },
+            ].map(({ num, title, body }) => (
+              <div
+                key={num}
+                className="p-6 rounded-2xl flex flex-col gap-3"
+                style={{ backgroundColor: "#ffffff", boxShadow: "0 1px 8px rgba(0,0,0,0.06)" }}
+              >
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0"
+                  style={{ backgroundColor: "var(--accent)" }}
+                >
+                  {num}
+                </div>
+                <h3 className="font-semibold" style={{ color: "var(--foreground)", fontSize: "15px" }}>
+                  {title}
+                </h3>
+                <p style={{ color: "var(--muted)", fontSize: "14px", lineHeight: 1.6 }}>{body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm font-medium" style={{ color: "var(--muted)" }}>
+            Select your area of interest from the form below to start the conversation.{" "}
+            <ArrowRight size={14} className="inline-block ml-1" style={{ color: "var(--accent)" }} />
           </p>
         </div>
       </section>
@@ -72,11 +134,18 @@ export default function ContactPage() {
                       Phone
                     </p>
                     <a
-                      href="tel:+2341234567890"
-                      className="text-sm font-medium transition-opacity hover:opacity-70"
+                      href="tel:+2347068115317"
+                      className="text-sm font-medium transition-opacity hover:opacity-70 block"
                       style={{ color: "var(--foreground)" }}
                     >
-                      +234 (0) 123 456 7890
+                      +234 706 811 5317 <span className="text-xs font-normal" style={{ color: "var(--muted)" }}>(Call / WhatsApp)</span>
+                    </a>
+                    <a
+                      href="tel:+2348052263878"
+                      className="text-sm font-medium transition-opacity hover:opacity-70 block mt-1"
+                      style={{ color: "var(--foreground)" }}
+                    >
+                      +234 805 226 3878 <span className="text-xs font-normal" style={{ color: "var(--muted)" }}>(Call only)</span>
                     </a>
                   </div>
                 </div>
@@ -93,11 +162,11 @@ export default function ContactPage() {
                       Email
                     </p>
                     <a
-                      href="mailto:hello@canann.org"
+                      href="mailto:hellocanann@gmail.com"
                       className="text-sm font-medium transition-opacity hover:opacity-70"
                       style={{ color: "var(--foreground)" }}
                     >
-                      hello@canann.org
+                      hellocanann@gmail.com
                     </a>
                   </div>
                 </div>

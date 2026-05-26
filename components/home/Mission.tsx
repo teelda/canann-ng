@@ -52,10 +52,10 @@ export default function Mission() {
               className="font-medium"
               style={{ fontSize: "clamp(24px,3.5vw,48px)",fontWeight: 400, color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
             >
-              Equipping Grassroots Communities for the Digital Age
+              Equipping Grassroots Communities with Digital Skills
             </h2>
             <p className="mt-5 text-base leading-relaxed" style={{ color: "var(--muted)", fontSize: 18, fontWeight: 400 }}>
-              Where curricula haven&apos;t caught up, we show up — with tools, skills, knowledge, and offline resources that reach the last mile.
+              Where school curricula still teach computers on chalkboards, we provide devices, structured AI literacy training, and offline learning materials that reach the last mile, even without internet.
             </p>
             <Link
               href="/about-us"

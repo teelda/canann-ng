@@ -1,62 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { posts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Canann Impact Initiative",
-  description: "Stories, insights, and updates from the front lines of our community work.",
+  title: "AI Education Nigeria & Digital Divide Stories — Canann Blog",
+  description:
+    "Stories and insights on AI education in Nigeria, closing the digital divide, offline learning, and grassroots skills training across Nigerian communities.",
+  alternates: { canonical: "/blog" },
 };
-
-const posts = [
-  {
-    title: "Teaching AI on Chalkboards: Inside Nigeria's Digital Divide",
-    excerpt: "What it looks like when schools still draw computer screens on blackboards — and how Canann is putting real devices in those classrooms.",
-    date: "February 25, 2026",
-    category: "Digital Access",
-    image: "/MEM_0667.jpg",
-    readTime: "4 min read",
-  },
-  {
-    title: "How Our Offline Tech Journals Reach Where the Internet Can't",
-    excerpt: "For remote communities with no connectivity, our printed resources bring digital education to the last mile — no signal required.",
-    date: "February 25, 2026",
-    category: "Offline Learning",
-    image: "/7N4A2919.png",
-    readTime: "3 min read",
-  },
-  {
-    title: "The 150,000: Why We're Sponsoring a Generation of African Builders",
-    excerpt: "Our flagship programme is sponsoring 150,000 professionals, innovators, and school graduates to build solutions for their own communities.",
-    date: "March 10, 2026",
-    category: "Sponsorship",
-    image: "/IMG_9368.jpg",
-    readTime: "5 min read",
-  },
-  {
-    title: "From Learner to Builder: Stories from Our Skills Programme",
-    excerpt: "The moment a student realises they can build — not just consume — technology. Stories from the ground in Lagos and Cross River.",
-    date: "March 5, 2026",
-    category: "Skills Training",
-    image: "/volunterr.jpg",
-    readTime: "6 min read",
-  },
-  {
-    title: "Why Curricula Can't Wait: Closing the AI Knowledge Gap in Schools",
-    excerpt: "Nigerian schools are graduating students into a digital world without the tools to navigate it. Here's how we're filling the gap right now.",
-    date: "February 26, 2026",
-    category: "Education",
-    image: "/m 115.jpg",
-    readTime: "7 min read",
-  },
-  {
-    title: "Green Workforce: Building Tech Solutions That Actually Fit Africa",
-    excerpt: "Sustainable, locally-rooted innovation isn't a trend — it's how we make sure the digital future benefits African communities, not just tech hubs.",
-    date: "February 25, 2026",
-    category: "Green Workforce",
-    image: "/mission1.jpg",
-    readTime: "4 min read",
-  },
-];
 
 export default function BlogPage() {
   return (
@@ -64,6 +16,13 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="py-24 md:py-36" style={{ backgroundColor: "var(--dark-bg)" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="flex justify-end mb-6">
+            <nav className="flex items-center gap-2 text-xs" aria-label="Breadcrumb">
+              <Link href="/" className="transition-opacity hover:opacity-80" style={{ color: "rgba(255,255,255,0.55)" }}>Home</Link>
+              <span style={{ color: "rgba(255,255,255,0.28)" }}>/</span>
+              <span style={{ color: "rgba(255,255,255,0.38)" }}>Blog</span>
+            </nav>
+          </div>
           <p
             className="text-xs font-semibold uppercase tracking-[0.1em] mb-5"
             style={{ fontFamily: "var(--font-onest)", color: "var(--accent)" }}
@@ -72,7 +31,7 @@ export default function BlogPage() {
           </p>
           <h1
             className="font-medium text-white leading-tight tracking-[-0.03em] max-w-3xl"
-            style={{ fontSize: "clamp(40px,6vw,72px)" }}
+            style={{ fontSize: "clamp(32px,5vw,62px)" }}
           >
             Stories and Insights
           </h1>
@@ -88,7 +47,7 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
               <article
-                key={post.title}
+                key={post.slug}
                 className="group rounded-3xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 style={{ backgroundColor: "#ffffff", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
               >
@@ -114,7 +73,7 @@ export default function BlogPage() {
                     <span className="text-xs" style={{ color: "var(--muted-light)" }}>{post.readTime}</span>
                   </div>
 
-                  <h2 className="text-sm font-medium leading-snug tracking-tight mb-2 flex-1" style={{ color: "var(--foreground)" }}>
+                  <h2 className="text-sm font-medium leading-snug tracking-tight mb-2 flex-1" style={{ color: "var(--foreground)", fontSize: "clamp(20px,2vw,28px)" }}>
                     {post.title}
                   </h2>
                   <p className="text-xs leading-relaxed mt-2" style={{ color: "var(--muted)" }}>
@@ -127,7 +86,7 @@ export default function BlogPage() {
                   >
                     <span className="text-xs" style={{ color: "var(--muted-light)" }}>{post.date}</span>
                     <Link
-                      href="/blog"
+                      href={`/blog/${post.slug}`}
                       className="inline-flex items-center gap-1 text-xs font-semibold transition-opacity hover:opacity-70"
                       style={{ color: "var(--accent)" }}
                     >

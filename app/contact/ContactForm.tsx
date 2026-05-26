@@ -5,6 +5,8 @@ import { Send, CheckCircle } from "lucide-react";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -12,9 +14,23 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try emailing us directly at hellocanann@gmail.com.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -94,6 +110,8 @@ export default function ContactForm() {
             <option value="donate">Make a donation</option>
             <option value="volunteer">Volunteer</option>
             <option value="partner">Partner with Canann</option>
+            <option value="ai-education">AI Education Partnership</option>
+            <option value="pad-a-girl">Pad a Girl Partnership</option>
             <option value="media">Media / Press</option>
             <option value="other">Something else</option>
           </select>
@@ -111,13 +129,18 @@ export default function ContactForm() {
           />
         </div>
 
+        {error && (
+          <p className="text-sm" style={{ color: "#dc2626" }}>{error}</p>
+        )}
+
         <button
           type="submit"
-          className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
+          disabled={loading}
+          className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90 disabled:opacity-60"
           style={{ backgroundColor: "var(--accent)" }}
         >
-          Send Message
-          <Send size={14} />
+          {loading ? "Sending…" : "Send Message"}
+          {!loading && <Send size={14} />}
         </button>
       </form>
     </div>

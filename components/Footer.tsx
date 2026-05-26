@@ -18,7 +18,7 @@ export default function Footer() {
 
   return (
     <footer style={{ backgroundColor: "rgb(18, 41, 34)" }}>
-      <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-6 pb-6">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 pt-10 pb-6">
 
         {/* TOP ROW — newsletter card + links card */}
         <div className="grid md:grid-cols-2 gap-4 mb-4">
@@ -30,9 +30,9 @@ export default function Footer() {
           >
             <h2
               className="font-medium text-white"
-              style={{ fontSize: "clamp(22px,2.5vw,32px)", letterSpacing: "-0.028em", lineHeight: "115%" }}
+              style={{ fontSize: "clamp(18px,2vw,30px)", letterSpacing: "-0.028em", lineHeight: "115%" }}
             >
-              Stay Connected<br />With Our Impact
+              Stay Connected — AI Education Updates, Pad a Girl Stories, and Real Impact Reports
             </h2>
             <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
               Get stories, updates, and real impact reports delivered to your inbox.
@@ -74,7 +74,7 @@ export default function Footer() {
 
           {/* Links card */}
           <div
-            className="rounded-[24px] p-8 md:p-10 grid grid-cols-3 gap-6"
+            className="rounded-[24px] p-5 md:p-10 grid grid-cols-3 gap-4 md:gap-6"
             style={{ backgroundColor: CARD_BG }}
           >
             {/* Company */}
@@ -150,11 +150,11 @@ export default function Footer() {
                     <Mail size={12} style={{ color: "var(--accent)" }} />
                   </div>
                   <a
-                    href="mailto:hello@canann.org"
-                    className="text-sm transition-opacity hover:opacity-70"
+                    href="mailto:hellocanann@gmail.com"
+                    className="text-sm transition-opacity hover:opacity-70 break-all"
                     style={{ color: "rgba(255,255,255,0.6)" }}
                   >
-                    hello@canann.org
+                    hellocanann@gmail.com
                   </a>
                 </li>
               </ul>
@@ -173,6 +173,9 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/Canann logo.png" alt="Canann" className="w-10 h-10 object-contain" />
+              <p className="text-xs leading-snug max-w-[200px]" style={{ color: "rgba(255,255,255,0.45)", fontSize: 10.5 }}>
+                Closing Africa&apos;s Digital, Skills, and Health Gap — One Community at a Time.
+              </p>
             </div>
             <p
               className="font-black leading-none select-none w-full"
@@ -219,10 +222,10 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
         >
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.22)" }}>
-            © {new Date().getFullYear()} Canann Impact Initiative. All Rights Reserved.
+            © {new Date().getFullYear()} Canann Impact Foundation. All Rights Reserved.
           </p>
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.22)" }}>
-            Canann Impact Initiative. Built with care.
+            Canann Impact Foundation. Built with care.
           </p>
         </div>
 

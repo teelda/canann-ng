@@ -49,9 +49,14 @@ export default function Hero() {
         className="absolute inset-0"
         style={{ background: "linear-gradient(135deg, rgba(12,32,26,0.75) 0%, rgba(12,32,26,0.45) 50%, rgba(12,32,26,0.2) 100%)" }}
       />
+      {/* Bottom fade */}
+      <div
+        className="absolute inset-x-0 bottom-0"
+        style={{ height: "35%", background: "linear-gradient(to top, rgba(12,32,26,0.95) 0%, transparent 100%)" }}
+      />
 
       {/* Content */}
-      <div className="relative max-w-[1160px] mx-auto px-5 md:px-8 min-h-screen flex items-end pb-16 md:pb-20">
+      <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 min-h-screen flex items-end pb-16 md:pb-20">
         <div className="w-full grid md:grid-cols-2 gap-8 md:gap-12 items-end">
 
           {/* LEFT — text */}
@@ -61,9 +66,10 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="font-medium text-white"
-              style={{ fontSize: "clamp(36px,4.5vw,64px)", letterSpacing: "-0.028em", fontWeight: 500, lineHeight: "1" }}
+              style={{ fontSize: "clamp(32px,4.5vw,64px)", letterSpacing: "-0.028em", fontWeight: 500, lineHeight: "1" }}
             >
-              Where Small Actions Lead to Big Impact.
+               Where Small Actions Lead to Big Impact.
+              {/* Where Small Actions Build Africa&apos;s Digital Future. */}
             </motion.h1>
 
             <motion.p
@@ -71,9 +77,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="mt-4 text-base md:text-lg max-w-sm leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.7)", fontSize: 20, fontWeight: 400 }}
+              style={{ color: "rgba(255,255,255,0.7)", fontSize: 18, fontWeight: 400 }}
             >
-              Bridging the digital divide — tech tools, skills, and knowledge for grassroots communities across Nigeria.
+              Tech tools, skills, and AI literacy reaching the grassroots communities that curricula left behind.
             </motion.p>
 
             <motion.div
@@ -102,7 +108,7 @@ export default function Hero() {
           </div>
 
           {/* RIGHT — floating stat card */}
-          <div className="flex justify-end">
+          <div className="flex justify-start md:justify-end">
             <motion.div
               initial={{ opacity: 0, y: 24, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}

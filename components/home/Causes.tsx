@@ -9,38 +9,38 @@ import { useRef } from "react";
 
 const causes = [
   {
-    tag: "Digital Access",
-    title: "Teaching the Digital World to Grassroots Communities",
-    desc: "Many Nigerian communities still learn computers on chalkboards. We're putting real tools and knowledge in their hands.",
-    goal: 60800,
-    raised: 39500,
+    tag: "Pad a Girl",
+    title: "A Period Should Never Cost a Girl Her Education",
+    desc: "Without sanitary products, a girl can miss up to 5 days every month. We deliver pads, health education, and support to girls in underserved schools.",
+    goal: 350000,
+    raised: 84000,
     image: "/7N4A2919.png",
     href: "/causes",
   },
   {
-    tag: "Tools & Devices",
-    title: "A Device Can Change Everything",
-    desc: "We provide laptops, tablets, and offline materials to learners who've never touched a keyboard. Access is the first step.",
-    goal: 50800,
-    raised: 36600,
+    tag: "Tech in School",
+    title: "Devices, AI literacy, and tech skills — already working in 4 schools. Expanding now.",
+    desc: "Real devices, structured AI foundations, and offline learning materials reaching secondary school students across Nigeria.",
+    goal: 1800000,
+    raised: 395000,
     image: "/7N4A2959.png",
     href: "/causes",
   },
   {
-    tag: "150K Sponsorship",
-    title: "Sponsoring a Generation of African Builders",
-    desc: "150,000 professionals, innovators, and secondary school graduates — sponsored with the skills to build for their own communities.",
-    goal: 500000,
+    tag: "GroundUp Skills",
+    title: "Digital, vocational, and entrepreneurship training — sponsoring 150,000 African builders.",
+    desc: "Digital training, vocational education, and entrepreneurship coaching in one accessible programme — built for grassroots communities across Nigeria.",
+    goal: 575000,
     raised: 120000,
     image: "/7N4A2747.jpg",
     href: "/causes",
   },
   {
     tag: "Green Workforce",
-    title: "Building Solutions That Actually Fit Africa",
-    desc: "We train innovators to build sustainable, locally-rooted tech solutions — a workforce equipped for Africa's future.",
-    goal: 80000,
-    raised: 38400,
+    title: "Building AI-powered solutions designed for Africa, not imported from Silicon Valley.",
+    desc: "We train a generation of African innovators to build sustainable, locally-rooted solutions — including AI-powered tools designed for African communities.",
+    goal: 800000,
+    raised: 380400,
     image: "/7N4A2739.jpg",
     href: "/causes",
   },
@@ -96,7 +96,7 @@ export default function Causes() {
         </motion.div>
 
         {/* 2×2 grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {causes.map((c, i) => (
             <motion.div
               key={c.title}
@@ -109,23 +109,23 @@ export default function Causes() {
               {/* Image with goal badge */}
               <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.image} alt={c.tag} className="w-full h-full object-cover" />
+                <img src={c.image} alt={`${c.tag} — ${c.title}`} className="w-full h-full object-cover" />
                 <div
                   className="absolute top-3 right-3 px-3 py-1.5 rounded-full text-xs font-semibold text-white"
                   style={{ backgroundColor: "var(--accent)" }}
                 >
-                  Goal: ${c.goal.toLocaleString()}
+                  Goal: ₦{c.goal.toLocaleString("en-NG")}
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <p className="text-xs font-semibold mb-2" style={{ color: "var(--accent)" }}>
+                <p className="text-xs font-semibold mb-2" style={{ fontSize: 18, color: "var(--accent)" }}>
                   {c.tag}
                 </p>
                 <h3
-                  className="text-base font-medium leading-snug mb-2"
-                  style={{ color: "var(--foreground)", letterSpacing: "-0.02em" }}
+                  className="font-regular leading-snug mb-2"
+                  style={{fontWeight: 500, fontSize: 24, color: "var(--foreground)", letterSpacing: "-0.03em" }}
                 >
                   {c.title}
                 </h3>

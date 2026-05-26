@@ -11,7 +11,7 @@ import { useRef } from "react";
 const roles = [
   {
     title: "Run Digital Skills Sessions",
-    desc: "Lead hands-on training in communities — teaching computer basics, internet use, and AI concepts to learners starting from zero.",
+    desc: "Lead hands-on sessions in communities — teaching computer basics, internet use, and practical AI literacy to learners starting from zero and hungry to learn.",
   },
   {
     title: "Tech Setup & Support",

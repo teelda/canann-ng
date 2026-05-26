@@ -63,8 +63,8 @@ const marqueeImages = [
 ];
 
 const stats = [
-  { icon: Building2, number: "5+", label: "Years of Foundation" },
-  { icon: Users, number: "500+", label: "Incredible Volunteers" },
+  { icon: Building2, number: "2+", label: "Years of Foundation" },
+  { icon: Users, number: "50+", label: "Incredible Volunteers" },
   { icon: Heart, number: "1,200+", label: "Learners Trained" },
   { icon: Megaphone, number: "150K", label: "Sponsorship Goal" },
 ];
@@ -85,7 +85,7 @@ const steps = [
   {
     num: "03",
     title: "We Take Action",
-    body: "Our team and local partners deliver food, education, healthcare, and emergency aid on the ground.",
+    body: "Our team and local partners deliver digital skills training, AI literacy sessions, devices, menstrual health support, and offline learning materials directly in communities.",
     active: false,
   },
   {
@@ -99,23 +99,27 @@ const steps = [
 const faqs = [
   {
     q: "How does Canann help people?",
-    a: "Canann helps vulnerable communities through food distribution, education support, healthcare access, and emergency relief programmes across Nigeria.",
+    a: "Canann helps communities through digital literacy programmes, AI education, device deployment, skills training, menstrual health support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
+  },
+  {
+    q: "Does Canann teach AI in schools?",
+    a: "Yes. AI literacy is a core part of our Tech in School programme. We teach secondary school students and community learners what AI is, how it works, and how to use it practically — starting from zero, delivered in person, with offline materials for communities without reliable internet.",
   },
   {
     q: "Can I volunteer with Canann?",
-    a: "Yes! We welcome volunteers with all kinds of skills. Reach out through our contact page and tell us how you'd like to get involved.",
+    a: "Yes! We welcome volunteers for digital skills sessions, device setup, curriculum support, and Pad a Girl distribution. Reach out through our contact page and tell us how you'd like to get involved.",
   },
   {
     q: "How does Canann use donations?",
-    a: "95% of all donations go directly to our programmes. We operate lean so that your generosity reaches the people who need it most.",
+    a: "95% of all donations go directly to our programmes — tech tools, AI literacy training, offline journals, Pad a Girl supplies, and the 150K sponsorship fund. We operate lean so your generosity reaches the people who need it most.",
   },
   {
     q: "How can I partner with Canann?",
-    a: "We partner with businesses, schools, faith communities, and other NGOs. Email us at hello@canann.org to explore partnership opportunities.",
+    a: "We partner with businesses, schools, health organisations, and tech companies. Whether you have funding, expertise, devices, or products — there's a way to plug in. Email us at hellocanann@gmail.com to explore partnership opportunities.",
   },
   {
     q: "How can I stay updated with Canann?",
-    a: "Subscribe to our newsletter, follow us on social media, or check our blog for the latest stories and impact reports.",
+    a: "Subscribe to our newsletter, follow us on social media, or check our blog for AI education updates, Pad a Girl stories, and the latest impact reports.",
   },
 ];
 
@@ -131,10 +135,17 @@ export default function AboutUsPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/about-hero.jpg"
-          alt="Children in community"
+          alt="Canann Impact Foundation volunteers training students in digital skills in Nigeria"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0" style={{ background: "rgba(12,28,18,0.55)" }} />
+        <div className="absolute inset-0" style={{ background: "rgba(12,28,18,0.78)" }} />
+        <div className="absolute top-8 right-5 md:right-8 z-10">
+          <nav className="flex items-center gap-2 text-xs" aria-label="Breadcrumb">
+            <Link href="/" className="transition-opacity hover:opacity-80" style={{ color: "rgba(255,255,255,0.55)" }}>Home</Link>
+            <span style={{ color: "rgba(255,255,255,0.28)" }}>/</span>
+            <span style={{ color: "rgba(255,255,255,0.38)" }}>About Us</span>
+          </nav>
+        </div>
         <div
           className="relative max-w-[1200px] mx-auto px-5 md:px-8 flex items-end pb-16 md:pb-28"
           style={{ minHeight: "85vh" }}
@@ -144,13 +155,13 @@ export default function AboutUsPage() {
             <h1
               className="text-white mt-1"
               style={{
-                fontSize: "clamp(36px, 5.5vw, 68px)",
+                fontSize: "clamp(32px, 4.5vw, 60px)",
                 fontWeight: 700,
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
               }}
             >
-              Driven By Purpose And Impact
+              Driven By Purpose, Powered by People — Building Africa&apos;s AI-Ready Generation
             </h1>
             <p
               className="mt-5 leading-relaxed max-w-md"
@@ -171,30 +182,30 @@ export default function AboutUsPage() {
               <SectionBadge icon={Heart} label="About Canann" />
               <h2
                 style={{
-                  fontSize: "clamp(28px, 4vw, 54px)",
+                  fontSize: "clamp(24px, 3vw, 50px)",
                   fontWeight: 700,
                   lineHeight: 1.1,
                   letterSpacing: "-0.02em",
                   color: "var(--foreground)",
                 }}
               >
-                Equipping Grassroots Communities for the Digital Age
+                Equipping Grassroots Communities with Digital and AI-Ready Skills
               </h2>
               <p
                 className="mt-5 leading-relaxed"
-                style={{ fontSize: "15px", color: "var(--muted)", fontWeight: 400 }}
+                style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400 }}
               >
-                Nigeria has millions of learners who are still being taught about computers on chalkboards. Canann closes that gap — with tech tools, structured skills training, and offline resources that reach communities even where the internet doesn&apos;t.
+                Nigeria has millions of learners being taught computers on chalkboards. Canann closes that gap with devices, structured digital and AI literacy training, and offline learning resources that reach every community, even where the internet doesn&apos;t.
               </p>
               <div className="mt-6 space-y-3">
                 {[
                   {
                     title: "Our Vision",
-                    body: "An Africa where every learner — regardless of geography, infrastructure, or income — has access to the digital tools, knowledge, and networks they need to build a better tomorrow.",
+                    body: "An Africa where every learner — regardless of geography, infrastructure, or income — has access to digital tools, AI literacy, and the networks they need to build solutions for their own communities.",
                   },
                   {
                     title: "Our Mission",
-                    body: "To bridge Africa's digital divide through tech tools, skills training, and offline learning resources — sponsoring 150,000 professionals, innovators, and graduates to build sustainable solutions for their own communities.",
+                    body: "To bridge Africa's digital and AI divide through hands-on training, real devices, and offline learning resources — sponsoring 150,000 professionals, innovators, and graduates with the skills to build sustainable, community-rooted solutions.",
                   },
                 ].map(({ title, body }) => (
                   <div key={title} className="p-5 md:p-6 rounded-2xl" style={{ backgroundColor: "var(--surface)" }}>
@@ -220,6 +231,86 @@ export default function AboutUsPage() {
                 alt="Canann community event"
                 className="w-full h-full object-cover"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── AI IN EDUCATION APPROACH ── */}
+      <section className="section" style={{ backgroundColor: "var(--background)" }}>
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+            {/* Left */}
+            <div>
+              <SectionBadge icon={Info} label="Our AI Approach" />
+              <h2
+                style={{
+                  fontSize: "clamp(24px, 3vw, 50px)",
+                  fontWeight: 700,
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.02em",
+                  color: "var(--foreground)",
+                }}
+              >
+                Teaching AI Where It Has Never Been Taught Before
+              </h2>
+              <p
+                className="mt-5 leading-relaxed"
+                style={{ fontSize: "15px", color: "var(--muted)", fontWeight: 400 }}
+              >
+                Across the world, AI is transforming agriculture, healthcare, finance, and public services. Yet in most community schools and training centres in Nigeria, AI education remains non-existent or purely theoretical — a topic on a whiteboard, not a skill in the hands.
+              </p>
+              <p
+                className="mt-4 leading-relaxed"
+                style={{ fontSize: "15px", color: "var(--muted)", fontWeight: 400 }}
+              >
+                Canann&apos;s AI education model is designed specifically for this gap. We localise AI education to the African context: using everyday examples Nigerian learners understand, and focusing on practical use cases they can apply immediately.
+              </p>
+            </div>
+
+            {/* Right — 3 pillars */}
+            <div className="space-y-4 md:mt-4">
+              {[
+                {
+                  num: "1",
+                  title: "Teach It Simply",
+                  body: "AI concepts in plain language, with real African examples, starting from absolute basics.",
+                },
+                {
+                  num: "2",
+                  title: "Make It Practical",
+                  body: "Learners use AI tools and explore prompting from day one.",
+                },
+                {
+                  num: "3",
+                  title: "Take It Offline",
+                  body: "Printed journals and structured guides mean AI education is never gated by internet access.",
+                },
+              ].map(({ num, title, body }) => (
+                <div
+                  key={num}
+                  className="flex gap-5 p-5 md:p-6 rounded-2xl"
+                  style={{ backgroundColor: "#ffffff", boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}
+                >
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm"
+                    style={{ backgroundColor: "var(--accent)" }}
+                  >
+                    {num}
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: "16px", fontWeight: 600, color: "var(--foreground)", letterSpacing: "-0.01em" }}>
+                      {title}
+                    </h3>
+                    <p
+                      className="mt-1 leading-relaxed"
+                      style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400 }}
+                    >
+                      {body}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -315,8 +406,9 @@ export default function AboutUsPage() {
 
             {/* Right — timeline */}
             <div className="relative mt-2">
+              {/* Vertical line — starts/ends at circle centres (top-5 = 20px = half of w-10) */}
               <div
-                className="absolute left-[19px] top-0 bottom-0 w-[2px] pointer-events-none"
+                className="absolute left-5 top-5 bottom-5 w-[2px] pointer-events-none -translate-x-1/2"
                 style={{ background: "linear-gradient(to bottom, var(--accent) 52%, #d4d4d4 52%)" }}
               />
               <div className="space-y-3">
@@ -325,7 +417,7 @@ export default function AboutUsPage() {
                     <div
                       className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 z-10"
                       style={{
-                        backgroundColor: step.active ? "var(--accent)" : "transparent",
+                        backgroundColor: step.active ? "var(--accent)" : "#ffffff",
                         color: step.active ? "#ffffff" : "var(--muted)",
                         border: step.active ? "none" : "2px solid #d4d4d4",
                         fontSize: "13px",
@@ -402,7 +494,7 @@ export default function AboutUsPage() {
                   Directly reach us and we&apos;ll get back to you as soon as possible.
                 </p>
                 <Link
-                  href="mailto:hello@canann.org"
+                  href="mailto:hellocanann@gmail.com"
                   className="inline-flex items-center gap-2 mt-5 font-semibold text-white transition-opacity hover:opacity-90"
                   style={{
                     backgroundColor: "var(--accent)",
