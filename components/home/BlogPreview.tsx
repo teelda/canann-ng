@@ -75,9 +75,7 @@ export default function BlogPreview() {
               Stories and insights
             </h2>
           </div>
-          <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "var(--muted)" }}>
-            Feeding families, educating children &amp; rebuilding lives what our impact shows.
-          </p>
+         
         </motion.div>
 
         {/* 3-column equal grid */}

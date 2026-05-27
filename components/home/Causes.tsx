@@ -14,7 +14,7 @@ const causes = [
     desc: "Without sanitary products, a girl can miss up to 5 days every month. We deliver pads, health education, and support to girls in underserved schools.",
     goal: 350000,
     raised: 84000,
-    image: "/m 157.JPEG",
+    image: "/m 199.JPEG",
     href: "/causes",
   },
   {
@@ -23,7 +23,7 @@ const causes = [
     desc: "Real devices, structured AI foundations, and offline learning materials reaching secondary school students across Nigeria.",
     goal: 1800000,
     raised: 395000,
-    image: "/m 199.JPEG",
+    image: "/story.jpg",
     href: "/causes",
   },
   {

@@ -84,7 +84,7 @@ export default function Volunteer() {
               className="font-medium"
               style={{ fontSize: "clamp(26px,3vw,38px)", color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
             >
-              Volunteer to Close the Digital Gap
+              Volunteer with us and help close the Digital Gap
             </h2>
             <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--muted)" }}>
               Training learners, deploying devices, and reaching remote communities — that&apos;s what our volunteers make possible.

@@ -77,10 +77,10 @@ export default function Mission() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ type: "spring", stiffness: 240, damping: 22, delay: 0.06 }}
-            className="rounded-[24px] overflow-hidden"
+            className="rounded-[24px] overflow-hidden "
             style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.07)" }}
           >
-            <div className="aspect-[4/5]">
+            <div className="relative aspect-[4/5] h-full">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/mission.jpg"

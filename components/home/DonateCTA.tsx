@@ -65,7 +65,7 @@ export default function DonateCTA() {
               <SectionTag label="Donate Today" icon={HeartHandshake} />
               <h2
                 className="font-medium text-white"
-                style={{ fontSize: "clamp(26px,3vw,42px)", letterSpacing: "-0.028em", lineHeight: "115%" }}
+                style={{ fontSize: "clamp(20px,2vw,40px)", letterSpacing: "-0.028em", lineHeight: "115%" }}
               >
                 Your Support Can Put a Device, an AI Skill, or a Pad in the Hands of Someone Who Needs It Today
               </h2>

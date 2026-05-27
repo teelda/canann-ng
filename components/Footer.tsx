@@ -154,7 +154,7 @@ export default function Footer() {
                     className="text-sm transition-opacity hover:opacity-70 break-all"
                     style={{ color: "rgba(255,255,255,0.6)" }}
                   >
-                    hellocanann@gmail.com
+                    hellocanannorg@gmail.com
                   </a>
                 </li>
               </ul>
@@ -198,7 +198,7 @@ export default function Footer() {
             {["Facebook", "Instagram", "X", "Linkedin"].map((social, i) => (
               <a
                 key={social}
-                href="#"
+                href="https://www.linkedin.com/company/canann-impact-initiative/"
                 className="flex items-center justify-between px-6 py-5 transition-opacity hover:opacity-80"
                 style={{
                   borderBottom: i < 3 ? "1px solid rgba(255,255,255,0.07)" : "none",
