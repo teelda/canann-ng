@@ -8,6 +8,15 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const causes = [
+   {
+    tag: "Tech in School",
+    title: "Devices, AI literacy, and tech skills — already working in 4 schools. Expanding now.",
+    desc: "Real devices, structured AI foundations, and offline learning materials reaching secondary school students across Nigeria.",
+    goal: 1800000,
+    raised: 395000,
+    image: "/story.jpg",
+    href: "/causes",
+  },
   {
     tag: "Pad a Girl",
     title: "A Period Should Never Cost a Girl Her Education",
@@ -17,15 +26,7 @@ const causes = [
     image: "/m 199.JPEG",
     href: "/causes",
   },
-  {
-    tag: "Tech in School",
-    title: "Devices, AI literacy, and tech skills — already working in 4 schools. Expanding now.",
-    desc: "Real devices, structured AI foundations, and offline learning materials reaching secondary school students across Nigeria.",
-    goal: 1800000,
-    raised: 395000,
-    image: "/story.jpg",
-    href: "/causes",
-  },
+
   {
     tag: "GroundUp Skills",
     title: "Digital, vocational, and entrepreneurship training — sponsoring 150,000 African builders.",
