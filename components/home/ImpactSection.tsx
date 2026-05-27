@@ -19,7 +19,7 @@ const slides = [
     desc: "Each device unlocks a learner. We place laptops, tablets, and offline tools in communities that have never had them before.",
   },
   {
-    image: "/volunterr.jpg",
+    image: "/m 162.jpg",
     title: "48+ Volunteers Driving Change",
     desc: "People who show up to train, teach, and equip — because they believe the next African innovator is sitting in a classroom right now.",
   },

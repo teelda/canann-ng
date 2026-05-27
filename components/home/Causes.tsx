@@ -14,7 +14,7 @@ const causes = [
     desc: "Without sanitary products, a girl can miss up to 5 days every month. We deliver pads, health education, and support to girls in underserved schools.",
     goal: 350000,
     raised: 84000,
-    image: "/7N4A2919.png",
+    image: "/m 157.JPEG",
     href: "/causes",
   },
   {
@@ -23,7 +23,7 @@ const causes = [
     desc: "Real devices, structured AI foundations, and offline learning materials reaching secondary school students across Nigeria.",
     goal: 1800000,
     raised: 395000,
-    image: "/7N4A2959.png",
+    image: "/m 199.JPEG",
     href: "/causes",
   },
   {
@@ -109,7 +109,7 @@ export default function Causes() {
               {/* Image with goal badge */}
               <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.image} alt={`${c.tag} — ${c.title}`} className="w-full h-full object-cover" />
+                <img src={c.image} alt={`${c.tag} — ${c.title}`} className="w-full h-full object-cover object-center" />
                 <div
                   className="absolute top-3 right-3 px-3 py-1.5 rounded-full text-xs font-semibold text-white"
                   style={{ backgroundColor: "var(--accent)" }}

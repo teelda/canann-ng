@@ -12,7 +12,7 @@ const programmes = [
     title: "Tech Tools Programme",
     desc: "Laptops, tablets, and offline materials for learners in communities where computers are still unfamiliar. The right tool shouldn't be a luxury.",
     href: "/causes",
-    image: "/7N4A2959.png",
+    image: "/m 199.JPEG",
   },
   {
     tag: "Skills",
@@ -33,7 +33,7 @@ const programmes = [
     title: "150K Sponsorship Drive",
     desc: "We are sponsoring 150,000 professionals, innovators, and secondary school graduates with the knowledge and tools to build solutions for their local communities.",
     href: "/causes",
-    image: "/7N4A2919.png",
+    image: "/m 157.JPEG",
   },
 ];
 

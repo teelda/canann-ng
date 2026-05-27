@@ -25,8 +25,8 @@ const testimonials = [
     quote: "As a volunteer, I see the impact up close. These programmes aren't charity — they're investments in people. Every meal, every lesson, every moment of relief creates a ripple that lasts for years.",
     name: "Emmanuel T.",
     role: "Programme Volunteer",
-    avatar: "/volunterr.jpg",
-    portrait: "/volunterr.jpg",
+    avatar: "/IMG_9368.jpg",
+    portrait: "/IMG_9368.jpg",
   },
   {
     quote: "Working alongside Canann has shown me what genuine community care looks like. They don't just provide resources — they restore dignity and open doors that were previously closed.",

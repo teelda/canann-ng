@@ -9,7 +9,7 @@ const stats = [
     number: "1,200+",
     label: "Learners Trained",
     sub: "Across schools and communities in Nigeria.",
-    image: "/7N4A2919.png",
+    image: "/m 118.jpg",
   },
   {
     number: "500+",

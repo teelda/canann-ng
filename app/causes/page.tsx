@@ -16,7 +16,7 @@ const causes = [
     desc: "In too many Nigerian communities, menstruation is still a reason girls stay home from school. Without sanitary products, a girl can miss up to 5 days every month — nearly 20% of her school year, gone. Pad a Girl delivers sanitary products, menstrual health education, and practical support to girls in underserved secondary schools.",
     goal: 350000,
     raised: 84000,
-    image: "/7N4A2919.png",
+    image: "/m 157.JPEG",
     impact: "Target: 5,000 girls reached with products and health education in Year 1",
     cta: "Pad a Girl",
   },
@@ -26,7 +26,7 @@ const causes = [
     desc: "For two years, Canann has gone directly into secondary schools — setting up tech environments, delivering offline journals, introducing AI literacy, and training over 1,500 students in Calabar. Tech in School now expands: deploying devices, delivering structured AI foundations, and reaching more schools across Nigeria. Devices and AI literacy are no longer optional — they are the baseline.",
     goal: 1800000,
     raised: 395000,
-    image: "/7N4A2959.png",
+    image: "/m 199.JPEG",
     impact: "1,500+ students trained across 4 schools. Expanding now.",
     cta: "Fund Tech in School",
   },
@@ -123,7 +123,7 @@ export default function CausesPage() {
                   <img
                     src={c.image}
                     alt={`${c.tag} — ${c.title}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
 
