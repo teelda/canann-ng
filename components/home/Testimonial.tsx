@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { Star } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
@@ -124,20 +125,20 @@ export default function Testimonial() {
                   }}
                   aria-label={item.name}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.avatar} alt={item.name} className="w-full h-full object-cover" />
+                  <Image src={item.avatar} alt={item.name} width={44} height={44} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
 
             {/* Portrait photo */}
-            <div className="hidden md:block overflow-hidden" style={{ maxHeight: "380px", borderRadius: "16px" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative hidden md:block overflow-hidden" style={{ maxHeight: "380px", borderRadius: "16px" }}>
+              <Image
                 key={t.portrait}
                 src={t.portrait}
                 alt={t.name}
-                className="w-full h-full object-cover object-top"
+                fill
+                className="object-cover object-top"
+                sizes="280px"
               />
             </div>
 

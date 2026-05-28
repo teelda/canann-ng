@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const links = [
@@ -46,8 +47,7 @@ export default function Nav() {
             className="flex items-center gap-2.5 font-semibold text-[17px] shrink-0 transition-opacity hover:opacity-80"
             style={{ color: "var(--foreground)", letterSpacing: "-0.03em" }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/Canann logo.png" alt="Canann" className="w-8 h-8 object-contain shrink-0" />
+            <Image src="/Canann logo.png" alt="Canann" width={32} height={32} className="object-contain shrink-0" />
             Canann
           </Link>
 

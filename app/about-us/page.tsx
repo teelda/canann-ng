@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Info,
   RefreshCw,
@@ -132,11 +133,13 @@ export default function AboutUsPage() {
     <div>
       {/* ── HERO ── */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: "85vh" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/about-hero.jpg"
           alt="Canann Impact Foundation volunteers training students in digital skills in Nigeria"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
         <div className="absolute inset-0" style={{ background: "rgba(12,28,18,0.78)" }} />
         <div className="absolute top-8 right-5 md:right-8 z-10">
@@ -224,12 +227,13 @@ export default function AboutUsPage() {
             </div>
 
             {/* Right — featured image */}
-            <div className="rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
+              <Image
                 src="/MEM_0667.jpg"
                 alt="Canann community event"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -331,14 +335,14 @@ export default function AboutUsPage() {
               key={i}
               style={{
                 flexShrink: 0,
+                position: "relative",
                 width: "clamp(260px, 28vw, 360px)",
                 height: "clamp(300px, 32vw, 420px)",
                 borderRadius: "20px",
                 overflow: "hidden",
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" className="w-full h-full object-cover" style={{ display: "block" }} />
+              <Image src={src} alt="" fill className="object-cover" sizes="420px" style={{ display: "block" }} />
             </div>
           ))}
         </div>
@@ -566,11 +570,12 @@ export default function AboutUsPage() {
       <section className="pb-8 px-4 md:px-8">
         <div className="max-w-[1200px] mx-auto">
           <div className="relative overflow-hidden rounded-[24px]" style={{ minHeight: "320px" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/donate-cta.jpg"
               alt=""
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1200px) 100vw, 1200px"
             />
             <div className="absolute inset-0" style={{ background: "rgba(10,28,18,0.62)" }} />
             <div

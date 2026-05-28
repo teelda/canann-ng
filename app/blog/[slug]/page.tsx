@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { posts, getPostBySlug } from "@/lib/blog";
@@ -38,12 +39,14 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Hero */}
       <section className="relative py-28 md:py-40 overflow-hidden" style={{ backgroundColor: "var(--dark-bg)" }}>
         <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={post.image}
             alt=""
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
             style={{ opacity: 0.22 }}
+            sizes="100vw"
           />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--dark-bg) 0%, transparent 60%)" }} />
         </div>
@@ -91,14 +94,15 @@ export default async function BlogPostPage({ params }: Props) {
           </p>
 
           <div
-            className="w-full rounded-3xl overflow-hidden mb-10"
+            className="relative w-full rounded-3xl overflow-hidden mb-10"
             style={{ aspectRatio: "16/7" }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={post.image}
               alt={post.title}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 800px) 100vw, 800px"
             />
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
@@ -109,8 +110,7 @@ export default function Causes() {
             >
               {/* Image with goal badge */}
               <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.image} alt={`${c.tag} — ${c.title}`} className="w-full h-full object-cover object-center" />
+                <Image src={c.image} alt={`${c.tag} — ${c.title}`} fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 50vw" />
                 <div
                   className="absolute top-3 right-3 px-3 py-1.5 rounded-full text-xs font-semibold text-white"
                   style={{ backgroundColor: "var(--accent)" }}

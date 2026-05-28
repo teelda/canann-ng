@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -30,14 +31,15 @@ export default function FeaturedStory() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ type: "spring", stiffness: 280, damping: 22, delay: 0.05 }}
-            className="rounded-3xl overflow-hidden aspect-[4/3]"
+            className="relative rounded-3xl overflow-hidden aspect-[4/3]"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.10)" }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/story.jpg"
               alt="Chidi working on his laptop"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
 

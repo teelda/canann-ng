@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -72,13 +73,14 @@ export default function Communities() {
               style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
             >
               {/* Image */}
-              <div className="aspect-[4/3] overflow-hidden" style={{ backgroundColor: "var(--surface)" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative aspect-[4/3] overflow-hidden" style={{ backgroundColor: "var(--surface)" }}>
+                <Image
                   src={city.image}
                   alt={city.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                   style={{ filter: "brightness(0.85)" }}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
 

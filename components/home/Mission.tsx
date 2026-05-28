@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sprout, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
@@ -81,11 +82,12 @@ export default function Mission() {
             style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.07)" }}
           >
             <div className="relative aspect-[4/5] h-full">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/mission.jpg"
                 alt="Community volunteers"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
               />
             </div>
           </motion.div>
@@ -120,12 +122,13 @@ export default function Mission() {
               </div>
             </div>
 
-            <div className="rounded-[20px] overflow-hidden flex-1 min-h-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative rounded-[20px] overflow-hidden flex-1 min-h-0">
+              <Image
                 src="/mission1.jpg"
                 alt="Mentor with student"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="260px"
               />
             </div>
           </motion.div>

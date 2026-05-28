@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -38,11 +39,13 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden">
       {/* Background image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src="/hero-bg.jpg"
         alt="Community impact"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
       />
       {/* Dark overlay */}
       <div
@@ -174,8 +177,7 @@ export default function Hero() {
                     transition={{ duration: 0.4 }}
                     className="w-full h-full rounded-[16px] overflow-hidden"
                     style={{ minHeight: "220px" }}                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={s.image} alt={s.label} className="w-full h-full object-cover" />
+                    <Image src={s.image} alt={s.label} fill className="object-cover" sizes="260px" />
                   </motion.div>
                 </div>
               </div>

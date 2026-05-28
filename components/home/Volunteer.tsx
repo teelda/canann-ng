@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Handshake, Plus, Minus } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useState } from "react";
@@ -63,12 +64,13 @@ export default function Volunteer() {
             className="rounded-[24px] overflow-hidden"
             style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.07)" }}
           >
-            <div className="aspect-[4/5]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative aspect-[4/5]">
+              <Image
                 src="/volunterr.jpg"
                 alt="Volunteer at work"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </motion.div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -93,7 +94,7 @@ export default function CausesPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:divide-x" style={{ "--tw-divide-opacity": 1 } as React.CSSProperties}>
             {[
               { n: "1,200+", l: "Learners trained" },
-              { n: "500+", l: "Devices deployed" },
+              { n: "500+", l: "Devices to deploy" },
               { n: "95%", l: "Funds to programmes" },
               { n: "150K", l: "Sponsorship goal" },
             ].map((s) => (
@@ -118,12 +119,13 @@ export default function CausesPage() {
                 style={{ backgroundColor: "#ffffff", boxShadow: "0 2px 16px rgba(0,0,0,0.07)" }}
               >
                 {/* Image */}
-                <div className={`aspect-[4/3] md:aspect-auto overflow-hidden ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className={`relative aspect-[4/3] md:aspect-auto overflow-hidden ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                  <Image
                     src={c.image}
                     alt={`${c.tag} — ${c.title}`}
-                    className="w-full h-full object-cover object-center"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 
@@ -174,12 +176,13 @@ export default function CausesPage() {
 
       {/* CTA */}
       <section className="py-20 md:py-24 relative overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/7N4A2919.png"
           alt=""
+          fill
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="object-cover object-center"
+          sizes="100vw"
         />
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(12,32,26,0.72)" }} />
         <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 text-center">

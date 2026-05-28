@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, MapPin, Mail } from "lucide-react";
 
@@ -171,8 +172,7 @@ export default function Footer() {
             style={{ backgroundColor: CARD_BG, minHeight: "200px" }}
           >
             <div className="flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/Canann logo.png" alt="Canann" className="w-10 h-10 object-contain" />
+              <Image src="/Canann logo.png" alt="Canann" width={40} height={40} className="object-contain" />
               <p className="text-xs leading-snug max-w-[200px]" style={{ color: "rgba(255,255,255,0.45)", fontSize: 10.5 }}>
                 Closing Africa&apos;s Digital, Skills, and Health Gap — One Community at a Time.
               </p>

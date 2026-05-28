@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, HeartHandshake } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
@@ -45,12 +46,13 @@ export default function DonateCTA() {
           style={{ minHeight: "340px" }}
         >
           {/* Background image */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/donate-cta.jpg"
             alt=""
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
             aria-hidden="true"
+            sizes="(max-width: 1200px) 100vw, 1200px"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0" style={{ backgroundColor: "rgba(12,32,26,0.6)" }} />

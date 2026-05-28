@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Heart, Gift } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
@@ -96,12 +97,14 @@ export default function ImpactSection() {
             style={{ minHeight: "420px" }}
           >
             {/* Background image */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               key={slide.image}
               src={slide.image}
               alt={slide.title}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              fill
+              priority
+              className="object-cover transition-opacity duration-500"
+              sizes="(max-width: 768px) 100vw, 55vw"
             />
             {/* Dark overlay */}
             <div
@@ -205,11 +208,12 @@ export default function ImpactSection() {
             className="rounded-[24px] overflow-hidden hidden md:block"
             style={{ minHeight: "200px" }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/7N4A2747.jpg"
               alt="Community impact"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="25vw"
             />
           </motion.div>
 

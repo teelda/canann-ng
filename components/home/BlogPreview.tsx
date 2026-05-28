@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Newspaper, Calendar } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
@@ -90,12 +91,13 @@ export default function BlogPreview() {
               style={{ backgroundColor: "var(--surface)", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}
             >
               {/* Image */}
-              <div className="overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                <Image
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 33vw"
                 />
               </div>
 
