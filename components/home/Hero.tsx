@@ -175,7 +175,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.4 }}
-                    className="w-full h-full rounded-[16px] overflow-hidden"
+                    className="relative w-full h-full rounded-[16px] overflow-hidden"
                     style={{ minHeight: "220px" }}                  >
                     <Image src={s.image} alt={s.label} fill className="object-cover" sizes="260px" />
                   </motion.div>

@@ -205,7 +205,7 @@ export default function ImpactSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-[24px] overflow-hidden hidden md:block"
+            className="relative rounded-[24px] overflow-hidden hidden md:block"
             style={{ minHeight: "200px" }}
           >
             <Image
