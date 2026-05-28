@@ -198,7 +198,7 @@ export default function AboutUsPage() {
                 className="mt-5 leading-relaxed"
                 style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400 }}
               >
-                Nigeria has millions of learners being taught computers on chalkboards. Canann closes that gap with devices, structured digital and AI literacy training, and offline learning resources that reach every community, even where the internet doesn&apos;t.
+                AI is reshaping agriculture, healthcare, finance, and public services worldwide — yet millions of Nigerian learners are still being taught computing on chalkboards, with curricula decades behind the moment. Canann bridges that gap: placing devices in classrooms, delivering structured digital and AI literacy, and distributing offline learning materials that reach every community, with or without an internet connection.
               </p>
               <div className="mt-6 space-y-3">
                 {[
