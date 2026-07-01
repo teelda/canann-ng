@@ -65,8 +65,8 @@ const marqueeImages = [
 
 const stats = [
   { icon: Building2, number: "2+", label: "Years of Foundation" },
-  { icon: Users, number: "50+", label: "Incredible Volunteers" },
-  { icon: Heart, number: "1,200+", label: "Learners Trained" },
+  { icon: Users, number: "27", label: "Incredible Volunteers" },
+  { icon: Heart, number: "1,800+", label: "Learners Trained" },
   { icon: Megaphone, number: "150K", label: "Sponsorship Goal" },
 ];
 
@@ -86,7 +86,7 @@ const steps = [
   {
     num: "03",
     title: "We Take Action",
-    body: "Our team and local partners deliver digital skills training, AI literacy sessions, devices, menstrual health support, and offline learning materials directly in communities.",
+    body: "Our team and local partners deliver digital skills training, AI literacy sessions, devices, Pad a Girl support, and offline learning materials directly in communities.",
     active: false,
   },
   {
@@ -100,7 +100,7 @@ const steps = [
 const faqs = [
   {
     q: "How does Canann help people?",
-    a: "Canann helps communities through digital literacy programmes, AI education, device deployment, skills training, menstrual health support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
+    a: "Canann helps communities through digital literacy programmes, AI education, device deployment, entrepreneurship skills training, Pad a Girl support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
   },
   {
     q: "Does Canann teach AI in schools?",
@@ -116,7 +116,7 @@ const faqs = [
   },
   {
     q: "How can I partner with Canann?",
-    a: "We partner with businesses, schools, health organisations, and tech companies. Whether you have funding, expertise, devices, or products — there's a way to plug in. Email us at hellocanann@gmail.com to explore partnership opportunities.",
+    a: "We partner with businesses, schools, and tech companies. Whether you have funding, expertise, devices, or products — there's a way to plug in. Email us at hellocanann@gmail.com to explore partnership opportunities.",
   },
   {
     q: "How can I stay updated with Canann?",
@@ -240,13 +240,13 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ── AI IN EDUCATION APPROACH ── */}
+      {/* ── ENTREPRENEURSHIP TRAINING APPROACH ── */}
       <section className="section" style={{ backgroundColor: "var(--background)" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
             {/* Left */}
             <div>
-              <SectionBadge icon={Info} label="Our AI Approach" />
+              <SectionBadge icon={Info} label="Our Approach" />
               <h2
                 style={{
                   fontSize: "clamp(24px, 3vw, 50px)",
@@ -256,39 +256,44 @@ export default function AboutUsPage() {
                   color: "var(--foreground)",
                 }}
               >
-                Teaching AI Where It Has Never Been Taught Before
+                Training Entrepreneurs, Not Just Learners
               </h2>
               <p
                 className="mt-5 leading-relaxed"
                 style={{ fontSize: "15px", color: "var(--muted)", fontWeight: 400 }}
               >
-                Across the world, AI is transforming agriculture, healthcare, finance, and public services. Yet in most community schools and training centres in Nigeria, AI education remains non-existent or purely theoretical — a topic on a whiteboard, not a skill in the hands.
+                Across the world, technology and AI are reshaping how small businesses compete — automating tasks, reaching new customers, and cutting costs. Yet in most community schools and training centres in Nigeria, learners graduate with theory but no practical way to turn a skill into income.
               </p>
               <p
                 className="mt-4 leading-relaxed"
                 style={{ fontSize: "15px", color: "var(--muted)", fontWeight: 400 }}
               >
-                Canann&apos;s AI education model is designed specifically for this gap. We localise AI education to the African context: using everyday examples Nigerian learners understand, and focusing on practical use cases they can apply immediately.
+                Canann&apos;s training model is designed specifically for this gap — reaching underserved communities and equipping them with digital, vocational, and entrepreneurial skills. We localise every lesson to the African context and show learners how tools like AI can amplify what they build — from marketing a small business to automating repetitive work.
               </p>
             </div>
 
-            {/* Right — 3 pillars */}
+            {/* Right — 4 pillars */}
             <div className="space-y-4 md:mt-4">
               {[
                 {
                   num: "1",
                   title: "Teach It Simply",
-                  body: "AI concepts in plain language, with real African examples, starting from absolute basics.",
+                  body: "Skills and concepts in plain language, with real African examples, starting from absolute basics.",
                 },
                 {
                   num: "2",
                   title: "Make It Practical",
-                  body: "Learners use AI tools and explore prompting from day one.",
+                  body: "Learners get hands-on with real tools — including AI — and explore practical use cases from day one.",
                 },
                 {
                   num: "3",
+                  title: "Build For Income",
+                  body: "Learners are shown how to apply their skills toward entrepreneurship — from AI-powered services to small business ideas — turning training into a livelihood, not just a certificate.",
+                },
+                {
+                  num: "4",
                   title: "Take It Offline",
-                  body: "Printed journals and structured guides mean AI education is never gated by internet access.",
+                  body: "Printed journals and structured guides mean training is never gated by internet access.",
                 },
               ].map(({ num, title, body }) => (
                 <div

@@ -10,7 +10,7 @@ import Link from "next/link";
 const faqs = [
   {
     q: "How does Canann help people?",
-    a: "Canann helps communities through digital literacy programmes, AI education, device deployment, skills training, menstrual health support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
+    a: "Canann helps communities through digital literacy programmes, AI education, device deployment, entrepreneurship skills training, Pad a Girl support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
   },
   {
     q: "Does Canann teach AI in schools?",

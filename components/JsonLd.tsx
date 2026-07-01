@@ -8,7 +8,7 @@ const orgSchema = {
   url: BASE,
   logo: `${BASE}/Canann%20logo.png`,
   description:
-    "Canann Impact Foundation bridges Africa's digital, AI, and health divide through skills training, AI literacy, real devices in schools, and the Pad a Girl programme — serving Nigerian grassroots communities.",
+    "Canann Impact Foundation bridges Africa's digital and AI divide through skills training, AI literacy, real devices in schools, and the Pad a Girl programme — serving Nigerian grassroots communities.",
   email: "hellocanann@gmail.com",
   telephone: "+2347068115317",
   foundingDate: "2022",
@@ -17,7 +17,7 @@ const orgSchema = {
     "Digital literacy",
     "AI education",
     "Vocational skills",
-    "Women's health",
+    "Entrepreneurship training",
     "Grassroots development",
   ],
   sameAs: [],

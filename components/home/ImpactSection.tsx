@@ -11,17 +11,17 @@ import { useInView } from "framer-motion";
 const slides = [
   {
     image: "/m 115.jpg",
-    title: "1,200+ Learners Trained in Digital Skills",
+    title: "1,800+ Learners Trained in Digital Skills",
     desc: "From complete beginners to confident digital users — in communities where AI is still a chalkboard concept. That gap is closing.",
   },
   {
     image: "/7N4A2959.png",
-    title: "500+ Devices Deployed Across Nigeria",
-    desc: "Each device unlocks a learner. We place laptops, tablets, and offline tools in communities that have never had them before.",
+    title: "50+ Offline Tech Journals Distributed",
+    desc: "Printed AI and digital literacy journals that reach classrooms without internet access — bringing structured learning to the last mile.",
   },
   {
     image: "/m 162.jpg",
-    title: "48+ Volunteers Driving Change",
+    title: "27 Volunteers Driving Change",
     desc: "People who show up to train, teach, and equip — because they believe the next African innovator is sitting in a classroom right now.",
   },
 ];
@@ -160,7 +160,7 @@ export default function ImpactSection() {
                   className="text-3xl font-bold leading-none"
                   style={{ color: "var(--foreground)", letterSpacing: "-0.04em" }}
                 >
-                  1,000+
+                  1,800+
                 </p>
                 <p className="text-sm mt-1 font-medium" style={{ color: "var(--muted)" }}>
                   Students trained

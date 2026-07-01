@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const stats = [
   {
-    number: "1,200+",
+    number: "1,800+",
     label: "Learners Trained",
     sub: "Across schools and communities in Nigeria.",
     image: "/m 118.jpg",

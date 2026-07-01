@@ -114,7 +114,7 @@ export default function Mission() {
                   className="text-4xl mt-6 font-bold leading-none"
                   style={{ color: "var(--foreground)", letterSpacing: "-0.04em" }}
                 >
-                  48+
+                  27
                 </p>
                 <p className="text-sm mt-1 font-medium" style={{ color: "var(--muted)" }}>
                   Dedicated Volunteers
