@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Digital Access for Communities Nigeria — Our Four Causes",
   description:
-    "Four causes closing Nigeria's digital, skills, and health gap — Pad a Girl, Tech in School, GroundUp Skills, and Green Workforce. Fund digital access for communities in Nigeria today.",
+    "Four causes closing Nigeria's digital, skills, and education gap — Pad a Girl, Tech in School, GroundUp Skills, and Green Workforce. Fund digital access for communities in Nigeria today.",
   alternates: { canonical: "/causes" },
 };
 
@@ -14,21 +14,21 @@ const causes = [
   {
     tag: "Tech in School: EMpower",
     title: "Real Devices. Real AI Skills. Real Schools. Real Change.",
-    desc: "For two years, Canann has gone directly into secondary schools — setting up tech environments, delivering offline journals, introducing AI literacy, and training over 1,500 students in Calabar. Tech in School now expands: deploying devices, delivering structured AI foundations, and reaching more schools across Nigeria. Devices and AI literacy are no longer optional — they are the baseline.",
+    desc: "For two years, Canann has gone directly into secondary schools — setting up tech environments, delivering offline journals, introducing AI literacy, and training over 1,800 students in Calabar. Tech in School now expands: deploying devices, delivering structured AI foundations, and reaching more schools across Nigeria. Devices and AI literacy are no longer optional — they are the baseline.",
     goal: 1800000,
-    raised: 395000,
+    raised: 39000,
     image: "/m 199.JPEG",
-    impact: "1,500+ students trained across 4 schools. Expanding now.",
+    impact: "1,800+ students trained across 4 schools. Expanding now.",
     cta: "Fund Tech in School",
   },
   {
     tag: "Pad a Girl",
     title: "A Period Should Never Cost a Girl Her Education",
-    desc: "In too many Nigerian communities, menstruation is still a reason girls stay home from school. Without sanitary products, a girl can miss up to 5 days every month — nearly 20% of her school year, gone. Pad a Girl delivers sanitary products, menstrual health education, and practical support to girls in underserved secondary schools.",
+    desc: "In too many Nigerian communities, menstruation is still a reason girls stay home from school. Without sanitary products, a girl can miss up to 5 days every month — nearly 20% of her school year, gone. Pad a Girl delivers sanitary products and menstrual education so girls in underserved secondary schools stay in class.",
     goal: 350000,
-    raised: 84000,
+    raised: 44000,
     image: "/m 157.JPEG",
-    impact: "Target: 5,000 girls reached with products and health education in Year 1",
+    impact: "Target: 5,000 girls reached with products and education in Year 1",
     cta: "Pad a Girl",
   },
   {
@@ -46,7 +46,7 @@ const causes = [
     title: "Building AI-Powered Solutions Designed for Africa, Not Imported From Silicon Valley.",
     desc: "We train a generation of African innovators to build sustainable, locally-rooted solutions — including AI-powered tools designed for African communities, not imported from Silicon Valley. A green workforce builds with the environment, the community, and the future in mind.",
     goal: 800000,
-    raised: 380400,
+    raised: 38400,
     image: "/7N4A2747.jpg",
     impact: "Pan-African long-term vision",
     cta: "Fund Green Workforce",
@@ -80,7 +80,7 @@ export default function CausesPage() {
             className="font-medium text-white leading-tight tracking-[-0.03em] max-w-3xl"
             style={{ fontSize: "clamp(32px,5vw,62px)" }}
           >
-            Four Causes. One Mission. Closing Africa&apos;s Digital, Skills, and Health Gap.
+            Four Causes. One Mission. Closing Africa&apos;s Digital and Skills Gap.
           </h1>
           <p className="mt-6 text-base md:text-lg max-w-md leading-relaxed" style={{ color: "rgba(255,255,255,0.48)" }}>
             Every cause is rooted in a real barrier Nigerian and African communities face on their path to the digital age.
@@ -93,7 +93,7 @@ export default function CausesPage() {
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:divide-x" style={{ "--tw-divide-opacity": 1 } as React.CSSProperties}>
             {[
-              { n: "1,200+", l: "Learners trained" },
+              { n: "1,800+", l: "Learners trained" },
               { n: "500+", l: "Devices to deploy" },
               { n: "95%", l: "Funds to programmes" },
               { n: "150K", l: "Sponsorship goal" },

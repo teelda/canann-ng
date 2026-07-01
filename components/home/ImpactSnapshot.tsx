@@ -5,7 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { number: "1,200+", label: "Learners trained" },
+  { number: "1,800+", label: "Learners trained" },
   { number: "500+", label: "Devices deployed" },
   { number: "15+", label: "Schools & communities reached" },
   { number: "3+", label: "States active in Nigeria" },

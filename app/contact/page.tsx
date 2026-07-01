@@ -48,7 +48,7 @@ export default function ContactPage() {
             Is Your Organisation Ready to Help Close Africa&apos;s Gap?
           </h2>
           <p className="text-sm leading-relaxed mb-10 max-w-2xl" style={{ color: "var(--muted)" }}>
-            We&apos;re looking for corporate partners, universities, health organisations, and tech companies who want to make a real difference in Nigerian communities. Whether you have funding, expertise, devices, or products — there&apos;s a way to plug in.
+            We&apos;re looking for corporate partners, universities, and tech companies who want to make a real difference in Nigerian communities. Whether you have funding, expertise, devices, or products — there&apos;s a way to plug in.
           </p>
           <div className="grid md:grid-cols-3 gap-5">
             {[

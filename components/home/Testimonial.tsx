@@ -9,32 +9,29 @@ import { useInView } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Canann has transformed the way our community experiences support. Every program they run brings hope, education, and vital resources to families, empowering them to overcome challenges and build brighter futures.",
+    quote: "Canann has transformed the way our community experiences support. Every program they run brings hope, education, and real skills to families, empowering them to overcome challenges and build brighter futures.",
     name: "James Harrison",
     role: "Father",
     avatar: "/testimonial.jpg",
     portrait: "/testimonial.jpg",
   },
   {
-    quote: "The support we received from Canann didn't just fill a gap — it changed the trajectory of our entire family. I cannot express how grateful we are for the meals, the education support, and the human dignity they gave us.",
+    quote: "The support we received from Canann didn't just fill a gap — it changed the trajectory of our entire family. I cannot express how grateful we are for the digital skills training and the doors it opened for us.",
     name: "Adaeze Okafor",
     role: "Mother of three",
-    avatar: "/testimonial 1.png",
-    portrait: "/testimonial 1.png",
+    initial: "A",
   },
   {
-    quote: "As a volunteer, I see the impact up close. These programmes aren't charity — they're investments in people. Every meal, every lesson, every moment of relief creates a ripple that lasts for years.",
+    quote: "As a volunteer, I see the impact up close. These programmes aren't charity — they're investments in people. Every lesson, every skill learned, creates a ripple that lasts for years.",
     name: "Emmanuel T.",
     role: "Programme Volunteer",
-    avatar: "/IMG_9368.jpg",
-    portrait: "/IMG_9368.jpg",
+    initial: "E",
   },
   {
-    quote: "Working alongside Canann has shown me what genuine community care looks like. They don't just provide resources — they restore dignity and open doors that were previously closed.",
+    quote: "Working alongside Canann has shown me what genuine community care looks like. They don't just teach skills — they restore confidence and open doors that were previously closed.",
     name: "Sarah Mensah",
     role: "Community Leader",
-    avatar: "/m 118.jpg",
-    portrait: "/m 118.jpg",
+    initial: "S",
   },
 ];
 
@@ -125,21 +122,50 @@ export default function Testimonial() {
                   }}
                   aria-label={item.name}
                 >
-                  <Image src={item.avatar} alt={item.name} width={44} height={44} className="w-full h-full object-cover" />
+                  {item.avatar ? (
+                    <Image src={item.avatar} alt={item.name} width={44} height={44} className="w-full h-full object-cover" />
+                  ) : (
+                    <div
+                      className="w-full h-full flex items-center justify-center text-sm font-bold"
+                      style={{ backgroundColor: "var(--accent)", color: "var(--accent-fg)" }}
+                    >
+                      {item.initial}
+                    </div>
+                  )}
                 </button>
               ))}
             </div>
 
             {/* Portrait photo */}
             <div className="relative hidden md:block overflow-hidden" style={{ maxHeight: "380px", borderRadius: "16px" }}>
-              <Image
-                key={t.portrait}
-                src={t.portrait}
-                alt={t.name}
-                fill
-                className="object-cover object-top"
-                sizes="280px"
-              />
+              {t.portrait ? (
+                <Image
+                  key={t.portrait}
+                  src={t.portrait}
+                  alt={t.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="280px"
+                />
+              ) : (
+                <div
+                  className="w-full h-full flex items-center justify-center"
+                  style={{ backgroundColor: "var(--accent-light)" }}
+                >
+                  <span
+                    className="rounded-full flex items-center justify-center font-bold"
+                    style={{
+                      width: "96px",
+                      height: "96px",
+                      fontSize: "36px",
+                      backgroundColor: "var(--accent)",
+                      color: "var(--accent-fg)",
+                    }}
+                  >
+                    {t.initial}
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Quote + name */}

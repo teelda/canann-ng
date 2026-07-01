@@ -174,7 +174,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <Image src="/Canann logo.png" alt="Canann" width={40} height={40} className="object-contain" />
               <p className="text-xs leading-snug max-w-[200px]" style={{ color: "rgba(255,255,255,0.45)", fontSize: 10.5 }}>
-                Closing Africa&apos;s Digital, Skills, and Health Gap — One Community at a Time.
+                Closing Africa&apos;s Digital and Skills Gap — One Community at a Time.
               </p>
             </div>
             <p

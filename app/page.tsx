@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Canann Impact Foundation is Nigeria's digital literacy NGO — putting real devices in classrooms, teaching AI skills to grassroots communities, and sponsoring 150,000 African builders. Donate today.",
   alternates: { canonical: "/" },
 };
+import OurImpact from "@/components/home/OurImpact";
 import Mission from "@/components/home/Mission";
 import Causes from "@/components/home/Causes";
 import Marquee from "@/components/home/Marquee";
@@ -21,6 +22,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <OurImpact />
       <Mission />
       <Causes />
       <Marquee />
