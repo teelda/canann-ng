@@ -613,7 +613,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* ── DONATE CTA ── */}
-      <section className="pb-8 px-4 md:px-8">
+      <section className="pb-8 px-4 md:px-8" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-[1200px] mx-auto">
           <div className="relative overflow-hidden rounded-[24px]" style={{ minHeight: "320px" }}>
             <Image
