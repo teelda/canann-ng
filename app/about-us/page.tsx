@@ -142,7 +142,7 @@ export default function AboutUsPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0" style={{ background: "rgba(12,28,18,0.78)" }} />
-        <div className="absolute top-8 right-5 md:right-8 z-10">
+        <div className="absolute top-24 right-5 md:right-8 z-10">
           <nav className="flex items-center gap-2 text-xs" aria-label="Breadcrumb">
             <Link href="/" className="transition-opacity hover:opacity-80" style={{ color: "rgba(255,255,255,0.55)" }}>Home</Link>
             <span style={{ color: "rgba(255,255,255,0.28)" }}>/</span>
