@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -75,25 +75,21 @@ const steps = [
     num: "01",
     title: "You Give",
     body: "Your donation, time, or support is the starting point of change for someone who needs hope.",
-    active: true,
   },
   {
     num: "02",
     title: "We Allocate",
     body: "We carefully direct resources to the programmes and communities that need them most.",
-    active: true,
   },
   {
     num: "03",
     title: "We Take Action",
     body: "Our team and local partners deliver digital skills training, AI literacy sessions, devices, Pad a Girl support, and offline learning materials directly in communities.",
-    active: false,
   },
   {
     num: "04",
     title: "Lives Improve",
     body: "Families gain stability, children gain opportunities, and communities grow stronger.",
-    active: false,
   },
 ];
 
@@ -127,7 +123,38 @@ const faqs = [
 // ── Page ───────────────────────────────────────────────────────────────
 export default function AboutUsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeStep, setActiveStep] = useState(1);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const doubled = [...marqueeImages, ...marqueeImages];
+
+  useEffect(() => {
+    let ticking = false;
+
+    const update = () => {
+      const line = window.innerHeight * 0.5;
+      let current = 1;
+      stepRefs.current.forEach((el, i) => {
+        if (el && el.getBoundingClientRect().top <= line) current = i + 1;
+      });
+      setActiveStep(current);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -142,7 +169,7 @@ export default function AboutUsPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0" style={{ background: "rgba(12,28,18,0.78)" }} />
-        <div className="absolute top-8 right-5 md:right-8 z-10">
+        <div className="absolute top-24 right-5 md:right-8 z-10">
           <nav className="flex items-center gap-2 text-xs" aria-label="Breadcrumb">
             <Link href="/" className="transition-opacity hover:opacity-80" style={{ color: "rgba(255,255,255,0.55)" }}>Home</Link>
             <span style={{ color: "rgba(255,255,255,0.28)" }}>/</span>
@@ -418,17 +445,30 @@ export default function AboutUsPage() {
               {/* Vertical line — starts/ends at circle centres (top-5 = 20px = half of w-10) */}
               <div
                 className="absolute left-5 top-5 bottom-5 w-[2px] pointer-events-none -translate-x-1/2"
-                style={{ background: "linear-gradient(to bottom, var(--accent) 52%, #d4d4d4 52%)" }}
+                style={{
+                  background: `linear-gradient(to bottom, var(--accent) ${
+                    (100 * (activeStep - 1)) / (steps.length - 1)
+                  }%, #d4d4d4 ${(100 * (activeStep - 1)) / (steps.length - 1)}%)`,
+                  transition: "background 0.4s ease",
+                }}
               />
               <div className="space-y-3">
-                {steps.map((step) => (
-                  <div key={step.num} className="flex gap-4 md:gap-5 items-start relative">
+                {steps.map((step, i) => {
+                  const isActive = i + 1 <= activeStep;
+                  return (
+                  <div
+                    key={step.num}
+                    ref={(el) => {
+                      stepRefs.current[i] = el;
+                    }}
+                    className="flex gap-4 md:gap-5 items-start relative"
+                  >
                     <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 z-10"
+                      className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 z-10 transition-colors duration-300"
                       style={{
-                        backgroundColor: step.active ? "var(--accent)" : "#ffffff",
-                        color: step.active ? "#ffffff" : "var(--muted)",
-                        border: step.active ? "none" : "2px solid #d4d4d4",
+                        backgroundColor: isActive ? "var(--accent)" : "#ffffff",
+                        color: isActive ? "#ffffff" : "var(--muted)",
+                        border: isActive ? "none" : "2px solid #d4d4d4",
                         fontSize: "13px",
                         fontWeight: 600,
                       }}
@@ -467,7 +507,8 @@ export default function AboutUsPage() {
                       </p>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -572,7 +613,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* ── DONATE CTA ── */}
-      <section className="pb-8 px-4 md:px-8">
+      <section className="pb-8 px-4 md:px-8" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-[1200px] mx-auto">
           <div className="relative overflow-hidden rounded-[24px]" style={{ minHeight: "320px" }}>
             <Image
