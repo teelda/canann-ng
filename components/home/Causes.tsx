@@ -11,6 +11,7 @@ import { useRef } from "react";
 const causes = [
    {
     tag: "Tech in School",
+    audience: "Students in public secondary schools, JSS1 to SS3.",
     title: "Devices, AI literacy, and tech skills — already working in 4 schools. Expanding now.",
     desc: "Real devices, structured AI foundations, and offline learning materials reaching secondary school students across Nigeria.",
     goal: 1800000,
@@ -20,8 +21,9 @@ const causes = [
   },
   {
     tag: "Pad a Girl",
+    audience: "Girls in underserved secondary schools.",
     title: "A Period Should Never Cost a Girl Her Education",
-    desc: "Without sanitary products, a girl can miss up to 5 days every month. We deliver pads, education, and support to girls in underserved schools.",
+    desc: "Without sanitary products, a girl can miss several days of school every month. We deliver pads, education, and support to girls in underserved schools.",
     goal: 350000,
     raised: 44000,
     image: "/m 199.JPEG",
@@ -30,8 +32,9 @@ const causes = [
 
   {
     tag: "GroundUp Skills",
-    title: "Digital, vocational, and entrepreneurship training — sponsoring 150,000 African builders.",
-    desc: "Digital training, vocational education, and entrepreneurship coaching in one accessible programme — built for grassroots communities across Nigeria.",
+    audience: "School leavers in their first two years after secondary school.",
+    title: "Digital, vocational, and entrepreneurship training for young people just out of school.",
+    desc: "Digital training, vocational education, and entrepreneurship coaching that helps school leavers turn digital and AI skills into work or a business.",
     goal: 575000,
     raised: 120000,
     image: "/7N4A2747.jpg",
@@ -39,6 +42,7 @@ const causes = [
   },
   {
     tag: "Green Workforce",
+    audience: "School leavers and Tech Club alumni ready to build.",
     title: "Building AI-powered solutions designed for Africa, not imported from Silicon Valley.",
     desc: "We train a generation of African innovators to build sustainable, locally-rooted solutions — including AI-powered tools designed for African communities.",
     goal: 800000,
@@ -130,6 +134,9 @@ export default function Causes() {
                 >
                   {c.title}
                 </h3>
+                <p className="text-xs font-semibold mb-2" style={{ color: "var(--foreground)" }}>
+                  For: <span className="font-normal" style={{ color: "var(--muted)" }}>{c.audience}</span>
+                </p>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
                   {c.desc}
                 </p>

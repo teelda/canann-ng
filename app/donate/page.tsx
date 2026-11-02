@@ -1,17 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, Heart, Laptop, BookOpen, Users, X, CheckCircle, Building2 } from "lucide-react";
 
 const PRESETS = [5000, 10000, 25000, 50000];
 
+// Keys match the ?programme= value the cause buttons link with.
+const PROGRAMMES = [
+  { value: "where-needed", label: "Where it's needed most" },
+  { value: "tech-in-school", label: "Tech in School" },
+  { value: "pad-a-girl", label: "Pad a Girl" },
+  { value: "groundup-skills", label: "GroundUp Skills" },
+  { value: "green-workforce", label: "Green Workforce" },
+];
+
+// Set NEXT_PUBLIC_BANK_ACCOUNT_NUMBER (and optionally NEXT_PUBLIC_BANK_NAME) to show bank details.
+const BANK_ACCOUNT_NUMBER = process.env.NEXT_PUBLIC_BANK_ACCOUNT_NUMBER ?? "";
+const BANK_NAME = process.env.NEXT_PUBLIC_BANK_NAME ?? "Wema Bank";
+
 const IMPACT = [
   { icon: Laptop, text: "Funds a refurbished device for a learner in a rural school" },
   { icon: BookOpen, text: "Prints and ships an offline Tech Journal to a remote community" },
   { icon: Users, text: "Covers one session of digital skills training for 10 students" },
-  { icon: Heart, text: "Contributes toward the 150K Sponsorship Fund for young builders" },
+  { icon: Heart, text: "Helps school leavers start GroundUp Skills training, a step towards our long-term goal of 150,000" },
 ];
 
 function fmt(n: number) {
@@ -27,6 +40,12 @@ export default function DonatePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const searchParams = useSearchParams();
+  const programmeFromUrl = searchParams.get("programme");
+  const [programmeChoice, setProgramme] = useState<string | null>(null);
+  const programme =
+    programmeChoice ??
+    (PROGRAMMES.some((p) => p.value === programmeFromUrl) ? programmeFromUrl! : "where-needed");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -34,6 +53,8 @@ export default function DonatePage() {
   const [transferModal, setTransferModal] = useState<TransferModal>("idle");
   const [transferMessage, setTransferMessage] = useState("");
   const [transferDone, setTransferDone] = useState<"community" | "anonymous" | null>(null);
+
+  const programmeLabel = PROGRAMMES.find((p) => p.value === programme)?.label ?? programme;
 
   const amount = custom ? Number(custom.replace(/[^0-9]/g, "")) : selected;
 
@@ -48,7 +69,7 @@ export default function DonatePage() {
       const res = await fetch("/api/donate/init", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount, email, name, message }),
+        body: JSON.stringify({ amount, email, name, message, programme: programmeLabel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -70,7 +91,7 @@ export default function DonatePage() {
     fetch("/api/donate/transfer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, amount, message: transferMessage, mode }),
+      body: JSON.stringify({ name, email, amount, message: transferMessage, mode, programme: programmeLabel }),
     }).catch(() => undefined);
   }
 
@@ -165,6 +186,28 @@ export default function DonatePage() {
                     className="flex-1 bg-transparent text-sm outline-none font-medium"
                     style={{ color: "var(--foreground)" }}
                   />
+                </div>
+
+                {/* Programme */}
+                <div className="mb-4">
+                  <label htmlFor="programme" className="block text-xs font-semibold mb-1.5 uppercase tracking-[0.06em]" style={{ color: "var(--muted)" }}>
+                    Programme to support
+                  </label>
+                  <select
+                    id="programme"
+                    value={programme}
+                    onChange={(e) => setProgramme(e.target.value)}
+                    className="w-full px-4 py-3 rounded-2xl text-sm outline-none transition-all"
+                    style={{
+                      border: "2px solid var(--border-solid)",
+                      backgroundColor: "var(--surface)",
+                      color: "var(--foreground)",
+                    }}
+                  >
+                    {PROGRAMMES.map((p) => (
+                      <option key={p.value} value={p.value}>{p.label}</option>
+                    ))}
+                  </select>
                 </div>
 
                 {/* Name + Email */}
@@ -298,13 +341,15 @@ export default function DonatePage() {
                   </div>
                 </div>
 
+                {BANK_ACCOUNT_NUMBER ? (
+                <>
                 <div
                   className="rounded-2xl p-5 mb-6 space-y-3"
                   style={{ backgroundColor: "#ffffff" }}
                 >
                   {[
-                    ["Account Number", "0012345678"],
-                    ["Bank", "Wema Bank"],
+                    ["Account Number", BANK_ACCOUNT_NUMBER],
+                    ["Bank", BANK_NAME],
                     ["Account Name", "Canann Impact Foundation"],
                   ].map(([label, value]) => (
                     <div key={label} className="flex justify-between items-center gap-4">
@@ -332,6 +377,16 @@ export default function DonatePage() {
                     <CheckCircle size={13} color="white" />
                   </span>
                 </button>
+                </>
+                ) : (
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                    Email{" "}
+                    <a href="mailto:hellocanannorg@gmail.com?subject=Bank%20transfer%20details" className="font-semibold" style={{ color: "var(--accent)" }}>
+                      hellocanannorg@gmail.com
+                    </a>{" "}
+                    and we&apos;ll send our account details.
+                  </p>
+                )}
               </div>
             </div>
 

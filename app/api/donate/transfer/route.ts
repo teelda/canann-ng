@@ -2,10 +2,10 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-const TO = process.env.EMAIL_TO ?? "hellocanann@gmail.com";
+const TO = process.env.EMAIL_TO ?? "hellocanannorg@gmail.com";
 
 export async function POST(req: Request) {
-  const { name, email, amount, message, mode } = await req.json();
+  const { name, email, amount, message, mode, programme } = await req.json();
 
   if (!resend) {
     return NextResponse.json({ ok: true });
@@ -27,6 +27,7 @@ export async function POST(req: Request) {
           <tr><td style="padding:8px 0;color:#727272;font-size:13px">Amount</td><td style="padding:8px 0;font-weight:700;font-size:18px;color:#39a46b">${amountFmt}</td></tr>
           <tr><td style="padding:8px 0;color:#727272;font-size:13px">Name</td><td style="padding:8px 0;font-weight:600">${name || "Anonymous"}</td></tr>
           <tr><td style="padding:8px 0;color:#727272;font-size:13px">Email</td><td style="padding:8px 0">${email ? `<a href="mailto:${email}">${email}</a>` : "not provided"}</td></tr>
+          <tr><td style="padding:8px 0;color:#727272;font-size:13px">Programme</td><td style="padding:8px 0">${programme || "Not specified"}</td></tr>
           <tr><td style="padding:8px 0;color:#727272;font-size:13px">Preference</td><td style="padding:8px 0">${modeLabel}</td></tr>
         </table>
         ${message ? `<hr style="border:none;border-top:1px solid #e4e4e4;margin:16px 0"/><p style="white-space:pre-wrap;color:#222;line-height:1.6">${message}</p>` : ""}

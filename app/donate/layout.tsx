@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Donate to a Nigerian NGO — Fund Digital Literacy & AI Education",
@@ -8,5 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function DonateLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  // Suspense lets the page read ?programme= with useSearchParams
+  return <Suspense>{children}</Suspense>;
 }

@@ -22,9 +22,9 @@ const posts = [
     href: "/blog",
   },
   {
-    title: "The 150,000: Why We're Sponsoring a Generation of African Builders",
+    title: "The 150,000: Our Long-Term Goal for Nigeria's School Leavers",
     date: "March 10, 2026",
-    image: "/mission1.jpg",
+    image: "/about-hero.jpg",
     href: "/blog",
   },
 ];
