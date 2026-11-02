@@ -2,15 +2,14 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-const TO = process.env.EMAIL_TO ?? "hellocanann@gmail.com";
+const TO = process.env.EMAIL_TO ?? "hellocanannorg@gmail.com";
 
 const typeLabels: Record<string, string> = {
   general: "General enquiry",
   donate: "Make a donation",
   volunteer: "Volunteer",
-  partner: "Partner with Canann",
-  "ai-education": "AI Education Partnership",
-  "pad-a-girl": "Pad a Girl Partnership",
+  partner: "Partnership",
+  "student-professional": "University student or professional",
   media: "Media / Press",
   other: "Something else",
 };

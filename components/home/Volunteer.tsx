@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Handshake, Plus, Minus } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -8,6 +7,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { VOLUNTEER_FORM_URL } from "@/lib/site";
 
 const roles = [
   {
@@ -16,11 +16,15 @@ const roles = [
   },
   {
     title: "Tech Setup & Support",
-    desc: "Help deploy devices, install software, and set up learning stations in schools and community centres across Nigeria.",
+    desc: "Set up and maintain donated devices before school visits, and troubleshoot on the day.",
   },
   {
     title: "Content & Curriculum Support",
-    desc: "Contribute to our offline tech journals and digital learning materials that reach communities where the internet hasn't arrived yet.",
+    desc: "Help write and test the lessons in our offline Tech Journals so they work without internet.",
+  },
+  {
+    title: "Tech Club Mentor",
+    desc: "Answer questions and share weekly challenges in a school Tech Club WhatsApp group, about one hour a week.",
   },
 ];
 
@@ -86,10 +90,10 @@ export default function Volunteer() {
               className="font-medium"
               style={{ fontSize: "clamp(26px,3vw,38px)", color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
             >
-              Volunteer with us and help close the Digital Gap
+              In University or Early in Your Career? Teach With Us.
             </h2>
             <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--muted)" }}>
-              Training learners, deploying devices, and reaching remote communities — that&apos;s what our volunteers make possible.
+              Our learners are secondary school students and school leavers. If you&apos;re past that stage, the best way in is as a volunteer: run a digital skills session, mentor a Tech Club over WhatsApp, or help build our offline journals.
             </p>
 
             {/* Accordion role list */}
@@ -128,8 +132,10 @@ export default function Volunteer() {
             </div>
 
             <div className="mt-6">
-              <Link
-                href="/contact?type=volunteer"
+              <a
+                href={VOLUNTEER_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
                 style={{ backgroundColor: "var(--accent)" }}
               >
@@ -140,7 +146,7 @@ export default function Volunteer() {
                 >
                   <ArrowRight size={12} color="white" />
                 </span>
-              </Link>
+              </a>
             </div>
           </motion.div>
 

@@ -11,7 +11,7 @@ import { useInView } from "framer-motion";
 const slides = [
   {
     image: "/m 115.jpg",
-    title: "1,800+ Learners Trained in Digital Skills",
+    title: "1,800+ Secondary School Students Trained",
     desc: "From complete beginners to confident digital users — in communities where AI is still a chalkboard concept. That gap is closing.",
   },
   {
@@ -163,7 +163,7 @@ export default function ImpactSection() {
                   1,800+
                 </p>
                 <p className="text-sm mt-1 font-medium" style={{ color: "var(--muted)" }}>
-                  Students trained
+                  Secondary school students trained
                 </p>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function ImpactSection() {
                 95% of Funds Go Directly to Programmes
               </h3>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
-                Every donation goes into tech tools, skills training, offline journals, and the 150K sponsorship fund — not overhead.
+                Every donation goes into tech tools, skills training, offline journals, and GroundUp Skills training — not overhead.
               </p>
               <div className="mt-auto pt-5">
                 <Link

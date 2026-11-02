@@ -4,7 +4,7 @@ import Hero from "@/components/home/Hero";
 export const metadata: Metadata = {
   title: "Digital Literacy NGO Nigeria — Closing Africa's AI & Digital Divide",
   description:
-    "Canann Impact Foundation is Nigeria's digital literacy NGO — putting real devices in classrooms, teaching AI skills to grassroots communities, and sponsoring 150,000 African builders. Donate today.",
+    "Canann Impact Foundation brings devices, offline learning and practical AI skills to secondary school students and school leavers in Nigeria. Donate, volunteer or partner with us.",
   alternates: { canonical: "/" },
 };
 import OurImpact from "@/components/home/OurImpact";
@@ -14,7 +14,6 @@ import Marquee from "@/components/home/Marquee";
 import ImpactSection from "@/components/home/ImpactSection";
 import Volunteer from "@/components/home/Volunteer";
 import BlogPreview from "@/components/home/BlogPreview";
-import Testimonial from "@/components/home/Testimonial";
 import FAQ from "@/components/home/FAQ";
 import DonateCTA from "@/components/home/DonateCTA";
 
@@ -29,7 +28,6 @@ export default function HomePage() {
       <ImpactSection />
       <Volunteer />
       <BlogPreview />
-      <Testimonial />
       <FAQ />
       <DonateCTA />
     </>

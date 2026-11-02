@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s — Canann Impact Foundation",
   },
   description:
-    "Canann Impact Foundation is a digital literacy NGO in Nigeria bridging Africa's digital divide — AI education, skills training, devices in schools, and Pad a Girl for grassroots communities.",
+    "Canann Impact Foundation brings devices, offline learning and practical AI skills to secondary school students and school leavers in Nigeria. Donate, volunteer or partner with us.",
   keywords: [
     "digital literacy NGO Nigeria",
     "AI education Nigeria",

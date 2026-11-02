@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { icon: GraduationCap, number: "1,800+", label: "Students Reached" },
+  { icon: GraduationCap, number: "1,800+", label: "Secondary School Students Trained" },
   { icon: School, number: "4", label: "Schools Visited, 2 Tech Clubs Formed" },
   { icon: BookOpen, number: "100", label: "Tech Journals and Notebooks Given" },
   { icon: Presentation, number: "800+", label: "Conference Attendees Reached" },

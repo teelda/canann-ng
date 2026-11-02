@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const { amount, email, name, message } = await req.json();
+  const { amount, email, name, message, programme } = await req.json();
 
   if (!amount || !email || !name) {
     return NextResponse.json({ error: "amount, email, and name are required" }, { status: 400 });
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       email,
       amount: amountKobo,
       callback_url: callbackUrl,
-      metadata: { name, message: message ?? "" },
+      metadata: { name, message: message ?? "", programme: programme ?? "" },
     }),
   });
 

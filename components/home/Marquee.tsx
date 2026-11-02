@@ -8,7 +8,7 @@ const keywords = [
   "Africa",
   "Innovation",
   "Green Workforce",
-  "150K Sponsorships",
+  "150K Long-Term Goal",
   "STEM",
   "Secondary Schools",
   "Remote Communities",

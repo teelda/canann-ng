@@ -6,8 +6,20 @@ import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import Link from "next/link";
+import { VOLUNTEER_FORM_URL } from "@/lib/site";
 
-const faqs = [
+type Faq = { q: string; a: string; link?: { href: string; label: string } };
+
+const faqs: Faq[] = [
+  {
+    q: "Who are Canann's programmes for?",
+    a: "Secondary school students (JSS1 to SS3) in public schools, mostly in rural Cross River State, and young people in their first two years after leaving school. Teachers, parents and local trades join short community sessions so the learning continues at home.",
+  },
+  {
+    q: "I'm a university student or a graduate. Can I join a Canann programme?",
+    a: "Our training programmes are for secondary school students and recent school leavers, so we can't enrol university students or working professionals as learners. We'd love your help, though. Many of our 27 volunteers are students and early-career professionals who run sessions, mentor Tech Club members, and help with content and logistics. Volunteer with us and tell us what you're good at.",
+    link: { href: VOLUNTEER_FORM_URL, label: "Volunteer with us" },
+  },
   {
     q: "How does Canann help people?",
     a: "Canann helps communities through digital literacy programmes, AI education, device deployment, entrepreneurship skills training, Pad a Girl support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
@@ -18,15 +30,17 @@ const faqs = [
   },
   {
     q: "Can I volunteer with Canann?",
-    a: "Yes! We welcome volunteers for digital skills sessions, device setup, curriculum support, and Pad a Girl distribution. Visit our contact page to apply and we'll find the right role for your skills and availability.",
+    a: "Yes! We welcome volunteers for digital skills sessions, device setup, curriculum support, and Pad a Girl distribution. Fill in our volunteer form and we'll find the right role for your skills and availability.",
+    link: { href: VOLUNTEER_FORM_URL, label: "Open the volunteer form" },
   },
   {
     q: "How does Canann use donations?",
-    a: "95% of all donations go directly to programmes — tech tools, AI literacy training, offline journals, Pad a Girl supplies, and the 150K sponsorship fund. We publish transparent impact reports so you always know where your money goes.",
+    a: "95% of all donations go directly to programmes — tech tools, AI literacy training, offline journals, Pad a Girl supplies, and GroundUp Skills training for school leavers. We publish transparent impact reports so you always know where your money goes.",
   },
   {
     q: "How can I partner with Canann?",
-    a: "Organisations, companies, and institutions can partner with us to fund AI education or Tech in School cohorts, support Pad a Girl, or join GroundUp Skills. Reach out via our contact page to start a conversation.",
+    a: "Companies, foundations, universities and schools can sponsor a Tech in School visit, fund Pad a Girl for a school, give devices or products, share staff as facilitators or mentors, or co-host an event. Every partnership is tied to a named school or cohort, with a short impact report afterwards.",
+    link: { href: "/contact?type=partner", label: "Start a partnership conversation" },
   },
   {
     q: "How can I stay updated with Canann?",
@@ -87,7 +101,7 @@ export default function FAQ() {
               style={{ backgroundColor: "var(--surface)" }}
             >
               <p className="text-sm font-semibold mb-2" style={{ color: "var(--foreground)", letterSpacing: "-0.02em" }}>
-                Still have any Question?
+                Still have a question?
               </p>
               <p className="text-xs leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
                 Reach out and we&apos;ll connect you to the right programme — AI education, Pad a Girl, GroundUp Skills, and more.
@@ -141,6 +155,17 @@ export default function FAQ() {
                     <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
                       {faq.a}
                     </p>
+                    {faq.link && (
+                      <Link
+                        href={faq.link.href}
+                        {...(faq.link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold"
+                        style={{ color: "var(--accent)" }}
+                      >
+                        {faq.link.label}
+                        <ArrowRight size={13} />
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>

@@ -6,25 +6,29 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Digital Access for Communities Nigeria — Our Four Causes",
   description:
-    "Four causes closing Nigeria's digital, skills, and education gap — Pad a Girl, Tech in School, GroundUp Skills, and Green Workforce. Fund digital access for communities in Nigeria today.",
+    "Four programmes for Nigeria's secondary school students and school leavers — Tech in School, Pad a Girl, GroundUp Skills, and Green Workforce. Fund one today.",
   alternates: { canonical: "/causes" },
 };
 
 const causes = [
   {
     tag: "Tech in School: EMpower",
+    slug: "tech-in-school",
+    audience: "Students in public secondary schools, JSS1 to SS3.",
     title: "Real Devices. Real AI Skills. Real Schools. Real Change.",
-    desc: "For two years, Canann has gone directly into secondary schools — setting up tech environments, delivering offline journals, introducing AI literacy, and training over 1,800 students in Calabar. Tech in School now expands: deploying devices, delivering structured AI foundations, and reaching more schools across Nigeria. Devices and AI literacy are no longer optional — they are the baseline.",
+    desc: "For two years, Canann has gone directly into secondary schools — setting up tech environments, delivering offline journals, introducing AI literacy, and training over 1,800 secondary school students in Cross River State. Tech in School now expands: deploying devices, delivering structured AI foundations, and reaching more schools across Nigeria. Devices and AI literacy are no longer optional — they are the baseline.",
     goal: 1800000,
     raised: 39000,
     image: "/m 199.JPEG",
-    impact: "1,800+ students trained across 4 schools. Expanding now.",
+    impact: "1,800+ secondary school students trained across 4 schools. Expanding now.",
     cta: "Fund Tech in School",
   },
   {
     tag: "Pad a Girl",
+    slug: "pad-a-girl",
+    audience: "Girls in underserved secondary schools.",
     title: "A Period Should Never Cost a Girl Her Education",
-    desc: "In too many Nigerian communities, menstruation is still a reason girls stay home from school. Without sanitary products, a girl can miss up to 5 days every month — nearly 20% of her school year, gone. Pad a Girl delivers sanitary products and menstrual education so girls in underserved secondary schools stay in class.",
+    desc: "In too many Nigerian communities, menstruation is still a reason girls stay home from school. Without sanitary products, a girl can miss several days of school every month. Pad a Girl delivers sanitary products and menstrual education so girls in underserved secondary schools stay in class.",
     goal: 350000,
     raised: 44000,
     image: "/m 157.JPEG",
@@ -33,16 +37,20 @@ const causes = [
   },
   {
     tag: "GroundUp Skills",
-    title: "The Skills to Earn. The Knowledge to Build. The Confidence to Lead 150,000 People.",
-    desc: "Digital training, vocational education, and entrepreneurship coaching in one accessible programme — built for grassroots communities across Nigeria. Our flagship ambition: sponsor 150,000 professionals, innovators, and graduates with the tools, skills, and networks to build sustainable solutions for their own communities.",
+    slug: "groundup-skills",
+    audience: "School leavers in their first two years after secondary school, plus parents and local trades through short community bootcamps.",
+    title: "The Skills to Earn. The Knowledge to Build. The Confidence to Lead.",
+    desc: "Digital training, vocational education, and entrepreneurship coaching in one accessible programme for young people who have just left secondary school. Our long-term ambition: sponsor 150,000 young Nigerians with the tools, skills, and networks to build solutions for their own communities. Parents and local trades join short community sessions, but sponsorship is not open to university students or working professionals.",
     goal: 575000,
     raised: 120000,
     image: "/7N4A2739.jpg",
-    impact: "Target: 150,000 African builders sponsored",
+    impact: "Long-term target: 150,000 young Nigerians sponsored",
     cta: "Fund GroundUp Skills",
   },
   {
     tag: "Green Workforce",
+    slug: "green-workforce",
+    audience: "School leavers and Tech Club alumni ready to build.",
     title: "Building AI-Powered Solutions Designed for Africa, Not Imported From Silicon Valley.",
     desc: "We train a generation of African innovators to build sustainable, locally-rooted solutions — including AI-powered tools designed for African communities, not imported from Silicon Valley. A green workforce builds with the environment, the community, and the future in mind.",
     goal: 800000,
@@ -96,7 +104,7 @@ export default function CausesPage() {
               { n: "1,800+", l: "Learners trained" },
               { n: "500+", l: "Devices to deploy" },
               { n: "95%", l: "Funds to programmes" },
-              { n: "150K", l: "Sponsorship goal" },
+              { n: "150K", l: "Long-term sponsorship goal" },
             ].map((s) => (
               <div key={s.l} className="md:px-10 first:pl-0 last:pr-0">
                 <p className="text-4xl font-bold tracking-tight" style={{ color: "var(--accent)" }}>{s.n}</p>
@@ -140,6 +148,9 @@ export default function CausesPage() {
                   <h2 className="text-xl md:text-2xl font-medium tracking-tight leading-snug mb-4" style={{ color: "var(--foreground)" }}>
                     {c.title}
                   </h2>
+                  <p className="text-xs font-semibold mb-4" style={{ color: "var(--foreground)" }}>
+                    For: <span className="font-normal" style={{ color: "var(--muted)" }}>{c.audience}</span>
+                  </p>
                   <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--muted)" }}>{c.desc}</p>
 
                   <div className="text-xs font-semibold mb-1" style={{ color: "var(--accent)" }}>
@@ -160,7 +171,7 @@ export default function CausesPage() {
                   </div>
 
                   <Link
-                    href="/donate"
+                    href={`/donate?programme=${c.slug}`}
                     className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full text-sm font-semibold self-start transition-all hover:opacity-90"
                     style={{ backgroundColor: "var(--accent)", color: "#ffffff" }}
                   >

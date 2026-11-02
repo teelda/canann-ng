@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
 import { MapPin, Mail, Phone, ArrowRight } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us — Partner with Nigeria's Digital Literacy NGO",
@@ -162,11 +163,11 @@ export default function ContactPage() {
                       Email
                     </p>
                     <a
-                      href="mailto:hellocanann@gmail.com"
+                      href="mailto:hellocanannorg@gmail.com"
                       className="text-sm font-medium transition-opacity hover:opacity-70"
                       style={{ color: "var(--foreground)" }}
                     >
-                      hellocanann@gmail.com
+                      hellocanannorg@gmail.com
                     </a>
                   </div>
                 </div>
@@ -178,10 +179,12 @@ export default function ContactPage() {
                   Follow Us
                 </p>
                 <div className="flex gap-3">
-                  {["Facebook", "Instagram", "X", "LinkedIn"].map((label) => (
+                  {SOCIAL_LINKS.map(({ label, href }) => (
                     <a
                       key={label}
-                      href="#"
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-xs font-medium px-3 py-2 rounded-xl transition-all hover:opacity-80"
                       style={{ backgroundColor: "var(--surface)", color: "var(--muted)" }}
                     >

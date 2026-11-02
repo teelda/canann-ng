@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, MapPin, Mail } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/site";
 
 const CARD_BG = "rgba(12, 32, 26)";
 
@@ -152,7 +153,7 @@ export default function Footer() {
                     <Mail size={12} style={{ color: "var(--accent)" }} />
                   </div>
                   <a
-                    href="mailto:hellocanann@gmail.com"
+                    href="mailto:hellocanannorg@gmail.com"
                     className="text-sm transition-opacity hover:opacity-70 break-all"
                     style={{ color: "rgba(255,255,255,0.6)" }}
                   >
@@ -196,13 +197,15 @@ export default function Footer() {
             className="rounded-[24px] flex flex-col justify-center"
             style={{ backgroundColor: CARD_BG }}
           >
-            {["Facebook", "Instagram", "X", "Linkedin"].map((social, i) => (
+            {SOCIAL_LINKS.map(({ label: social, href }, i) => (
               <a
                 key={social}
-                href="https://www.linkedin.com/company/canann-impact-initiative/"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-between px-6 py-5 transition-opacity hover:opacity-80"
                 style={{
-                  borderBottom: i < 3 ? "1px solid rgba(255,255,255,0.07)" : "none",
+                  borderBottom: i < SOCIAL_LINKS.length - 1 ? "1px solid rgba(255,255,255,0.07)" : "none",
                 }}
               >
                 <span

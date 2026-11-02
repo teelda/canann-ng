@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 const stats = [
   {
     number: "1,800+",
-    label: "Learners Trained",
-    sub: "Across schools and communities in Nigeria.",
+    label: "Secondary School Students Trained",
+    sub: "Across public secondary schools in Cross River State.",
     image: "/m 118.jpg",
   },
   {
@@ -20,8 +20,8 @@ const stats = [
   },
   {
     number: "150,000",
-    label: "Sponsorship Goal",
-    sub: "Professionals, innovators & graduates to sponsor.",
+    label: "Long-Term Sponsorship Goal",
+    sub: "Young Nigerians to sponsor through GroundUp Skills.",
     image: "/7N4A2747.jpg",
   },
 ];
@@ -79,17 +79,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-4 text-base md:text-lg max-w-sm leading-relaxed"
+              className="mt-4 text-base md:text-lg max-w-md leading-relaxed"
               style={{ color: "rgba(255,255,255,0.7)", fontSize: 18, fontWeight: 400 }}
             >
-              Tech tools, skills, and AI literacy reaching the grassroots communities that curricula left behind.
+              We bring devices, offline tech journals and practical AI lessons into public secondary schools in Cross River, then keep students learning through Tech Clubs after they finish school.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-7"
+              className="mt-7 flex flex-wrap gap-3"
             >
               <Link
                 href="/donate"
@@ -106,6 +106,18 @@ export default function Hero() {
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
+              </Link>
+              <Link
+                href="/contact?type=partner"
+                className="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:bg-white/10"
+                style={{
+                  color: "#ffffff",
+                  padding: "12px 26px",
+                  borderRadius: "100px",
+                  border: "1.5px solid rgba(255,255,255,0.6)",
+                }}
+              >
+                Partner With Us
               </Link>
             </motion.div>
           </div>

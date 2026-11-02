@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
+import { VOLUNTEER_FORM_URL } from "@/lib/site";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -13,6 +14,13 @@ export default function ContactForm() {
     type: "general",
     message: "",
   });
+
+  // Preselect the enquiry type from links like /contact?type=partner
+  useEffect(() => {
+    const type = new URLSearchParams(window.location.search).get("type");
+    const allowed = ["general", "donate", "volunteer", "partner", "student-professional", "media", "other"];
+    if (type && allowed.includes(type)) setForm((f) => ({ ...f, type }));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +35,7 @@ export default function ContactForm() {
       if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please try emailing us directly at hellocanann@gmail.com.");
+      setError("Something went wrong. Please try emailing us directly at hellocanannorg@gmail.com.");
     } finally {
       setLoading(false);
     }
@@ -109,12 +117,20 @@ export default function ContactForm() {
             <option value="general">General enquiry</option>
             <option value="donate">Make a donation</option>
             <option value="volunteer">Volunteer</option>
-            <option value="partner">Partner with Canann</option>
-            <option value="ai-education">AI Education Partnership</option>
-            <option value="pad-a-girl">Pad a Girl Partnership</option>
+            <option value="partner">Partnership</option>
+            <option value="student-professional">I&apos;m a university student or professional</option>
             <option value="media">Media / Press</option>
             <option value="other">Something else</option>
           </select>
+          {form.type === "volunteer" && (
+            <p className="text-sm mt-2" style={{ color: "var(--muted)" }}>
+              Volunteer applications go through our{" "}
+              <a href={VOLUNTEER_FORM_URL} target="_blank" rel="noopener noreferrer" className="font-semibold" style={{ color: "var(--accent)" }}>
+                volunteer form
+              </a>
+              . Use this form only if you have a question first.
+            </p>
+          )}
         </div>
 
         <div>

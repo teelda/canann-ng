@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { VOLUNTEER_FORM_URL } from "@/lib/site";
 import {
   Info,
   RefreshCw,
@@ -67,7 +68,7 @@ const stats = [
   { icon: Building2, number: "2+", label: "Years of Foundation" },
   { icon: Users, number: "27", label: "Incredible Volunteers" },
   { icon: Heart, number: "1,800+", label: "Learners Trained" },
-  { icon: Megaphone, number: "150K", label: "Sponsorship Goal" },
+  { icon: Megaphone, number: "150K", label: "Long-Term Sponsorship Goal" },
 ];
 
 const steps = [
@@ -93,7 +94,7 @@ const steps = [
   },
 ];
 
-const faqs = [
+const faqs: { q: string; a: string; link?: { href: string; label: string } }[] = [
   {
     q: "How does Canann help people?",
     a: "Canann helps communities through digital literacy programmes, AI education, device deployment, entrepreneurship skills training, Pad a Girl support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
@@ -104,15 +105,21 @@ const faqs = [
   },
   {
     q: "Can I volunteer with Canann?",
-    a: "Yes! We welcome volunteers for digital skills sessions, device setup, curriculum support, and Pad a Girl distribution. Reach out through our contact page and tell us how you'd like to get involved.",
+    a: "Yes! We welcome volunteers for digital skills sessions, device setup, curriculum support, and Pad a Girl distribution. Fill in our volunteer form and tell us how you'd like to get involved.",
+    link: { href: VOLUNTEER_FORM_URL, label: "Open the volunteer form" },
   },
   {
     q: "How does Canann use donations?",
-    a: "95% of all donations go directly to our programmes — tech tools, AI literacy training, offline journals, Pad a Girl supplies, and the 150K sponsorship fund. We operate lean so your generosity reaches the people who need it most.",
+    a: "95% of all donations go directly to our programmes — tech tools, AI literacy training, offline journals, Pad a Girl supplies, and GroundUp Skills training for school leavers. We operate lean so your generosity reaches the people who need it most.",
   },
   {
     q: "How can I partner with Canann?",
-    a: "We partner with businesses, schools, and tech companies. Whether you have funding, expertise, devices, or products — there's a way to plug in. Email us at hellocanann@gmail.com to explore partnership opportunities.",
+    a: "We partner with businesses, schools, and tech companies. Whether you have funding, expertise, devices, or products — there's a way to plug in. Email us at hellocanannorg@gmail.com to explore partnership opportunities.",
+  },
+  {
+    q: "I'm a university student or a graduate. Can I join a Canann programme?",
+    a: "Our training programmes are for secondary school students and recent school leavers, so we can't enrol university students or working professionals as learners. We'd love your help as a volunteer, though: many of our 27 volunteers are students and early-career professionals who run sessions, mentor Tech Club members, and help with content. Fill in our volunteer form and tell us what you're good at.",
+    link: { href: VOLUNTEER_FORM_URL, label: "Open the volunteer form" },
   },
   {
     q: "How can I stay updated with Canann?",
@@ -235,7 +242,7 @@ export default function AboutUsPage() {
                   },
                   {
                     title: "Our Mission",
-                    body: "To bridge Africa's digital and AI divide through hands-on training, real devices, and offline learning resources — sponsoring 150,000 professionals, innovators, and graduates with the skills to build sustainable, community-rooted solutions.",
+                    body: "To close Africa's digital and AI divide by starting where it opens: in secondary school. We give students and recent school leavers real devices, offline learning materials and practical AI skills, so they can build solutions for their own communities.",
                   },
                 ].map(({ title, body }) => (
                   <div key={title} className="p-5 md:p-6 rounded-2xl" style={{ backgroundColor: "var(--surface)" }}>
@@ -535,7 +542,7 @@ export default function AboutUsPage() {
               </h2>
               <div className="mt-6 md:mt-8 p-5 md:p-6 rounded-2xl" style={{ backgroundColor: "var(--surface)" }}>
                 <h3 style={{ fontSize: "16px", fontWeight: 600, color: "var(--foreground)" }}>
-                  Still have a Question?
+                  Still have a question?
                 </h3>
                 <p
                   className="mt-2 leading-relaxed"
@@ -544,7 +551,7 @@ export default function AboutUsPage() {
                   Directly reach us and we&apos;ll get back to you as soon as possible.
                 </p>
                 <Link
-                  href="mailto:hellocanann@gmail.com"
+                  href="mailto:hellocanannorg@gmail.com"
                   className="inline-flex items-center gap-2 mt-5 font-semibold text-white transition-opacity hover:opacity-90"
                   style={{
                     backgroundColor: "var(--accent)",
@@ -602,6 +609,17 @@ export default function AboutUsPage() {
                         <p style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400, lineHeight: 1.65 }}>
                           {faq.a}
                         </p>
+                        {faq.link && (
+                          <a
+                            href={faq.link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block mt-3 text-sm font-semibold"
+                            style={{ color: "var(--accent)" }}
+                          >
+                            {faq.link.label} →
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>
