@@ -1,18 +1,13 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { Plus, Minus, HelpCircle, ArrowRight } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { useId, useState } from "react";
+import { Plus, Minus, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { DEVICE_SUPPORT_ANSWER, FUNDING_SUPPORT_ANSWER, VOLUNTEER_FORM_URL } from "@/lib/site";
 
 type Faq = { q: string; a: string; link?: { href: string; label: string } };
 
 const faqs: Faq[] = [
-  { q: "Can I apply for a free laptop or phone?", a: DEVICE_SUPPORT_ANSWER },
-  { q: "Does Canann offer grants or fund businesses and external events?", a: FUNDING_SUPPORT_ANSWER },
   {
     q: "Who are Canann's programmes for?",
     a: "Secondary school students (JSS1 to SS3) in public schools, mostly in rural Cross River State, and young people in their first two years after leaving school. Teachers, parents and local trades join short community sessions so the learning continues at home.",
@@ -44,136 +39,57 @@ const faqs: Faq[] = [
     a: "Companies, foundations, universities and schools can sponsor a Tech in School visit, fund Pad a Girl for a school, give devices or products, share staff as facilitators or mentors, or co-host an event. Every partnership is tied to a named school or cohort, with a short impact report afterwards.",
     link: { href: "/contact?type=partner", label: "Start a partnership conversation" },
   },
+  { q: "Can I apply for a free laptop or phone?", a: DEVICE_SUPPORT_ANSWER },
+  { q: "Does Canann offer grants or fund businesses and external events?", a: FUNDING_SUPPORT_ANSWER },
   {
     q: "How can I stay updated with Canann?",
     a: "Subscribe to our newsletter in the footer, follow us on social media, or visit our blog regularly for AI education updates, Pad a Girl stories, and real impact reports from the field.",
   },
 ];
 
-function SectionTag({ label, icon: Icon }: { label: string; icon: LucideIcon }) {
-  return (
-    <div
-      className="inline-flex items-center gap-2 mb-5"
-      style={{
-        backgroundColor: "#ffffff",
-        borderRadius: "100px",
-        padding: "6px 8px 6px 12px",
-        boxShadow: "0 1px 8px rgba(0,0,0,0.08)",
-        border: "1px solid rgba(0,0,0,0.06)",
-      }}
-    >
-      <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: "var(--accent)" }}>
-        <Icon size={12} color="white" strokeWidth={2.5} />
-      </div>
-      <span className="text-xs font-semibold" style={{ color: "var(--foreground)" }}>
-        {label}
-      </span>
-    </div>
-  );
-}
-
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const id = useId();
 
   return (
-    <section className="section" style={{ backgroundColor: "#ffffff" }}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-        <div ref={ref} className="grid md:grid-cols-2 gap-12 md:gap-16">
+    <section id="faq" className="section" style={{ backgroundColor: "#ffffff" }} aria-labelledby={`${id}-heading`}>
+      <div className="max-w-[840px] mx-auto px-5 md:px-8">
+        <header className="text-center mb-10 md:mb-12">
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.14em] mb-4" style={{ color: "var(--accent)" }}>Frequently asked questions</span>
+          <h2 id={`${id}-heading`} className="font-medium" style={{ fontSize: "clamp(30px,4vw,48px)", color: "var(--foreground)", letterSpacing: "-0.035em", lineHeight: 1.12 }}>
+            Questions? We&apos;re here to help.
+          </h2>
+          <p className="mt-4 text-sm md:text-base leading-relaxed max-w-[520px] mx-auto" style={{ color: "var(--muted)" }}>
+            Get to know our programmes, who they serve, and how you can be part of the work.
+          </p>
+        </header>
 
-          {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-start"
-          >
-            <SectionTag label="FAQ" icon={HelpCircle} />
-            <h2
-              className="font-medium"
-              style={{ fontSize: "clamp(26px,3vw,38px)", color: "var(--foreground)", letterSpacing: "-0.028em", lineHeight: "115%" }}
-            >
-              Questions? We&apos;re Here to Help
-            </h2>
-
-            {/* CTA card */}
-            <div
-              className="mt-8 p-6 rounded-[20px]"
-              style={{ backgroundColor: "var(--surface)" }}
-            >
-              <p className="text-sm font-semibold mb-2" style={{ color: "var(--foreground)", letterSpacing: "-0.02em" }}>
-                Still have a question?
-              </p>
-              <p className="text-xs leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-                Read our programme and support guidance before sending an enquiry. Contacting us does not create an application for a device.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-                style={{ backgroundColor: "var(--accent)" }}
-              >
-                Send Mail
-                <ArrowRight size={13} />
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* RIGHT — individual FAQ cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-3"
-          >
-            {faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="rounded-[16px] overflow-hidden"
-                style={{ backgroundColor: "var(--surface)" }}
-              >
-                <button
-                  onClick={() => setOpen(open === i ? null : i)}
-                  aria-expanded={open === i}
-                  aria-controls={`home-faq-${i}`}
-                  className="w-full flex items-center justify-between gap-4 p-4 text-left"
-                >
-                  <span
-                    className="text-sm font-medium leading-snug"
-                    style={{ color: "var(--foreground)", letterSpacing: "-0.02em" }}
-                  >
-                    {faq.q}
+        <div className="space-y-3">
+          {faqs.map((faq, i) => (
+            <div key={faq.q} className="rounded-2xl overflow-hidden border transition-colors" style={{ backgroundColor: open === i ? "var(--accent-light)" : "var(--surface)", borderColor: open === i ? "var(--accent)" : "transparent" }}>
+              <h3>
+                <button type="button" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i} aria-controls={`${id}-${i}`} className="w-full flex items-center justify-between gap-5 px-5 md:px-6 py-5 text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px]" style={{ color: "var(--foreground)" }}>
+                  <span className="text-sm md:text-base font-medium leading-relaxed">{faq.q}</span>
+                  <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: open === i ? "var(--accent)" : "#ffffff" }} aria-hidden="true">
+                    {open === i ? <Minus size={14} color="white" /> : <Plus size={14} />}
                   </span>
-                  <div
-                    className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors"
-                    style={{ backgroundColor: open === i ? "var(--accent)" : "#ffffff" }}
-                  >
-                    {open === i
-                      ? <Minus size={13} color="white" />
-                      : <Plus size={13} style={{ color: "var(--foreground)" }} />
-                    }
-                  </div>
                 </button>
-                <div id={`home-faq-${i}`} hidden={open !== i} className="px-4 pb-4">
-                    <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
-                      {faq.a}
-                    </p>
-                    {faq.link && (
-                      <Link
-                        href={faq.link.href}
-                        {...(faq.link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                        className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold"
-                        style={{ color: "var(--accent)" }}
-                      >
-                        {faq.link.label}
-                        <ArrowRight size={13} />
-                      </Link>
-                    )}
-                  </div>
+              </h3>
+              <div id={`${id}-${i}`} hidden={open !== i} className="px-5 md:px-6 pb-6 pr-12 md:pr-16">
+                <p className="text-sm leading-7" style={{ color: "var(--muted)" }}>{faq.a}</p>
+                {faq.link && (
+                  <Link href={faq.link.href} {...(faq.link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="inline-flex items-center gap-2 mt-4 text-sm font-semibold" style={{ color: "var(--accent)" }}>
+                    {faq.link.label}<ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                )}
               </div>
-            ))}
-          </motion.div>
+            </div>
+          ))}
+        </div>
 
+        <div className="text-center mt-10 md:mt-12">
+          <p className="text-sm" style={{ color: "var(--muted)" }}>Still have a question?</p>
+          <Link href="/contact" className="inline-flex items-center gap-2 mt-3 text-sm font-semibold" style={{ color: "var(--accent)" }}>Talk to our team <ArrowRight size={14} aria-hidden="true" /></Link>
         </div>
       </div>
     </section>

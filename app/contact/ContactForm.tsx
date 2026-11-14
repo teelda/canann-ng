@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
-import { VOLUNTEER_FORM_URL } from "@/lib/site";
+import { DEVICE_SUPPORT_ANSWER, FUNDING_SUPPORT_ANSWER, VOLUNTEER_FORM_URL } from "@/lib/site";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -14,16 +14,18 @@ export default function ContactForm() {
     type: "general",
     message: "",
   });
+  const supportRequest = form.type === "support-request";
 
   // Preselect the enquiry type from links like /contact?type=partner
   useEffect(() => {
     const type = new URLSearchParams(window.location.search).get("type");
-    const allowed = ["general", "donate", "volunteer", "partner", "student-professional", "media", "other"];
+    const allowed = ["general", "donate", "volunteer", "partner", "student-professional", "support-request", "media", "other"];
     if (type && allowed.includes(type)) setForm((f) => ({ ...f, type }));
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (supportRequest || loading) return;
     setError("");
     setLoading(true);
     try {
@@ -49,7 +51,7 @@ export default function ContactForm() {
           Message sent.
         </h3>
         <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
-          Thank you. Our volunteer team will review your enquiry as capacity allows. This confirmation is not an application or approval for device support.
+          Thank you. Our volunteer team will review your enquiry as capacity allows.
         </p>
       </div>
     );
@@ -79,9 +81,16 @@ export default function ContactForm() {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold tracking-tight mb-8" style={{ color: "var(--foreground)" }}>
+      <h2 className="text-2xl font-bold tracking-tight mb-4" style={{ color: "var(--foreground)" }}>
         Send A Message
       </h2>
+      <details className="mb-7 text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+        <summary className="cursor-pointer underline underline-offset-4 decoration-dotted">Looking for a laptop, phone or financial support?</summary>
+        <div className="mt-3 space-y-3">
+          <p>{DEVICE_SUPPORT_ANSWER}</p>
+          <p>{FUNDING_SUPPORT_ANSWER}</p>
+        </div>
+      </details>
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
           <label style={labelStyle}>Full Name</label>
@@ -108,8 +117,9 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label style={labelStyle}>I&apos;m reaching out to...</label>
+          <label htmlFor="enquiry-type" style={labelStyle}>I&apos;m reaching out to...</label>
           <select
+            id="enquiry-type"
             value={form.type}
             onChange={(e) => setForm({ ...form, type: e.target.value })}
             style={{ ...inputStyle, appearance: "auto" } as React.CSSProperties}
@@ -119,9 +129,20 @@ export default function ContactForm() {
             <option value="volunteer">Volunteer</option>
             <option value="partner">Support or collaborate on Canann programmes</option>
             <option value="student-professional">I&apos;m a university student or professional</option>
+            <option value="support-request">Requesting a device or funding</option>
             <option value="media">Media / Press</option>
             <option value="other">Something else</option>
           </select>
+          <div aria-live="polite">
+            {supportRequest && (
+              <div id="support-request-explanation" className="mt-4 rounded-xl p-4 text-sm leading-relaxed space-y-3" style={{ backgroundColor: "var(--surface)", color: "var(--muted)" }}>
+                <p className="font-semibold" style={{ color: "var(--foreground)" }}>We can&apos;t accept this request through the contact form.</p>
+                <p>{DEVICE_SUPPORT_ANSWER}</p>
+                <p>{FUNDING_SUPPORT_ANSWER}</p>
+                <p>Sending is unavailable for this enquiry type.</p>
+              </div>
+            )}
+          </div>
           {form.type === "volunteer" && (
             <p className="text-sm mt-2" style={{ color: "var(--muted)" }}>
               Volunteer applications go through our{" "}
@@ -151,8 +172,9 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          disabled={loading}
-          className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90 disabled:opacity-60"
+          disabled={loading || supportRequest}
+          aria-describedby={supportRequest ? "support-request-explanation" : undefined}
+          className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
           style={{ backgroundColor: "var(--accent)" }}
         >
           {loading ? "Sending…" : "Send Message"}
