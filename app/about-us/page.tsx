@@ -3,15 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { DEVICE_SUPPORT_ANSWER, FUNDING_SUPPORT_ANSWER, VOLUNTEER_FORM_URL } from "@/lib/site";
+import FAQ from "@/components/home/FAQ";
 import {
   Info,
   RefreshCw,
-  HelpCircle,
   Heart,
   ArrowRight,
-  Plus,
-  Minus,
   Building2,
   Users,
   Megaphone,
@@ -94,44 +91,8 @@ const steps = [
   },
 ];
 
-const faqs: { q: string; a: string; link?: { href: string; label: string } }[] = [
-  { q: "Can I apply for a free laptop or phone?", a: DEVICE_SUPPORT_ANSWER },
-  { q: "Does Canann offer grants or fund businesses and external events?", a: FUNDING_SUPPORT_ANSWER },
-  {
-    q: "How does Canann help people?",
-    a: "Canann helps communities through digital literacy programmes, AI education, device deployment, entrepreneurship skills training, Pad a Girl support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
-  },
-  {
-    q: "Does Canann teach AI in schools?",
-    a: "Yes. AI literacy is a core part of our Tech in School programme. We teach secondary school students and community learners what AI is, how it works, and how to use it practically — starting from zero, delivered in person, with offline materials for communities without reliable internet.",
-  },
-  {
-    q: "Can I volunteer with Canann?",
-    a: "Yes! We welcome volunteers for digital skills sessions, device setup, curriculum support, and Pad a Girl distribution. Fill in our volunteer form and tell us how you'd like to get involved.",
-    link: { href: VOLUNTEER_FORM_URL, label: "Open the volunteer form" },
-  },
-  {
-    q: "How does Canann use donations?",
-    a: "95% of all donations go directly to our programmes — tech tools, AI literacy training, offline journals, Pad a Girl supplies, and GroundUp Skills training for school leavers. We operate lean so your generosity reaches the people who need it most.",
-  },
-  {
-    q: "How can I partner with Canann?",
-    a: "We partner with businesses, schools, and tech companies. Whether you have funding, expertise, devices, or products — there's a way to plug in. Email us at hellocanannorg@gmail.com to explore partnership opportunities.",
-  },
-  {
-    q: "I'm a university student or a graduate. Can I join a Canann programme?",
-    a: "Our training programmes are for secondary school students and recent school leavers, so we can't enrol university students or working professionals as learners. We'd love your help as a volunteer, though: many of our 27 volunteers are students and early-career professionals who run sessions, mentor Tech Club members, and help with content. Fill in our volunteer form and tell us what you're good at.",
-    link: { href: VOLUNTEER_FORM_URL, label: "Open the volunteer form" },
-  },
-  {
-    q: "How can I stay updated with Canann?",
-    a: "Subscribe to our newsletter, follow us on social media, or check our blog for AI education updates, Pad a Girl stories, and the latest impact reports.",
-  },
-];
-
 // ── Page ───────────────────────────────────────────────────────────────
 export default function AboutUsPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [activeStep, setActiveStep] = useState(1);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const doubled = [...marqueeImages, ...marqueeImages];
@@ -524,113 +485,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className="section" style={{ backgroundColor: "#ffffff" }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid md:grid-cols-[2fr_3fr] gap-10 md:gap-20 items-start">
-            {/* Left */}
-            <div>
-              <SectionBadge icon={HelpCircle} label="FAQ" />
-              <h2
-                style={{
-                  fontSize: "clamp(24px, 3.2vw, 48px)",
-                  fontWeight: 700,
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.02em",
-                  color: "var(--foreground)",
-                }}
-              >
-                Questions? We&apos;re Here to Help
-              </h2>
-              <div className="mt-6 md:mt-8 p-5 md:p-6 rounded-2xl" style={{ backgroundColor: "var(--surface)" }}>
-                <h3 style={{ fontSize: "16px", fontWeight: 600, color: "var(--foreground)" }}>
-                  Still have a question?
-                </h3>
-                <p
-                  className="mt-2 leading-relaxed"
-                  style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400 }}
-                >
-                  Directly reach us and we&apos;ll get back to you as soon as possible.
-                </p>
-                <Link
-                  href="mailto:hellocanannorg@gmail.com"
-                  className="inline-flex items-center gap-2 mt-5 font-semibold text-white transition-opacity hover:opacity-90"
-                  style={{
-                    backgroundColor: "var(--accent)",
-                    padding: "10px 20px",
-                    borderRadius: "100px",
-                    fontSize: "14px",
-                  }}
-                >
-                  Send Mail <ArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right — accordion */}
-            <div className="space-y-3">
-              {faqs.map((faq, i) => {
-                const isOpen = openFaq === i;
-                return (
-                  <div
-                    key={i}
-                    className="rounded-2xl overflow-hidden"
-                    style={{ backgroundColor: "var(--surface)" }}
-                  >
-                    <button
-                      className="w-full flex items-center justify-between px-4 md:px-5 py-4 text-left"
-                      onClick={() => setOpenFaq(isOpen ? null : i)}
-                      aria-expanded={isOpen}
-                      aria-controls={`about-faq-${i}`}
-                    >
-                      <span
-                        className="pr-4"
-                        style={{
-                          fontSize: "15px",
-                          fontWeight: 600,
-                          color: "var(--foreground)",
-                          letterSpacing: "-0.01em",
-                        }}
-                      >
-                        {faq.q}
-                      </span>
-                      <div
-                        className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
-                        style={{
-                          backgroundColor: isOpen ? "var(--accent)" : "transparent",
-                          border: isOpen ? "none" : "1.5px solid #d4d4d4",
-                        }}
-                      >
-                        {isOpen ? (
-                          <Minus size={14} color="white" />
-                        ) : (
-                          <Plus size={14} style={{ color: "var(--muted)" }} />
-                        )}
-                      </div>
-                    </button>
-                    <div id={`about-faq-${i}`} hidden={!isOpen} className="px-4 md:px-5 pb-5">
-                        <p style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400, lineHeight: 1.65 }}>
-                          {faq.a}
-                        </p>
-                        {faq.link && (
-                          <a
-                            href={faq.link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block mt-3 text-sm font-semibold"
-                            style={{ color: "var(--accent)" }}
-                          >
-                            {faq.link.label} →
-                          </a>
-                        )}
-                      </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ />
 
       {/* ── DONATE CTA ── */}
       <section className="pb-8 px-4 md:px-8" style={{ backgroundColor: "#ffffff" }}>

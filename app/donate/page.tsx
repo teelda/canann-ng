@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import SupportNotice from "@/components/SupportNotice";
 import { ArrowRight, Heart, Laptop, BookOpen, Users, X, CheckCircle, Building2 } from "lucide-react";
 
 const PRESETS = [5000, 10000, 25000, 50000];
@@ -140,7 +139,6 @@ export default function DonatePage() {
 
             {/* LEFT — form */}
             <div>
-              <SupportNotice />
               <form onSubmit={handleSubmit}>
                 <h2 className="text-2xl font-semibold tracking-tight mb-8" style={{ color: "var(--foreground)", letterSpacing: "-0.03em" }}>
                   Choose your gift

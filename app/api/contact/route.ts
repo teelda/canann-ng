@@ -17,6 +17,10 @@ const typeLabels: Record<string, string> = {
 export async function POST(req: Request) {
   const { name, email, type, message } = await req.json();
 
+  if (type === "support-request") {
+    return NextResponse.json({ error: "We do not accept public device or funding applications through this form." }, { status: 422 });
+  }
+
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
   }

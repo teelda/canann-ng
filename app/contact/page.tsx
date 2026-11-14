@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
-import SupportNotice from "@/components/SupportNotice";
 import { MapPin, Mail, Phone, ArrowRight } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/site";
 
@@ -98,7 +97,6 @@ export default function ContactPage() {
       {/* Form + Info */}
       <section className="py-20 md:py-28" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <SupportNotice />
           <div className="grid md:grid-cols-2 gap-16 md:gap-20">
             {/* Info */}
             <div>
