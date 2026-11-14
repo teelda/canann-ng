@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
+import SupportNotice from "@/components/SupportNotice";
 import { MapPin, Mail, Phone, ArrowRight } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us — Partner with Nigeria's Digital Literacy NGO",
   description:
-    "Reach out to volunteer, partner on AI education or Pad a Girl, or fund digital access in Nigerian communities. We respond within 48 hours.",
+    "Reach out to volunteer, partner on AI education or Pad a Girl, or fund digital access in Nigerian communities. Please read our support guidance before contacting us.",
   alternates: { canonical: "/contact" },
 };
 
@@ -97,6 +98,7 @@ export default function ContactPage() {
       {/* Form + Info */}
       <section className="py-20 md:py-28" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <SupportNotice />
           <div className="grid md:grid-cols-2 gap-16 md:gap-20">
             {/* Info */}
             <div>
@@ -104,7 +106,7 @@ export default function ContactPage() {
                 Get In Touch
               </h2>
               <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
-                Our team typically responds within 48 hours. For partnership inquiries, please mention it in your message.
+                For partnership enquiries, tell us how your organisation would like to support or help deliver Canann’s programmes.
               </p>
 
               <div className="mt-10 space-y-7">
@@ -203,7 +205,7 @@ export default function ContactPage() {
                   Response time
                 </p>
                 <p className="text-sm mt-1 leading-relaxed" style={{ color: "var(--muted)" }}>
-                  We typically respond within 48 hours. For urgent partnership or donation inquiries, mention it in your message.
+                  Our volunteer team reviews enquiries as capacity allows. We prioritise enquiries about our programmes, donations and collaboration.
                 </p>
               </div>
             </div>

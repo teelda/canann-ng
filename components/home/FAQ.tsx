@@ -6,11 +6,13 @@ import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import Link from "next/link";
-import { VOLUNTEER_FORM_URL } from "@/lib/site";
+import { DEVICE_SUPPORT_ANSWER, FUNDING_SUPPORT_ANSWER, VOLUNTEER_FORM_URL } from "@/lib/site";
 
 type Faq = { q: string; a: string; link?: { href: string; label: string } };
 
 const faqs: Faq[] = [
+  { q: "Can I apply for a free laptop or phone?", a: DEVICE_SUPPORT_ANSWER },
+  { q: "Does Canann offer grants or fund businesses and external events?", a: FUNDING_SUPPORT_ANSWER },
   {
     q: "Who are Canann's programmes for?",
     a: "Secondary school students (JSS1 to SS3) in public schools, mostly in rural Cross River State, and young people in their first two years after leaving school. Teachers, parents and local trades join short community sessions so the learning continues at home.",
@@ -104,7 +106,7 @@ export default function FAQ() {
                 Still have a question?
               </p>
               <p className="text-xs leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-                Reach out and we&apos;ll connect you to the right programme — AI education, Pad a Girl, GroundUp Skills, and more.
+                Read our programme and support guidance before sending an enquiry. Contacting us does not create an application for a device.
               </p>
               <Link
                 href="/contact"
@@ -132,6 +134,8 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
+                  aria-expanded={open === i}
+                  aria-controls={`home-faq-${i}`}
                   className="w-full flex items-center justify-between gap-4 p-4 text-left"
                 >
                   <span
@@ -150,8 +154,7 @@ export default function FAQ() {
                     }
                   </div>
                 </button>
-                {open === i && (
-                  <div className="px-4 pb-4">
+                <div id={`home-faq-${i}`} hidden={open !== i} className="px-4 pb-4">
                     <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
                       {faq.a}
                     </p>
@@ -167,7 +170,6 @@ export default function FAQ() {
                       </Link>
                     )}
                   </div>
-                )}
               </div>
             ))}
           </motion.div>
