@@ -135,7 +135,7 @@ export default function DonatePage() {
       {/* Main form + sidebar */}
       <section className="py-20 md:py-28" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid md:grid-cols-[1fr_380px] gap-12 md:gap-16 items-start">
+          <div className="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
 
             {/* LEFT — form */}
             <div>
@@ -289,7 +289,7 @@ export default function DonatePage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90 disabled:opacity-60"
+                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap shrink-0 transition-all hover:opacity-90 disabled:opacity-60"
                     style={{ backgroundColor: "var(--accent)" }}
                   >
                     {loading ? "Redirecting…" : "Continue to Payment"}

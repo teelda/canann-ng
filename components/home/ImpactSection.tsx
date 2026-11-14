@@ -86,14 +86,14 @@ export default function ImpactSection() {
         </motion.div>
 
         {/* 3-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_0.8fr] gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_0.8fr] gap-4">
 
           {/* LEFT — image carousel card */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-[24px] overflow-hidden"
+            className="relative rounded-[24px] overflow-hidden md:col-span-2 lg:col-span-1"
             style={{ minHeight: "420px" }}
           >
             {/* Background image */}
