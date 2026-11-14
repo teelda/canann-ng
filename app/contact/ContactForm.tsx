@@ -49,7 +49,7 @@ export default function ContactForm() {
           Message sent.
         </h3>
         <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
-          Thanks for reaching out. We&apos;ll be in touch within 48 hours.
+          Thank you. Our volunteer team will review your enquiry as capacity allows. This confirmation is not an application or approval for device support.
         </p>
       </div>
     );
@@ -117,7 +117,7 @@ export default function ContactForm() {
             <option value="general">General enquiry</option>
             <option value="donate">Make a donation</option>
             <option value="volunteer">Volunteer</option>
-            <option value="partner">Partnership</option>
+            <option value="partner">Support or collaborate on Canann programmes</option>
             <option value="student-professional">I&apos;m a university student or professional</option>
             <option value="media">Media / Press</option>
             <option value="other">Something else</option>

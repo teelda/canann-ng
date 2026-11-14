@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { VOLUNTEER_FORM_URL } from "@/lib/site";
+import { DEVICE_SUPPORT_ANSWER, FUNDING_SUPPORT_ANSWER, VOLUNTEER_FORM_URL } from "@/lib/site";
 import {
   Info,
   RefreshCw,
@@ -95,6 +95,8 @@ const steps = [
 ];
 
 const faqs: { q: string; a: string; link?: { href: string; label: string } }[] = [
+  { q: "Can I apply for a free laptop or phone?", a: DEVICE_SUPPORT_ANSWER },
+  { q: "Does Canann offer grants or fund businesses and external events?", a: FUNDING_SUPPORT_ANSWER },
   {
     q: "How does Canann help people?",
     a: "Canann helps communities through digital literacy programmes, AI education, device deployment, entrepreneurship skills training, Pad a Girl support, and offline learning resources — directly reaching grassroots learners across Nigeria.",
@@ -578,6 +580,8 @@ export default function AboutUsPage() {
                     <button
                       className="w-full flex items-center justify-between px-4 md:px-5 py-4 text-left"
                       onClick={() => setOpenFaq(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                      aria-controls={`about-faq-${i}`}
                     >
                       <span
                         className="pr-4"
@@ -604,8 +608,7 @@ export default function AboutUsPage() {
                         )}
                       </div>
                     </button>
-                    {isOpen && (
-                      <div className="px-4 md:px-5 pb-5">
+                    <div id={`about-faq-${i}`} hidden={!isOpen} className="px-4 md:px-5 pb-5">
                         <p style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400, lineHeight: 1.65 }}>
                           {faq.a}
                         </p>
@@ -621,7 +624,6 @@ export default function AboutUsPage() {
                           </a>
                         )}
                       </div>
-                    )}
                   </div>
                 );
               })}

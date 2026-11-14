@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import Script from "next/script";
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://canann.org";
 
@@ -81,10 +82,33 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${onest.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased">
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-58ZJ56CT"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-58ZJ56CT');`}
+        </Script>
         <JsonLd />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Script
+          id="cloudflare-web-analytics"
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token":"1bbebffc9815427a8494ee0d7efa53c6"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
