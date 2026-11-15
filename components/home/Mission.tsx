@@ -39,14 +39,14 @@ export default function Mission() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-[1fr_1.15fr_260px] gap-6 md:gap-8 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1.15fr_260px] gap-6 md:gap-8 items-stretch"
         >
           {/* Col 1 — Text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 "
+            className="mt-6 md:col-span-2 lg:col-span-1"
           >
             <SectionTag label="Our Mission" icon={Sprout} />
             <h2
