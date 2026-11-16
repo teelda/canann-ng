@@ -7,7 +7,7 @@ export const SOCIAL_LINKS = [
 export const VOLUNTEER_FORM_URL = "https://tally.so/r/MeBBZg";
 
 export const DEVICE_SUPPORT_ANSWER =
-  "Canann sometimes provides devices to selected participants through its education programmes. There is no public application process for personal laptops or phones. Sending an enquiry does not enrol you in a programme or create an application for a device.";
+  "We share devices with students who are taking part in our school programmes. We don't have an application process for personal laptops or phones at the moment, so we're not able to take device requests by email or through our contact form.";
 
 export const FUNDING_SUPPORT_ANSWER =
-  "Canann does not currently accept requests for cash grants, personal financial assistance, business funding, or financial sponsorship of other organisations’ events and programmes. Our resources support Canann’s own education and community programmes.";
+  "Everything we raise goes into Canann's own school and community programmes, so we're not able to offer cash grants, personal financial help, business funding or sponsorship for other events. We're sorry we can't help in this way.";
