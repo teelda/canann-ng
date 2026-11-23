@@ -14,6 +14,7 @@ import Marquee from "@/components/home/Marquee";
 import ImpactSection from "@/components/home/ImpactSection";
 import Volunteer from "@/components/home/Volunteer";
 import BlogPreview from "@/components/home/BlogPreview";
+import Partners from "@/components/home/Partners";
 import FAQ from "@/components/home/FAQ";
 import DonateCTA from "@/components/home/DonateCTA";
 
@@ -27,6 +28,7 @@ export default function HomePage() {
       <Marquee />
       <ImpactSection />
       <Volunteer />
+      <Partners />
       <BlogPreview />
       <FAQ />
       <DonateCTA />
