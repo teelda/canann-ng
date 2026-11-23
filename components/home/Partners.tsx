@@ -1,87 +1,60 @@
-"use client";
+import Image from "next/image";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-
+// Logos are each partner's own, from their websites. Heights are set per logo so they look the same size.
 const partners = [
   {
-    name: "Tech In School Initiative",
-    org: "Calabar Tech Community",
-    desc: "Brings technology education directly into secondary schools in Calabar.",
+    name: "Tech In School · Calabar Tech Community",
     href: "https://calabartechcommunity.com/tis",
+    logo: "/partners/calabar-tech-community.png",
+    w: 244,
+    h: 240,
+    cls: "h-[76px] md:h-[92px]",
   },
   {
     name: "YALI Network Abuja",
-    org: "Young African Leaders Initiative",
-    desc: "A network of young leaders running programmes and community projects across Abuja.",
     href: "https://yalinetworkabuja.com/partners.html",
+    logo: "/partners/yali-network-abuja.png",
+    w: 256,
+    h: 240,
+    cls: "h-[76px] md:h-[92px]",
   },
   {
     name: "Tech Conference Calabar",
-    org: "Calabar, Cross River State",
-    desc: "The largest gathering of innovators, startups and investors in Cross River State.",
     href: "https://calabartechconf.ng/2025",
+    logo: "/partners/tech-conference-calabar.png",
+    w: 825,
+    h: 200,
+    cls: "h-[40px] md:h-[48px]",
   },
 ];
 
 export default function Partners() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section className="section" style={{ backgroundColor: "var(--background)" }}>
-      <div ref={ref} className="max-w-[1200px] mx-auto px-5 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-10 md:mb-12"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.1em] mb-4" style={{ color: "var(--accent)" }}>
-            Our Partners
-          </p>
-          <h2 className="text-4xl md:text-[52px] font-bold text-[#181a19] leading-tight tracking-[-0.02em] max-w-2xl">
-            Building this together.
-          </h2>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-4 md:gap-5">
-          {partners.map((p, i) => (
-            <motion.a
-              key={p.name}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 + i * 0.08 }}
-              className="group flex flex-col rounded-3xl p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              style={{ backgroundColor: "var(--surface)" }}
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-xl font-semibold leading-snug tracking-[-0.02em]" style={{ color: "var(--foreground)" }}>
-                    {p.name}
-                  </h3>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.08em]" style={{ color: "var(--accent)" }}>
-                    {p.org}
-                  </p>
+    <section className="py-16 md:py-24" style={{ backgroundColor: "var(--background)" }}>
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.1em] text-center" style={{ color: "var(--accent)" }}>
+          In partnership with
+        </p>
+        <ul className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+          {partners.map((p) => (
+            <li key={p.name}>
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group h-full flex flex-col items-center justify-between gap-6 rounded-3xl bg-white px-6 pt-10 pb-6 md:pt-12 md:pb-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)]"
+                style={{ border: "1.5px solid var(--border-solid)" }}
+              >
+                <div className="h-[76px] md:h-[92px] flex items-center justify-center">
+                  <Image src={p.logo} alt="" width={p.w} height={p.h} className={`w-auto ${p.cls}`} />
                 </div>
-                <span
-                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: "#ffffff" }}
-                  aria-hidden="true"
-                >
-                  <ArrowUpRight size={16} />
+                <span className="text-sm font-medium text-center leading-snug" style={{ color: "var(--muted)" }}>
+                  {p.name}
                 </span>
-              </div>
-              <p className="mt-4 text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
-                {p.desc}
-              </p>
-            </motion.a>
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
