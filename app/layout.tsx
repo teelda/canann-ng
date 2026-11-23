@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Onest } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -8,10 +8,12 @@ import Script from "next/script";
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://canann.org";
 
-const onest = Onest({
+// Self-hosted so builds don't depend on downloading from Google Fonts.
+// Onest variable font (weights 100–900), latin + latin-ext; licence in app/fonts/Onest-OFL.txt
+const onest = localFont({
+  src: "./fonts/Onest-Variable.woff2",
   variable: "--font-onest",
-  subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: "100 900",
   display: "swap",
 });
 
