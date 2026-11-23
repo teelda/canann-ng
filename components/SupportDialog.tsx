@@ -57,7 +57,7 @@ export default function SupportDialog({ open, onClose, onChooseAnother }: Props)
         <ul className="mt-3 space-y-2 text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
           <li className="flex gap-2.5">
             <span className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "var(--accent)" }} aria-hidden="true" />
-            <span><strong className="font-semibold" style={{ color: "var(--foreground)" }}>Devices</strong> go to students in our school programmes. We can&apos;t take personal requests.</span>
+            <span><strong className="font-semibold" style={{ color: "var(--foreground)" }}>Devices</strong> (laptops) go to students in our school programmes. We don&apos;t give out phones, and we can&apos;t take personal requests.</span>
           </li>
           <li className="flex gap-2.5">
             <span className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "var(--accent)" }} aria-hidden="true" />

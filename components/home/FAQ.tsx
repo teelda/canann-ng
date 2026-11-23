@@ -39,7 +39,7 @@ const faqs: Faq[] = [
     a: "Companies, foundations, universities and schools can sponsor a Tech in School visit, fund Pad a Girl for a school, give devices or products, share staff as facilitators or mentors, or co-host an event. Every partnership is tied to a named school or cohort, with a short impact report afterwards.",
     link: { href: "/contact?type=partner", label: "Start a partnership conversation" },
   },
-  { q: "Can I apply for a free laptop or phone?", a: DEVICE_SUPPORT_ANSWER },
+  { q: "Does Canann give out phones or laptops to individuals?", a: DEVICE_SUPPORT_ANSWER },
   { q: "Does Canann offer grants or fund businesses and external events?", a: FUNDING_SUPPORT_ANSWER },
   {
     q: "How can I stay updated with Canann?",

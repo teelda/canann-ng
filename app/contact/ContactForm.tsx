@@ -100,7 +100,7 @@ export default function ContactForm() {
         className="mb-7 text-sm text-left underline underline-offset-4 decoration-dotted transition-colors hover:text-[var(--foreground)]"
         style={{ color: "var(--muted)" }}
       >
-        Looking for a laptop, phone or financial support?
+        Looking for a laptop or financial support?
       </button>
       <SupportDialog
         open={dialog !== null}
